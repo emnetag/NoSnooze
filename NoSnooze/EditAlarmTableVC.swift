@@ -12,14 +12,18 @@ import DatePickerCell
 class EditAlarmTableVC: UITableViewController {
 
     var cells:NSArray = []
-    
+    var alarmOptions = ["Label","Add friends to Alarm"]
+    var alarmLabel = "Alarm"
+    @IBAction func unwindToEditAlarm(segue: UIStoryboardSegue) {
+        self.tableView.reloadData()
+    }
     override func viewDidLoad() {
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 44
         
         // The DatePickerCell.
         let datePickerCell1 = DatePickerCell(style: UITableViewCellStyle.Default, reuseIdentifier: nil)
-        datePickerCell1.leftLabel.text = "Alarm"
+        datePickerCell1.leftLabel.text = "Time"
         let datePickerCell2 = DatePickerCell(style: UITableViewCellStyle.Default, reuseIdentifier: nil)
         datePickerCell2.leftLabel.text = "Cutoff Snooze"
         // Cells is a 2D array containing sections and rows.
@@ -52,7 +56,7 @@ class EditAlarmTableVC: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cells[section].count + 3
+        return cells[section].count + 2
     }
     
     
@@ -63,9 +67,16 @@ class EditAlarmTableVC: UITableViewController {
         var cell : UITableViewCell
         if(indexPath.row <= 1) {
             cell = cells[indexPath.section][indexPath.row] as! UITableViewCell
+        } else if (indexPath.row == 2) {
+            // Can create cell models here
+            // Description -> goes to popup text box?, Add Friends -> goes to new VC, (Optional) Repeatable -> Is a (on/off) button
+            cell = tableView.dequeueReusableCellWithIdentifier("EditLabelCell", forIndexPath: indexPath)
+            cell.textLabel?.text = alarmOptions[indexPath.row - 2]
+            cell.detailTextLabel?.text = alarmLabel
+            
         } else {
-            cell = tableView.dequeueReusableCellWithIdentifier("OptionCell", forIndexPath: indexPath)
-            cell.textLabel?.text = "Test"
+            cell = tableView.dequeueReusableCellWithIdentifier("AddFriendCell", forIndexPath: indexPath)
+            cell.textLabel?.text = alarmOptions[indexPath.row - 2]
         }
         return cell
     }
@@ -127,14 +138,19 @@ class EditAlarmTableVC: UITableViewController {
     }
     */
     
-    /*
+    
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     // Get the new view controller using segue.destinationViewController.
     // Pass the selected object to the new view controller.
+        if segue.identifier == "ShowAlarmLabel"
+        {
+            let destinationVC = segue.destinationViewController as! LabelAlarmVC
+            destinationVC.text = alarmLabel;
+        }
     }
-    */
+    
 
 }

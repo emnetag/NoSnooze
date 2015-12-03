@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		543B35CA1C0FDDD90004C5AD /* EditAlarmTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543B35C91C0FDDD90004C5AD /* EditAlarmTableVC.swift */; };
 		547471D21C0F6C38000CF3EE /* HomeAlarmTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547471D11C0F6C38000CF3EE /* HomeAlarmTableVC.swift */; };
+		54E677101C10EC02003E14F1 /* LabelAlarmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E6770F1C10EC02003E14F1 /* LabelAlarmVC.swift */; };
 		73D3DC83D681702C9CAC10DB /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BE1B6929FCC47CAF68E3A2E /* Pods.framework */; };
 		9D54CBBD1C0E94A800A7AFBA /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D54CBB91C0E94A800A7AFBA /* FBSDKCoreKit.framework */; };
 		9D54CBBE1C0E94A900A7AFBA /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D54CBBA1C0E94A800A7AFBA /* FBSDKLoginKit.framework */; };
@@ -45,6 +46,7 @@
 		4A6F1223335538703A26C0B0 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		543B35C91C0FDDD90004C5AD /* EditAlarmTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditAlarmTableVC.swift; sourceTree = "<group>"; };
 		547471D11C0F6C38000CF3EE /* HomeAlarmTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeAlarmTableVC.swift; sourceTree = "<group>"; };
+		54E6770F1C10EC02003E14F1 /* LabelAlarmVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelAlarmVC.swift; sourceTree = "<group>"; };
 		6BE1B6929FCC47CAF68E3A2E /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D54CBB91C0E94A800A7AFBA /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		9D54CBBA1C0E94A800A7AFBA /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				CE85E55F1C0E5C17003BC274 /* LaunchScreen.storyboard */,
 				CE85E5621C0E5C17003BC274 /* Info.plist */,
 				543B35C91C0FDDD90004C5AD /* EditAlarmTableVC.swift */,
+				54E6770F1C10EC02003E14F1 /* LabelAlarmVC.swift */,
 			);
 			path = NoSnooze;
 			sourceTree = "<group>";
@@ -357,6 +360,7 @@
 				CE85E5591C0E5C17003BC274 /* ViewController.swift in Sources */,
 				543B35CA1C0FDDD90004C5AD /* EditAlarmTableVC.swift in Sources */,
 				CE85E5571C0E5C17003BC274 /* AppDelegate.swift in Sources */,
+				54E677101C10EC02003E14F1 /* LabelAlarmVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
