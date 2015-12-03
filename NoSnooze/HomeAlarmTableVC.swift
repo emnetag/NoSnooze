@@ -8,8 +8,18 @@
 
 import UIKit
 
-class HomeAlarmTableVC: UITableViewController {
+struct Alarm {
+    var alarmTime : NSDate
+    var cutoffTime : NSDate
+    var snoozesAllowed : Int
+    
+    
+}
 
+class HomeAlarmTableVC: UITableViewController {
+    @IBAction func unwindToAlarmHome(segue: UIStoryboardSegue) {
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -17,7 +27,7 @@ class HomeAlarmTableVC: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        self.navigationItem.leftBarButtonItem = self.editButtonItem()
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,10 +49,12 @@ class HomeAlarmTableVC: UITableViewController {
 
     /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCellWithIdentifier("AlarmCell", forIndexPath: indexPath)
+        //let image : UIImage = UIImage(named: "Question_Flat.png")! <- maybe use a clock image
+        cell.imageView!.image = image // need image for each quiz
+        cell.textLabel?.text = subjects[indexPath.row]
+        cell.detailTextLabel!.text = descriptions[indexPath.row] // description goes here
+        
         return cell
     }
     */

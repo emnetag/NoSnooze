@@ -1,0 +1,6 @@
+framework module Pods_NoSnoozeTests {
+  umbrella header "Pods-NoSnoozeTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
