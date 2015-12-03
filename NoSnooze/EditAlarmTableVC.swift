@@ -17,6 +17,9 @@ class EditAlarmTableVC: UITableViewController {
     @IBAction func unwindToEditAlarm(segue: UIStoryboardSegue) {
         self.tableView.reloadData()
     }
+    @IBAction func saveButton(sender: UIBarButtonItem) {
+        // Saves the date, time, friends, and alarm label
+    }
     override func viewDidLoad() {
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 44
@@ -150,6 +153,9 @@ class EditAlarmTableVC: UITableViewController {
             let destinationVC = segue.destinationViewController as! LabelAlarmVC
             destinationVC.text = alarmLabel;
         }
+        let backItem = UIBarButtonItem()
+        backItem.title = "Back"
+        navigationItem.backBarButtonItem = backItem
     }
     
 

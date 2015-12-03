@@ -90,7 +90,11 @@
                                 <segue destination="GsV-eI-dfn" kind="unwind" unwindAction="unwindToAlarmHome:" id="BU0-gh-J1v"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Wd6-cj-7Cf"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Wd6-cj-7Cf">
+                            <connections>
+                                <action selector="saveButton:" destination="b9N-YT-G8l" id="yXT-L0-3a5"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vc8-jp-iMJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -110,7 +114,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wmi-cg-z8i">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="wmi-cg-z8i">
                                 <rect key="frame" x="20" y="218" width="560" height="30"/>
                                 <animations/>
                                 <constraints>

@@ -22,10 +22,14 @@ class LabelAlarmVC: UIViewController {
     @IBAction func textField(sender: UITextField) {
          save.enabled = true;
     }
+    override func viewDidAppear(animated: Bool) {
+        alarmLabel.becomeFirstResponder()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         save.enabled = false;
         alarmLabel.text = text;
+        
         // Do any additional setup after loading the view.
     }
 
