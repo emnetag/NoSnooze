@@ -18,18 +18,22 @@ class EditAlarmTableVC: UITableViewController {
         self.tableView.estimatedRowHeight = 44
         
         // The DatePickerCell.
-        let datePickerCell = DatePickerCell(style: UITableViewCellStyle.Default, reuseIdentifier: nil)
+        let datePickerCell1 = DatePickerCell(style: UITableViewCellStyle.Default, reuseIdentifier: nil)
+        datePickerCell1.leftLabel.text = "Alarm"
+        let datePickerCell2 = DatePickerCell(style: UITableViewCellStyle.Default, reuseIdentifier: nil)
+        datePickerCell2.leftLabel.text = "Cutoff Snooze"
         // Cells is a 2D array containing sections and rows.
-        cells = [[datePickerCell]]
+        cells = [[datePickerCell1, datePickerCell2]]
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         // Get the correct height if the cell is a DatePickerCell.
-        let cell = self.tableView(tableView, cellForRowAtIndexPath: indexPath)
-        if (cell.isKindOfClass(DatePickerCell)) {
-            return (cell as! DatePickerCell).datePickerHeight()
+        if(indexPath.row < 2) { // First two needs to be formatted as DatePickerCells
+            let cell = self.tableView(tableView, cellForRowAtIndexPath: indexPath)
+            if (cell.isKindOfClass(DatePickerCell)) {
+                return (cell as! DatePickerCell).datePickerHeight()
+            }
         }
-        
         return super.tableView(tableView, heightForRowAtIndexPath: indexPath)
     }
     
@@ -48,12 +52,89 @@ class EditAlarmTableVC: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cells[section].count
+        return cells[section].count + 3
     }
     
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        return cells[indexPath.section][indexPath.row] as! UITableViewCell
+        /*if(indexPath.row <= 1) {
+            return cells[indexPath.section][indexPath.row] as! UITableViewCell
+        }*/
+        var cell : UITableViewCell
+        if(indexPath.row <= 1) {
+            cell = cells[indexPath.section][indexPath.row] as! UITableViewCell
+        } else {
+            cell = tableView.dequeueReusableCellWithIdentifier("OptionCell", forIndexPath: indexPath)
+            cell.textLabel?.text = "Test"
+        }
+        return cell
     }
+    
+    /*override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 0
+    }
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        return 0
+    }*/
+    
+    /*
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCellWithIdentifier("AlarmCell", forIndexPath: indexPath)
+    //let image : UIImage = UIImage(named: "Question_Flat.png")! <- maybe use a clock image
+    cell.imageView!.image = image // need image for each quiz
+    cell.textLabel?.text = subjects[indexPath.row]
+    cell.detailTextLabel!.text = descriptions[indexPath.row] // description goes here
+    
+    return cell
+    }
+    */
+    
+    /*
+    // Override to support conditional editing of the table view.
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    // Return false if you do not want the specified item to be editable.
+    return true
+    }
+    */
+    
+    /*
+    // Override to support editing the table view.
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+    if editingStyle == .Delete {
+    // Delete the row from the data source
+    tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+    } else if editingStyle == .Insert {
+    // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+    }
+    }
+    */
+    
+    /*
+    // Override to support rearranging the table view.
+    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
+    
+    }
+    */
+    
+    /*
+    // Override to support conditional rearranging of the table view.
+    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    // Return false if you do not want the item to be re-orderable.
+    return true
+    }
+    */
+    
+    /*
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    // Get the new view controller using segue.destinationViewController.
+    // Pass the selected object to the new view controller.
+    }
+    */
 
 }
