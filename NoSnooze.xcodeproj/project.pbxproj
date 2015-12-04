@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		54E677131C113953003E14F1 /* LandingPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54E677111C113953003E14F1 /* LandingPage.storyboard */; };
 		9D54CBBD1C0E94A800A7AFBA /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D54CBB91C0E94A800A7AFBA /* FBSDKCoreKit.framework */; };
 		9D54CBBE1C0E94A900A7AFBA /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D54CBBA1C0E94A800A7AFBA /* FBSDKLoginKit.framework */; };
 		9D54CBBF1C0E94A900A7AFBA /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D54CBBB1C0E94A800A7AFBA /* FBSDKShareKit.framework */; };
@@ -46,6 +47,7 @@
 
 /* Begin PBXFileReference section */
 		000450177A5F6754508F954E /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		54E677121C113953003E14F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LandingPage.storyboard; sourceTree = "<group>"; };
 		5F7107326DDB52B2EC0ABE40 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		9D54CBB91C0E94A800A7AFBA /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		9D54CBBA1C0E94A800A7AFBA /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 		CE85E5551C0E5C17003BC274 /* NoSnooze */ = {
 			isa = PBXGroup;
 			children = (
+				54E677111C113953003E14F1 /* LandingPage.storyboard */,
 				CE85E5561C0E5C17003BC274 /* AppDelegate.swift */,
 				CE85E5581C0E5C17003BC274 /* LogInViewController.swift */,
 				CE69B59F1C1132D40042EEA7 /* AlarmFormViewController.swift */,
@@ -302,6 +305,7 @@
 				CE85E5611C0E5C17003BC274 /* LaunchScreen.storyboard in Resources */,
 				CE85E55E1C0E5C17003BC274 /* Assets.xcassets in Resources */,
 				CE85E55C1C0E5C17003BC274 /* LogIn.storyboard in Resources */,
+				54E677131C113953003E14F1 /* LandingPage.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,6 +422,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		54E677111C113953003E14F1 /* LandingPage.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				54E677121C113953003E14F1 /* Base */,
+			);
+			name = LandingPage.storyboard;
+			sourceTree = "<group>";
+		};
 		CE85E55A1C0E5C17003BC274 /* LogIn.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
