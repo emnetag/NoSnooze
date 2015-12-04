@@ -4,35 +4,25 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>DatePickerCell.xcscheme</key>
+		<key>NoSnooze.xcscheme</key>
 		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Firebase.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
+			<key>orderHint</key>
+			<integer>0</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>733206DFBBCC49D3502AE07C330E98E6</key>
+		<key>CE85E5521C0E5C17003BC274</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>741D7A024C5F5756A1593510BB201621</key>
+		<key>CE85E5661C0E5C17003BC274</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B7AC9326D819482593FE118E915409D7</key>
+		<key>CE85E5711C0E5C17003BC274</key>
 		<dict>
 			<key>primary</key>
 			<true/>

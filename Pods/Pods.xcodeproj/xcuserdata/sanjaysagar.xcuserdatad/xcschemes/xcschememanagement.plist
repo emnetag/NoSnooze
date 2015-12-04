@@ -9,7 +9,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Firebase.xcscheme</key>
+		<key>Pods-NoSnooze.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-NoSnoozeTests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-NoSnoozeUITests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -22,17 +32,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>133D6E55AC10285CB4D83B19B2860395</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3526AFDC026C6318C8F371C19767EA70</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3980A096B5F0AEF43DEA5AB121068C1E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>733206DFBBCC49D3502AE07C330E98E6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>741D7A024C5F5756A1593510BB201621</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>B7AC9326D819482593FE118E915409D7</key>
+		<key>FD4D30F5C2368488B9A7787EF304EC32</key>
 		<dict>
 			<key>primary</key>
 			<true/>

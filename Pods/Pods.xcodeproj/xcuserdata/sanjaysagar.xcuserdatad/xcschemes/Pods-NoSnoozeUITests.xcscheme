@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '0102AF4EF9562AC52207EFC4'
-               BlueprintName = 'DatePickerCell'
+               BlueprintIdentifier = '4EB3E2AAF5133F9C8271E305'
+               BlueprintName = 'Pods-NoSnoozeUITests'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'DatePickerCell.framework'>
+               BuildableName = 'Pods_NoSnoozeUITests.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
