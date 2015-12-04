@@ -84,41 +84,11 @@
                         <outlet property="loginStatusLabel" destination="xR5-Sx-lc3" id="jBO-K7-9Vs"/>
                         <outlet property="logoutButton" destination="ggt-mM-vIt" id="b4b-cb-dcP"/>
                         <outlet property="titleLabel" destination="JXz-wT-BmG" id="8ZO-l0-IVQ"/>
-                        <segue destination="gYk-qE-Ai5" kind="presentation" identifier="showNew" id="Vv7-0G-ENX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="564.5" y="223.5"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="5ZR-B4-uTl">
-            <objects>
-                <viewController id="gYk-qE-Ai5" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Q4p-pT-jXJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="pLS-Sq-mIr"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="iYM-fL-d82">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sweggg" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RGB-Rv-ydr">
-                                <rect key="frame" x="20" y="187" width="335" height="21"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Hh8-9u-1M1" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1173.5" y="223.5"/>
         </scene>
     </scenes>
 </document>

@@ -20,7 +20,7 @@
 		CE69B5AC1C1132ED0042EEA7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE69B5A61C1132ED0042EEA7 /* ViewController.swift */; };
 		CE85E5571C0E5C17003BC274 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE85E5561C0E5C17003BC274 /* AppDelegate.swift */; };
 		CE85E5591C0E5C17003BC274 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE85E5581C0E5C17003BC274 /* LogInViewController.swift */; };
-		CE85E55C1C0E5C17003BC274 /* LogIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE85E55A1C0E5C17003BC274 /* LogIn.storyboard */; };
+		CE85E55C1C0E5C17003BC274 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE85E55A1C0E5C17003BC274 /* Main.storyboard */; };
 		CE85E55E1C0E5C17003BC274 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE85E55D1C0E5C17003BC274 /* Assets.xcassets */; };
 		CE85E5611C0E5C17003BC274 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE85E55F1C0E5C17003BC274 /* LaunchScreen.storyboard */; };
 		CE85E56C1C0E5C17003BC274 /* NoSnoozeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE85E56B1C0E5C17003BC274 /* NoSnoozeTests.swift */; };
@@ -62,7 +62,7 @@
 		CE85E5531C0E5C17003BC274 /* NoSnooze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoSnooze.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE85E5561C0E5C17003BC274 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE85E5581C0E5C17003BC274 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
-		CE85E55B1C0E5C17003BC274 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LogIn.storyboard; sourceTree = "<group>"; };
+		CE85E55B1C0E5C17003BC274 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CE85E55D1C0E5C17003BC274 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE85E5601C0E5C17003BC274 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE85E5621C0E5C17003BC274 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -160,7 +160,7 @@
 				CE69B5A31C1132ED0042EEA7 /* HomeAlarmTableVC.swift */,
 				CE69B5A51C1132ED0042EEA7 /* LabelAlarmVC.swift */,
 				CE69B5A61C1132ED0042EEA7 /* ViewController.swift */,
-				CE85E55A1C0E5C17003BC274 /* LogIn.storyboard */,
+				CE85E55A1C0E5C17003BC274 /* Main.storyboard */,
 				CE85E55D1C0E5C17003BC274 /* Assets.xcassets */,
 				CE85E55F1C0E5C17003BC274 /* LaunchScreen.storyboard */,
 				CE85E5621C0E5C17003BC274 /* Info.plist */,
@@ -304,7 +304,7 @@
 			files = (
 				CE85E5611C0E5C17003BC274 /* LaunchScreen.storyboard in Resources */,
 				CE85E55E1C0E5C17003BC274 /* Assets.xcassets in Resources */,
-				CE85E55C1C0E5C17003BC274 /* LogIn.storyboard in Resources */,
+				CE85E55C1C0E5C17003BC274 /* Main.storyboard in Resources */,
 				54E677131C113953003E14F1 /* LandingPage.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -430,12 +430,12 @@
 			name = LandingPage.storyboard;
 			sourceTree = "<group>";
 		};
-		CE85E55A1C0E5C17003BC274 /* LogIn.storyboard */ = {
+		CE85E55A1C0E5C17003BC274 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				CE85E55B1C0E5C17003BC274 /* Base */,
 			);
-			name = LogIn.storyboard;
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 		CE85E55F1C0E5C17003BC274 /* LaunchScreen.storyboard */ = {

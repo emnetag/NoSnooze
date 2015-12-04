@@ -113,8 +113,10 @@ class LogInViewController: UIViewController {
             if authData == nil {
                 print("No one is home")
             } else {
+                let sb = UIStoryboard(name: "LandingPage", bundle: nil)
+                let VC = sb.instantiateInitialViewController() as! UINavigationController
                 print("Someone is home, \(authData.providerData["displayName"]!) to be specific")
-                self.performSegueWithIdentifier("showNew", sender: nil)
+                self.presentViewController(VC, animated: true, completion: nil)
             }
         }
     }
