@@ -11,8 +11,9 @@ import DatePickerCell
 
 class EditAlarmTableVC: UITableViewController {
 
+    @IBOutlet weak var minFriends: UITextField! //Save this 
     var cells:NSArray = []
-    var alarmOptions = ["Label","Add friends to Alarm"]
+    var alarmOptions = ["Label","Add friends to Alarm","Minimum # of Friends"]
     var alarmLabel = "Alarm"
     @IBAction func unwindToEditAlarm(segue: UIStoryboardSegue) {
         self.tableView.reloadData()
