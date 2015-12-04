@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		61807EFBECD47F48175B6AE5 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B142FFDD1ACB2261ECD16F9F /* libPods.a */; };
 		9D54CBBD1C0E94A800A7AFBA /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D54CBB91C0E94A800A7AFBA /* FBSDKCoreKit.framework */; };
 		9D54CBBE1C0E94A900A7AFBA /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D54CBBA1C0E94A800A7AFBA /* FBSDKLoginKit.framework */; };
 		9D54CBBF1C0E94A900A7AFBA /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D54CBBB1C0E94A800A7AFBA /* FBSDKShareKit.framework */; };
 		9D54CBC01C0E94A900A7AFBA /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 9D54CBBC1C0E94A800A7AFBA /* README.md */; };
+		B708C08B63CCCD1318823802 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 000450177A5F6754508F954E /* Pods.framework */; };
 		CE85E5571C0E5C17003BC274 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE85E5561C0E5C17003BC274 /* AppDelegate.swift */; };
 		CE85E5591C0E5C17003BC274 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE85E5581C0E5C17003BC274 /* LogInViewController.swift */; };
 		CE85E55C1C0E5C17003BC274 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE85E55A1C0E5C17003BC274 /* Main.storyboard */; };
@@ -40,12 +40,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		000450177A5F6754508F954E /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F7107326DDB52B2EC0ABE40 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		9D54CBB91C0E94A800A7AFBA /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		9D54CBBA1C0E94A800A7AFBA /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		9D54CBBB1C0E94A800A7AFBA /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		9D54CBBC1C0E94A800A7AFBA /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		B142FFDD1ACB2261ECD16F9F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB69201CCEF9598C1EB4A300 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		CE85E5531C0E5C17003BC274 /* NoSnooze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoSnooze.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE85E5561C0E5C17003BC274 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -72,7 +72,7 @@
 				9D54CBBE1C0E94A900A7AFBA /* FBSDKLoginKit.framework in Frameworks */,
 				9D54CBBD1C0E94A800A7AFBA /* FBSDKCoreKit.framework in Frameworks */,
 				9D54CBBF1C0E94A900A7AFBA /* FBSDKShareKit.framework in Frameworks */,
-				61807EFBECD47F48175B6AE5 /* libPods.a in Frameworks */,
+				B708C08B63CCCD1318823802 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,7 +109,7 @@
 				9D54CBBA1C0E94A800A7AFBA /* FBSDKLoginKit.framework */,
 				9D54CBBB1C0E94A800A7AFBA /* FBSDKShareKit.framework */,
 				9D54CBBC1C0E94A800A7AFBA /* README.md */,
-				B142FFDD1ACB2261ECD16F9F /* libPods.a */,
+				000450177A5F6754508F954E /* Pods.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
