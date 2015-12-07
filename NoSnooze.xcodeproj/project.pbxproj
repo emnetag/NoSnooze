@@ -18,6 +18,7 @@
 		CE69B5A91C1132ED0042EEA7 /* HomeAlarmTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE69B5A31C1132ED0042EEA7 /* HomeAlarmTableVC.swift */; };
 		CE69B5AB1C1132ED0042EEA7 /* LabelAlarmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE69B5A51C1132ED0042EEA7 /* LabelAlarmVC.swift */; };
 		CE69B5AC1C1132ED0042EEA7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE69B5A61C1132ED0042EEA7 /* ViewController.swift */; };
+		CE7D182B1C150AF400FC10EC /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D182A1C150AF400FC10EC /* Alarm.swift */; };
 		CE85E5571C0E5C17003BC274 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE85E5561C0E5C17003BC274 /* AppDelegate.swift */; };
 		CE85E5591C0E5C17003BC274 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE85E5581C0E5C17003BC274 /* LogInViewController.swift */; };
 		CE85E55C1C0E5C17003BC274 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE85E55A1C0E5C17003BC274 /* Main.storyboard */; };
@@ -59,6 +60,7 @@
 		CE69B5A31C1132ED0042EEA7 /* HomeAlarmTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeAlarmTableVC.swift; sourceTree = "<group>"; };
 		CE69B5A51C1132ED0042EEA7 /* LabelAlarmVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelAlarmVC.swift; sourceTree = "<group>"; };
 		CE69B5A61C1132ED0042EEA7 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CE7D182A1C150AF400FC10EC /* Alarm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alarm.swift; sourceTree = "<group>"; };
 		CE85E5531C0E5C17003BC274 /* NoSnooze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoSnooze.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE85E5561C0E5C17003BC274 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE85E5581C0E5C17003BC274 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				CEFBAED31C0FDE50003EA6FE /* User.swift */,
+				CE7D182A1C150AF400FC10EC /* Alarm.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -385,6 +388,7 @@
 				CE69B5AC1C1132ED0042EEA7 /* ViewController.swift in Sources */,
 				CE69B5A01C1132D40042EEA7 /* AlarmFormViewController.swift in Sources */,
 				CE69B5AB1C1132ED0042EEA7 /* LabelAlarmVC.swift in Sources */,
+				CE7D182B1C150AF400FC10EC /* Alarm.swift in Sources */,
 				CE85E5591C0E5C17003BC274 /* LogInViewController.swift in Sources */,
 				CE85E5571C0E5C17003BC274 /* AppDelegate.swift in Sources */,
 			);

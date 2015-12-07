@@ -8,19 +8,84 @@
 
 import UIKit
 import DatePickerCell
+import Firebase
 
 class EditAlarmTableVC: UITableViewController {
 
     @IBOutlet weak var minFriends: UITextField! //Save this 
-    var cells:NSArray = []
+    
+    var cells: NSArray = []
     var alarmOptions = ["Label","Add friends to Alarm","Minimum # of Friends"]
     var alarmLabel = "Alarm"
+    
+    var currentUser: User!
+    
+    let rootRef = Firebase(url: "https://nosnooze.firebaseio.com")
+    
     @IBAction func unwindToEditAlarm(segue: UIStoryboardSegue) {
         self.tableView.reloadData()
     }
+    
     @IBAction func saveButton(sender: UIBarButtonItem) {
         // Saves the date, time, friends, and alarm label
+        print("Saving...")
+        
+        //Get tableCell Data
+        let cells = tableView.visibleCells
+        
+        var cutoffTime = ""
+        var alarmTime = ""
+        var alarmLabel = ""
+        
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "EEE, d MMM yyyy HH:mm:ss Z"
+        
+        for cell in cells {
+            if cell.isKindOfClass(DatePickerCell) {
+                print("Found a datepicker")
+                let dateCell = cell as! DatePickerCell
+                if dateCell.leftLabel.text == "Time" {
+                    alarmTime = formatter.stringFromDate(dateCell.datePicker.date)
+                } else if dateCell.leftLabel.text == "Cutoff Snooze" {
+                    cutoffTime = formatter.stringFromDate(dateCell.datePicker.date)
+                }
+            } else if cell.isKindOfClass(UITableViewCell) {
+                print("Found a table cell")
+                if cell.textLabel!.text! == "Label" {
+                    alarmLabel = cell.detailTextLabel!.text!
+                }
+            }
+        }
+        
+        print("Current User is \(currentUser.uid)\nSaving alarm...")
+        
+        print("Saving alarm for time: \(alarmTime)\nCutoff at time: \(cutoffTime)")
+        
+        let numFriends = NSNumberFormatter().numberFromString(minFriends!.text!)!.integerValue
+        
+        let newAlarm = [
+            "alarmTime": alarmTime,
+            "cutoffTime": cutoffTime,
+            "minFriends": numFriends,
+            "name": alarmLabel,
+            "addedByUser": currentUser.uid,
+            "snoozesAllowed": 0
+        ]
+        
+        self.rootRef.childByAppendingPath("alarms")
+            .childByAutoId().setValue(newAlarm)
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        self.rootRef.observeAuthEventWithBlock { (authData) -> Void in
+            if authData != nil {
+                self.currentUser = User(authData: authData)
+            } else {
+                print("No one is home")
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 44

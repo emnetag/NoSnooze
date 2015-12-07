@@ -7,19 +7,31 @@
 //
 
 import UIKit
+import Firebase
 
-struct Alarm {
-    var alarmTime : NSDate
-    var cutoffTime : NSDate
-    var snoozesAllowed : Int
-    
-    
-}
 
 class HomeAlarmTableVC: UITableViewController {
+    
+    var currentUser: User!
+    
+    let rootRef = Firebase(url: "https://nosnooze.firebaseio.com/")
+    
+    override func viewDidAppear(animated: Bool) {
+        self.rootRef.observeAuthEventWithBlock { (authData) -> Void in
+            if authData != nil {
+                self.currentUser = User(authData: authData)
+                print("Current user is \(self.currentUser.displayName!)")
+            } else {
+                print("No one is home.")
+            }
+        }
+    }
+    
+    
     @IBAction func unwindToAlarmHome(segue: UIStoryboardSegue) {
         
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
