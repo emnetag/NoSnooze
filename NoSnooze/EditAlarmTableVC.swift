@@ -38,19 +38,24 @@ class EditAlarmTableVC: UITableViewController {
         var alarmLabel = ""
         
         let formatter = NSDateFormatter()
+        
         formatter.dateFormat = "EEE, d MMM yyyy HH:mm:ss Z"
         
         for cell in cells {
             if cell.isKindOfClass(DatePickerCell) {
                 print("Found a datepicker")
+                
                 let dateCell = cell as! DatePickerCell
+                
                 if dateCell.leftLabel.text == "Time" {
                     alarmTime = formatter.stringFromDate(dateCell.datePicker.date)
                 } else if dateCell.leftLabel.text == "Cutoff Snooze" {
                     cutoffTime = formatter.stringFromDate(dateCell.datePicker.date)
                 }
+                
             } else if cell.isKindOfClass(UITableViewCell) {
                 print("Found a table cell")
+                
                 if cell.textLabel!.text! == "Label" {
                     alarmLabel = cell.detailTextLabel!.text!
                 }
@@ -69,7 +74,6 @@ class EditAlarmTableVC: UITableViewController {
             "minFriends": numFriends,
             "name": alarmLabel,
             "addedByUser": currentUser.uid,
-            "snoozesAllowed": 0
         ]
         
         self.rootRef.childByAppendingPath("alarms")

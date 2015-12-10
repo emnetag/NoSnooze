@@ -56,6 +56,7 @@ class LogInViewController: UIViewController {
             self.logoutButton.hidden = true
         } else {
             var statusText = ""
+            
             if currentUser?.provider == "facebook" {
                 statusText = "Logged in as \(currentUser?.providerData["displayName"]) (Facebook)"
             }
@@ -65,6 +66,7 @@ class LogInViewController: UIViewController {
             
             //show the logout button
             self.logoutButton.hidden = false
+            
             //hide the login button for now
             self.loginButton.hidden = true
         }
@@ -117,9 +119,10 @@ class LogInViewController: UIViewController {
                 print("No one is home")
             } else {
                 print("Someone is home, \(authData.providerData["displayName"]!) to be specific")
+//                self.updateUIAndSetCurrentUser(authData)
                 let sb = UIStoryboard(name: "LandingPage", bundle: nil)
                 let VC = sb.instantiateInitialViewController() as! UINavigationController
-                self.presentViewController(VC, animated: true, completion: nil)
+                self.presentViewController(VC, animated: true, completion: nil)                
             }
         }
     }

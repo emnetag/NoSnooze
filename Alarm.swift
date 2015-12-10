@@ -13,7 +13,6 @@ struct Alarm {
     
     let alarmTime: NSDate!
     let cutoffTime: NSDate!
-    let snoozesAllowed: Int!
     let addedByUser: String!
     let ref: Firebase?
     let name: String!
@@ -22,7 +21,6 @@ struct Alarm {
         self.name = name
         self.alarmTime = alarmTime
         self.addedByUser = userID
-        self.snoozesAllowed = snoozesAllowed
         self.cutoffTime = cutoffTime
         self.ref = nil
     }
@@ -33,7 +31,6 @@ struct Alarm {
             "addedByUser": addedByUser,
             "alarmTime": alarmTime,
             "cutoffTime": cutoffTime,
-            "snoozesAllowed": snoozesAllowed
         ]
     }
     
