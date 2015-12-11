@@ -1,46 +1,60 @@
 //
-//  AddFriendsTableViewController.swift
+//  FriendsTableViewController.swift
 //  NoSnooze
 //
-//  Created by user on 12/8/15.
+//  Created by user on 12/10/15.
 //  Copyright © 2015 emnetg. All rights reserved.
 //
 
 import UIKit
-import Firebase
 import FBSDKCoreKit
 import FBSDKLoginKit
+import Foundation
 
-class AddFriendsTableViewController: UITableViewController {
-    
+class FriendsTableViewController: UITableViewController {
+
     var accessToken: String!
     var currentUserID: String!
     
+    var friends = [NSDictionary]()
+    var friendsCount: Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+
+    override func viewWillAppear(animated: Bool) {
+        let params = ["fields": "id, friends"]
         
         self.accessToken = FBSDKAccessToken.currentAccessToken().tokenString
-        
-        let params = ["fields": "id, friends"]
         
         if (self.accessToken != nil) {
             
             let request = FBSDKGraphRequest.init(graphPath: "me", parameters: params, tokenString: self.accessToken, version: "v2.5", HTTPMethod: "GET")
-            request.startWithCompletionHandler({ (connection, result, error) -> Void in
+            request.startWithCompletionHandler({ (connection, facebookResult, error) -> Void in
                 
                 if ((error) != nil) {
                     print("Error: \(error)")
                 } else {
-                    self.currentUserID = result.valueForKey("id") as? String
+                    let result = facebookResult as? NSDictionary
+                    
+                    if let friends = result?["friends"]!{
+                        
+                        let friendsDict = friends as! NSDictionary
+                        let data = friendsDict["data"] as! NSArray
+                        
+                        data.forEach({ (friendObj) -> () in
+                            let friend = friendObj as? NSDictionary
+                            self.friends.append(friend!)
+                        })
+                        self.tableView.reloadData()
+                        print("I have \(self.friends.count) friends")
+                    }
                 }
-                
             })
-
         }
-        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -50,23 +64,25 @@ class AddFriendsTableViewController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return self.friends.count
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCellWithIdentifier("FacebookFriendCell", forIndexPath: indexPath)
+        
+        let name = self.friends[indexPath.row]["name"] as? String
+        
+        cell.textLabel?.text = name
+        
         return cell
     }
-    */
+
 
     /*
     // Override to support conditional editing of the table view.

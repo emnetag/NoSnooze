@@ -15,7 +15,9 @@ class EditAlarmTableVC: UITableViewController {
     @IBOutlet weak var minFriends: UITextField! //Save this 
     
     var cells: NSArray = []
+    
     var alarmOptions = ["Label","Add friends to Alarm","Minimum # of Friends"]
+    
     var alarmLabel = "Alarm"
     
     var currentUser: User!
@@ -48,16 +50,22 @@ class EditAlarmTableVC: UITableViewController {
                 let dateCell = cell as! DatePickerCell
                 
                 if dateCell.leftLabel.text == "Time" {
+                    
                     alarmTime = formatter.stringFromDate(dateCell.datePicker.date)
+                    
                 } else if dateCell.leftLabel.text == "Cutoff Snooze" {
+                    
                     cutoffTime = formatter.stringFromDate(dateCell.datePicker.date)
+                    
                 }
                 
             } else if cell.isKindOfClass(UITableViewCell) {
                 print("Found a table cell")
                 
                 if cell.textLabel!.text! == "Label" {
+                    
                     alarmLabel = cell.detailTextLabel!.text!
+                    
                 }
             }
         }
@@ -76,7 +84,7 @@ class EditAlarmTableVC: UITableViewController {
             "active": false
         ]
         
-        if(alarmTime > cutoffTime) {
+        if(alarmTime < cutoffTime) {
             self.rootRef.childByAppendingPath("alarms")
                 .childByAutoId().setValue(newAlarm)
         }
