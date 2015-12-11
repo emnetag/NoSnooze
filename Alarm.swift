@@ -16,6 +16,7 @@ struct Alarm {
     let addedByUser: String!
     let ref: Firebase?
     let name: String!
+    let active: Bool
     
     init(alarmTime: NSDate?, userID: String, name: String, snoozesAllowed: Int = 0, cutoffTime: NSDate) {
         self.name = name
@@ -23,6 +24,7 @@ struct Alarm {
         self.addedByUser = userID
         self.cutoffTime = cutoffTime
         self.ref = nil
+        self.active = false;
     }
 
     func toAnyObject() -> AnyObject {
@@ -31,6 +33,7 @@ struct Alarm {
             "addedByUser": addedByUser,
             "alarmTime": alarmTime,
             "cutoffTime": cutoffTime,
+            "active":active
         ]
     }
     

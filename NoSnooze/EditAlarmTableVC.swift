@@ -61,7 +61,6 @@ class EditAlarmTableVC: UITableViewController {
                 }
             }
         }
-        
         print("Current User is \(currentUser.uid)\nSaving alarm...")
         
         print("Saving alarm for time: \(alarmTime)\nCutoff at time: \(cutoffTime)")
@@ -74,10 +73,16 @@ class EditAlarmTableVC: UITableViewController {
             "minFriends": numFriends,
             "name": alarmLabel,
             "addedByUser": currentUser.uid,
+            "active": false
         ]
         
-        self.rootRef.childByAppendingPath("alarms")
-            .childByAutoId().setValue(newAlarm)
+        if(alarmTime > cutoffTime) {
+            self.rootRef.childByAppendingPath("alarms")
+                .childByAutoId().setValue(newAlarm)
+        }
+        else {
+            cells.b
+        }
     }
     
     override func viewDidAppear(animated: Bool) {
