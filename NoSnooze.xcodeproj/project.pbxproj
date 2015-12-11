@@ -13,6 +13,8 @@
 		9D54CBBE1C0E94A900A7AFBA /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D54CBBA1C0E94A800A7AFBA /* FBSDKLoginKit.framework */; };
 		9D54CBBF1C0E94A900A7AFBA /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D54CBBB1C0E94A800A7AFBA /* FBSDKShareKit.framework */; };
 		9D54CBC01C0E94A900A7AFBA /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 9D54CBBC1C0E94A800A7AFBA /* README.md */; };
+		9D572DC61C1A876F00C9FD89 /* Active Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D572DC51C1A876F00C9FD89 /* Active Alarm.swift */; };
+		9D572DC81C1A879700C9FD89 /* alarm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9D572DC71C1A879700C9FD89 /* alarm.mp3 */; };
 		AC20819D1C1A5AF300550F3A /* AlarmActive.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC20819C1C1A5AF300550F3A /* AlarmActive.storyboard */; };
 		B708C08B63CCCD1318823802 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 000450177A5F6754508F954E /* Pods.framework */; };
 		CE2A8E731C17D47600977058 /* AddFriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2A8E721C17D47600977058 /* AddFriendsTableViewController.swift */; };
@@ -58,6 +60,8 @@
 		9D54CBBA1C0E94A800A7AFBA /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		9D54CBBB1C0E94A800A7AFBA /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		9D54CBBC1C0E94A800A7AFBA /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		9D572DC51C1A876F00C9FD89 /* Active Alarm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Active Alarm.swift"; sourceTree = "<group>"; };
+		9D572DC71C1A879700C9FD89 /* alarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = alarm.mp3; sourceTree = "<group>"; };
 		AC20819C1C1A5AF300550F3A /* AlarmActive.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AlarmActive.storyboard; sourceTree = "<group>"; };
 		BB69201CCEF9598C1EB4A300 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		CE2A8E721C17D47600977058 /* AddFriendsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFriendsTableViewController.swift; sourceTree = "<group>"; };
@@ -165,7 +169,9 @@
 				CE85E5581C0E5C17003BC274 /* LogInViewController.swift */,
 				CE69B59F1C1132D40042EEA7 /* AlarmFormViewController.swift */,
 				CE69B5A11C1132ED0042EEA7 /* EditAlarmTableVC.swift */,
+				9D572DC51C1A876F00C9FD89 /* Active Alarm.swift */,
 				CE2A8E721C17D47600977058 /* AddFriendsTableViewController.swift */,
+				9D572DC71C1A879700C9FD89 /* alarm.mp3 */,
 				CE69B5A31C1132ED0042EEA7 /* HomeAlarmTableVC.swift */,
 				CE69B5A51C1132ED0042EEA7 /* LabelAlarmVC.swift */,
 				CE69B5A61C1132ED0042EEA7 /* ViewController.swift */,
@@ -314,6 +320,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D572DC81C1A879700C9FD89 /* alarm.mp3 in Resources */,
 				CE85E5611C0E5C17003BC274 /* LaunchScreen.storyboard in Resources */,
 				AC20819D1C1A5AF300550F3A /* AlarmActive.storyboard in Resources */,
 				CE85E55E1C0E5C17003BC274 /* Assets.xcassets in Resources */,
@@ -398,6 +405,7 @@
 				9D54CBC01C0E94A900A7AFBA /* README.md in Sources */,
 				CE69B5AC1C1132ED0042EEA7 /* ViewController.swift in Sources */,
 				CE69B5A01C1132D40042EEA7 /* AlarmFormViewController.swift in Sources */,
+				9D572DC61C1A876F00C9FD89 /* Active Alarm.swift in Sources */,
 				CE69B5AB1C1132ED0042EEA7 /* LabelAlarmVC.swift in Sources */,
 				CE7D182B1C150AF400FC10EC /* Alarm.swift in Sources */,
 				CE85E5591C0E5C17003BC274 /* LogInViewController.swift in Sources */,
