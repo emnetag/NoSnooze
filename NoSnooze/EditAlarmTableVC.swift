@@ -76,7 +76,7 @@ class EditAlarmTableVC: UITableViewController {
             "active": false
         ]
         
-        if(alarmTime > cutoffTime) {
+        if(alarmTime < cutoffTime) {
             self.rootRef.childByAppendingPath("alarms")
                 .childByAutoId().setValue(newAlarm)
         }
