@@ -80,9 +80,6 @@ class EditAlarmTableVC: UITableViewController {
             self.rootRef.childByAppendingPath("alarms")
                 .childByAutoId().setValue(newAlarm)
         }
-        else {
-            cells.b
-        }
     }
     
     override func viewDidAppear(animated: Bool) {
