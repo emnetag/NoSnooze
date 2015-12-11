@@ -172,32 +172,38 @@
         <scene sceneID="L8m-uj-2j9">
             <objects>
                 <tableViewController id="PSW-Cy-Awl" customClass="HomeAlarmTableVC" customModule="NoSnooze" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="D5z-ag-BkS">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="95" sectionHeaderHeight="28" sectionFooterHeight="28" id="D5z-ag-BkS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AlarmCell" textLabel="0Ly-rY-6fC" detailTextLabel="Qbm-7F-vqK" style="IBUITableViewCellStyleSubtitle" id="jnr-Rf-36p">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AlarmCell" rowHeight="95" id="jnr-Rf-36p" customClass="AlarmTableViewCell" customModule="NoSnooze" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="95"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jnr-Rf-36p" id="deb-vx-WAm">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="94.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0Ly-rY-6fC">
-                                            <rect key="frame" x="15" y="6" width="31.5" height="19.5"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xxZ-W0-Sem">
+                                            <rect key="frame" x="15" y="17" width="485" height="34"/>
                                             <animations/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <accessibility key="accessibilityConfiguration" identifier="TimeText"/>
+                                            <attributedString key="attributedText">
+                                                <fragment content="[Alarm] on [EEE, MMM d]">
+                                                    <attributes>
+                                                        <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <font key="NSFont" size="22" name="HelveticaNeue"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Qbm-7F-vqK">
-                                            <rect key="frame" x="15" y="25.5" width="40.5" height="13.5"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Snooze Time: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VIT-Ld-Cfc">
+                                            <rect key="frame" x="15" y="56.5" width="171" height="14.5"/>
                                             <animations/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -208,6 +214,10 @@
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" image="YES"/>
                                 </accessibility>
+                                <connections>
+                                    <outlet property="AlarmText" destination="xxZ-W0-Sem" id="oJQ-qm-Z2y"/>
+                                    <outlet property="CutoffTime" destination="VIT-Ld-Cfc" id="Maq-UK-Dcc"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
