@@ -49,7 +49,7 @@ class LogInViewController: UIViewController {
     func updateUIAndSetCurrentUser(currentUser: FAuthData?) -> Void {
         self.currentUser = currentUser
         
-        if self.currentUser === nil {
+        if self.currentUser == nil {
             print("CurrentUser is nil")
             self.loginStatusLabel.hidden = true
             self.loginButton.hidden = false
@@ -119,10 +119,10 @@ class LogInViewController: UIViewController {
                 print("No one is home")
             } else {
                 print("Someone is home, \(authData.providerData["displayName"]!) to be specific")
-//                self.updateUIAndSetCurrentUser(authData)
-                let sb = UIStoryboard(name: "LandingPage", bundle: nil)
-                let VC = sb.instantiateInitialViewController() as! UINavigationController
-                self.presentViewController(VC, animated: true, completion: nil)                
+                self.updateUIAndSetCurrentUser(authData)
+//                let sb = UIStoryboard(name: "LandingPage", bundle: nil)
+//                let VC = sb.instantiateInitialViewController() as! UINavigationController
+//                self.presentViewController(VC, animated: true, completion: nil)                
             }
         }
     }

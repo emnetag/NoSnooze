@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		54AB74CD1C1A6C6900993BD4 /* AlarmTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AB74CC1C1A6C6900993BD4 /* AlarmTableViewCell.swift */; };
 		54E677131C113953003E14F1 /* LandingPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54E677111C113953003E14F1 /* LandingPage.storyboard */; };
 		9D54CBBD1C0E94A800A7AFBA /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D54CBB91C0E94A800A7AFBA /* FBSDKCoreKit.framework */; };
 		9D54CBBE1C0E94A900A7AFBA /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D54CBBA1C0E94A800A7AFBA /* FBSDKLoginKit.framework */; };
@@ -50,6 +51,7 @@
 
 /* Begin PBXFileReference section */
 		000450177A5F6754508F954E /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		54AB74CC1C1A6C6900993BD4 /* AlarmTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmTableViewCell.swift; sourceTree = "<group>"; };
 		54E677121C113953003E14F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LandingPage.storyboard; sourceTree = "<group>"; };
 		5F7107326DDB52B2EC0ABE40 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		9D54CBB91C0E94A800A7AFBA /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 				AC20819C1C1A5AF300550F3A /* AlarmActive.storyboard */,
 				CE85E5621C0E5C17003BC274 /* Info.plist */,
 				CEE765231C0ED8C30051C4BC /* NoSnooze-Bridging-Header.h */,
+				54AB74CC1C1A6C6900993BD4 /* AlarmTableViewCell.swift */,
 			);
 			path = NoSnooze;
 			sourceTree = "<group>";
@@ -399,6 +402,7 @@
 				CE7D182B1C150AF400FC10EC /* Alarm.swift in Sources */,
 				CE85E5591C0E5C17003BC274 /* LogInViewController.swift in Sources */,
 				CE85E5571C0E5C17003BC274 /* AppDelegate.swift in Sources */,
+				54AB74CD1C1A6C6900993BD4 /* AlarmTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

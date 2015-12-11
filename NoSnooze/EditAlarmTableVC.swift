@@ -73,7 +73,11 @@ class EditAlarmTableVC: UITableViewController {
         
         print("Saving alarm for time: \(alarmTime)\nCutoff at time: \(cutoffTime)")
         
-        let numFriends = NSNumberFormatter().numberFromString(minFriends!.text!)!.integerValue
+        var numFriends = 0
+        
+        if minFriends.text != nil {
+            numFriends = NSNumberFormatter().numberFromString(minFriends.text!)!.integerValue
+        }
         
         let newAlarm = [
             "alarmTime": alarmTime,
@@ -88,6 +92,7 @@ class EditAlarmTableVC: UITableViewController {
             self.rootRef.childByAppendingPath("alarms")
                 .childByAutoId().setValue(newAlarm)
         }
+        
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -228,14 +233,15 @@ class EditAlarmTableVC: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     // Get the new view controller using segue.destinationViewController.
     // Pass the selected object to the new view controller.
-        if segue.identifier == "ShowAlarmLabel"
-        {
+        if segue.identifier == "ShowAlarmLabel" {
             let destinationVC = segue.destinationViewController as! LabelAlarmVC
             destinationVC.text = alarmLabel;
         }
+
         let backItem = UIBarButtonItem()
         backItem.title = "Back"
         navigationItem.backBarButtonItem = backItem
+
     }
     
 

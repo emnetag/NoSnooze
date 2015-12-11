@@ -11,29 +11,46 @@ import Firebase
 
 struct Alarm {
     
-    let alarmTime: NSDate!
-    let cutoffTime: NSDate!
+    let key: String!
+    let alarmTime: String!
+    let cutoffTime: String!
     let addedByUser: String!
     let ref: Firebase?
     let name: String!
-    let active: Bool
+    let active: Bool!
+    let members: [User]!
     
-    init(alarmTime: NSDate?, userID: String, name: String, snoozesAllowed: Int = 0, cutoffTime: NSDate) {
+    init(alarmTime: String, userID: String, name: String, cutoffTime: String, members: [User]?, key: String = "") {
+        self.key = key
         self.name = name
         self.alarmTime = alarmTime
         self.addedByUser = userID
         self.cutoffTime = cutoffTime
         self.ref = nil
         self.active = false;
+        self.members = members
     }
 
+    init(snapshot: FDataSnapshot) {
+        key = snapshot.key
+        ref = snapshot.ref
+        name = snapshot.value["name"] as! String
+        addedByUser = snapshot.value["addedByUser"] as! String
+        active = snapshot.value["active"] as! Bool
+        alarmTime = snapshot.value["alarmTime"] as! String
+        cutoffTime = snapshot.value["cutoffTime"] as! String
+        members = snapshot.value["members"] as! Array
+    }
+    
+    
     func toAnyObject() -> AnyObject {
         return [
             "name": name,
             "addedByUser": addedByUser,
             "alarmTime": alarmTime,
             "cutoffTime": cutoffTime,
-            "active":active
+            "active": active,
+            "members": members as! AnyObject
         ]
     }
     
