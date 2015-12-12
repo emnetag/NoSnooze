@@ -17,7 +17,6 @@
 		9D572DC81C1A879700C9FD89 /* alarm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9D572DC71C1A879700C9FD89 /* alarm.mp3 */; };
 		AC20819D1C1A5AF300550F3A /* AlarmActive.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC20819C1C1A5AF300550F3A /* AlarmActive.storyboard */; };
 		B708C08B63CCCD1318823802 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 000450177A5F6754508F954E /* Pods.framework */; };
-		CE2A8E731C17D47600977058 /* AddFriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2A8E721C17D47600977058 /* AddFriendsTableViewController.swift */; };
 		CE69B5A01C1132D40042EEA7 /* AlarmFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE69B59F1C1132D40042EEA7 /* AlarmFormViewController.swift */; };
 		CE69B5A71C1132ED0042EEA7 /* EditAlarmTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE69B5A11C1132ED0042EEA7 /* EditAlarmTableVC.swift */; };
 		CE69B5A91C1132ED0042EEA7 /* HomeAlarmTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE69B5A31C1132ED0042EEA7 /* HomeAlarmTableVC.swift */; };
@@ -31,6 +30,7 @@
 		CE85E5611C0E5C17003BC274 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE85E55F1C0E5C17003BC274 /* LaunchScreen.storyboard */; };
 		CE85E56C1C0E5C17003BC274 /* NoSnoozeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE85E56B1C0E5C17003BC274 /* NoSnoozeTests.swift */; };
 		CE85E5771C0E5C17003BC274 /* NoSnoozeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE85E5761C0E5C17003BC274 /* NoSnoozeUITests.swift */; };
+		CEE442021C1A7E6C00EC6DB6 /* FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE442011C1A7E6C00EC6DB6 /* FriendsTableViewController.swift */; };
 		CEFBAED41C0FDE50003EA6FE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFBAED31C0FDE50003EA6FE /* User.swift */; };
 /* End PBXBuildFile section */
 
@@ -64,7 +64,6 @@
 		9D572DC71C1A879700C9FD89 /* alarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = alarm.mp3; sourceTree = "<group>"; };
 		AC20819C1C1A5AF300550F3A /* AlarmActive.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AlarmActive.storyboard; sourceTree = "<group>"; };
 		BB69201CCEF9598C1EB4A300 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		CE2A8E721C17D47600977058 /* AddFriendsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFriendsTableViewController.swift; sourceTree = "<group>"; };
 		CE69B59F1C1132D40042EEA7 /* AlarmFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmFormViewController.swift; sourceTree = "<group>"; };
 		CE69B5A11C1132ED0042EEA7 /* EditAlarmTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditAlarmTableVC.swift; sourceTree = "<group>"; };
 		CE69B5A31C1132ED0042EEA7 /* HomeAlarmTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeAlarmTableVC.swift; sourceTree = "<group>"; };
@@ -84,6 +83,7 @@
 		CE85E5721C0E5C17003BC274 /* NoSnoozeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NoSnoozeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE85E5761C0E5C17003BC274 /* NoSnoozeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoSnoozeUITests.swift; sourceTree = "<group>"; };
 		CE85E5781C0E5C17003BC274 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEE442011C1A7E6C00EC6DB6 /* FriendsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsTableViewController.swift; sourceTree = "<group>"; };
 		CEE765231C0ED8C30051C4BC /* NoSnooze-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NoSnooze-Bridging-Header.h"; sourceTree = "<group>"; };
 		CEFBAED31C0FDE50003EA6FE /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -169,11 +169,15 @@
 				CE85E5581C0E5C17003BC274 /* LogInViewController.swift */,
 				CE69B59F1C1132D40042EEA7 /* AlarmFormViewController.swift */,
 				CE69B5A11C1132ED0042EEA7 /* EditAlarmTableVC.swift */,
+<<<<<<< HEAD
 				9D572DC51C1A876F00C9FD89 /* Active Alarm.swift */,
 				CE2A8E721C17D47600977058 /* AddFriendsTableViewController.swift */,
 				9D572DC71C1A879700C9FD89 /* alarm.mp3 */,
+=======
+>>>>>>> origin/DataStructs
 				CE69B5A31C1132ED0042EEA7 /* HomeAlarmTableVC.swift */,
 				CE69B5A51C1132ED0042EEA7 /* LabelAlarmVC.swift */,
+				CEE442011C1A7E6C00EC6DB6 /* FriendsTableViewController.swift */,
 				CE69B5A61C1132ED0042EEA7 /* ViewController.swift */,
 				CE85E55A1C0E5C17003BC274 /* Main.storyboard */,
 				CE85E55D1C0E5C17003BC274 /* Assets.xcassets */,
@@ -400,7 +404,7 @@
 			files = (
 				CE69B5A91C1132ED0042EEA7 /* HomeAlarmTableVC.swift in Sources */,
 				CEFBAED41C0FDE50003EA6FE /* User.swift in Sources */,
-				CE2A8E731C17D47600977058 /* AddFriendsTableViewController.swift in Sources */,
+				CEE442021C1A7E6C00EC6DB6 /* FriendsTableViewController.swift in Sources */,
 				CE69B5A71C1132ED0042EEA7 /* EditAlarmTableVC.swift in Sources */,
 				9D54CBC01C0E94A900A7AFBA /* README.md in Sources */,
 				CE69B5AC1C1132ED0042EEA7 /* ViewController.swift in Sources */,

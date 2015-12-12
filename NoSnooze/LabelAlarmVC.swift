@@ -13,6 +13,7 @@ class LabelAlarmVC: UIViewController {
     @IBOutlet weak var alarmLabel: UITextField!
     var text : String = ""
     @IBOutlet weak var save: UIBarButtonItem!
+    
     @IBAction func saveButton(sender: UIBarButtonItem) {
         text = alarmLabel.text!;
         save.enabled = false;
