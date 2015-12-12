@@ -17,11 +17,11 @@ class EditAlarmTableVC: UITableViewController {
     var cells: NSArray = []
     
     var alarmOptions = ["Label","Add friends to Alarm","Minimum # of Friends"]
-    
     var alarmLabel = "Alarm"
     
     var currentUser: User!
-    
+    var alarmMembers: [String]!
+    var alarmStruct: Alarm!
     let rootRef = Firebase(url: "https://nosnooze.firebaseio.com")
     
     @IBAction func unwindToEditAlarm(segue: UIStoryboardSegue) {
@@ -35,43 +35,29 @@ class EditAlarmTableVC: UITableViewController {
         //Get tableCell Data
         let cells = tableView.visibleCells
         
-        var cutoffTime = ""
-        var alarmTime = ""
-        var alarmLabel = ""
-        
         let formatter = NSDateFormatter()
-        
         formatter.dateFormat = "EEE, d MMM yyyy HH:mm:ss Z"
+        formatter.timeStyle = .NoStyle
+        
+        var alarmTime = NSDate()
+        var cutoffTime = NSDate()
         
         for cell in cells {
             if cell.isKindOfClass(DatePickerCell) {
                 print("Found a datepicker")
-                
                 let dateCell = cell as! DatePickerCell
-                
                 if dateCell.leftLabel.text == "Time" {
-                    
-                    alarmTime = formatter.stringFromDate(dateCell.datePicker.date)
-                    
+                    alarmTime = dateCell.datePicker.date
                 } else if dateCell.leftLabel.text == "Cutoff Snooze" {
-                    
-                    cutoffTime = formatter.stringFromDate(dateCell.datePicker.date)
-                    
+                    cutoffTime = dateCell.datePicker.date
                 }
-                
             } else if cell.isKindOfClass(UITableViewCell) {
                 print("Found a table cell")
-                
                 if cell.textLabel!.text! == "Label" {
-                    
-                    alarmLabel = cell.detailTextLabel!.text!
-                    
+                    self.alarmLabel = cell.detailTextLabel!.text!
                 }
             }
         }
-        print("Current User is \(currentUser.uid)\nSaving alarm...")
-        
-        print("Saving alarm for time: \(alarmTime)\nCutoff at time: \(cutoffTime)")
         
         var numFriends = 0
         
@@ -79,18 +65,19 @@ class EditAlarmTableVC: UITableViewController {
             numFriends = NSNumberFormatter().numberFromString(minFriends.text!)!.integerValue
         }
         
-        let newAlarm = [
-            "alarmTime": alarmTime,
-            "cutoffTime": cutoffTime,
-            "minFriends": numFriends,
-            "name": alarmLabel,
-            "addedByUser": currentUser.uid,
-            "active": false
-        ]
-        
-        if(alarmTime < cutoffTime) {
+        if cutoffTime.timeIntervalSince1970 > alarmTime.timeIntervalSince1970 {
+            print("Saving Alarm...")
+            
+            var newAlarm = Alarm(alarmTime: alarmTime, userID: self.currentUser.uid, name: self.alarmLabel, cutoffTime: cutoffTime, members: alarmMembers, minFriends: numFriends)
+            
+            if newAlarm.storageFormat == false {
+                newAlarm.toStorageFormat()
+            }
+
             self.rootRef.childByAppendingPath("alarms")
-                .childByAutoId().setValue(newAlarm)
+                .childByAutoId().setValue(newAlarm.toAnyObject())
+        } else {
+            print("Cutoff Time must be after the alarm time")
         }
         
     }
@@ -237,7 +224,6 @@ class EditAlarmTableVC: UITableViewController {
             let destinationVC = segue.destinationViewController as! LabelAlarmVC
             destinationVC.text = alarmLabel;
         }
-
         let backItem = UIBarButtonItem()
         backItem.title = "Back"
         navigationItem.backBarButtonItem = backItem

@@ -13,8 +13,8 @@ struct User {
     
     var uid: String!
     var displayName: String!
+    var activeAlarms: [Alarm]?
     
-
     init(authData: FAuthData) {
         self.uid = authData.uid
         self.displayName = authData.providerData["displayName"] as! String

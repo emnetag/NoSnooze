@@ -9,19 +9,11 @@
 import UIKit
 import Firebase
 
-struct AlarmUnit {
-    var date : String
-    var time : String
-    var title: String
-    var cutoffTime : String
-}
 
 class HomeAlarmTableVC: UITableViewController {
     
-    var alarms : [AlarmUnit] = []
+    var alarms : [Alarm] = []
     var currentUser: User!
-    var titles : [String] = []
-    var alarmTimes : [String] = []
     let rootRef = Firebase(url: "https://nosnooze.firebaseio.com/")
     let alarmRef = Firebase(url: "https://nosnooze.firebaseio.com/alarms")
     
@@ -38,61 +30,36 @@ class HomeAlarmTableVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "EEE, d MMM yyyy HH:mm:ss Z"
-        self.rootRef.observeAuthEventWithBlock { (authData) -> Void in
-            if authData != nil {
-                self.currentUser = User(authData: authData)
-                print("Current user is \(self.currentUser.displayName!)")
-                
-                self.alarmRef.queryOrderedByChild("addedByUser").queryEqualToValue(self.currentUser.uid)
-                    .observeSingleEventOfType(.ChildAdded, withBlock: { snapshot in
-                        //retrieves alarm times
-                        //print(snapshot.value["alarmTime"] as! String)
-                        
-                        let title = snapshot.value["name"] as! String
-                       
-                        let dateString = snapshot.value["alarmTime"] as! String
-                        
-                        let cutoffTimeDate = dateFormatter.dateFromString(snapshot.value["cutoffTime"] as! String)
-                        
-                        let date = dateFormatter.dateFromString(dateString)
-                        dateFormatter.dateFormat = "EEE, MMM d"
-                        
-                        let dateShort = dateFormatter.stringFromDate(date!)
-                        
-                        dateFormatter.dateFormat = "HH:mm a"
-                        
-                        dateFormatter.timeStyle = .ShortStyle
-                        
-                        let time = dateFormatter.stringFromDate(date!)
-                        
-                        let cutoffTime = dateFormatter.stringFromDate(cutoffTimeDate!)
-                        
-                        //print(time)
-                        //self.titles.append(title)
-                        //self.alarmTimes.append(time) // Gets time of each alarm in AM/PM format
-                        //Need to double check about if should leave this chunk on viewdidload
-                       
-                        self.alarms += [AlarmUnit(date: dateShort, time: time, title: title, cutoffTime: cutoffTime)]
-                        self.tableView.reloadData()
-                        print("I have \(self.alarms.count) alarms on me.")
-                    })
-                
-            } else {
-                print("No one is home.")
-            }
-        }
-        
         self.navigationItem.leftBarButtonItem = self.editButtonItem()
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        self.rootRef.observeAuthEventWithBlock { (authData) -> Void in
+            if authData != nil {
+                self.currentUser = User(authData: authData)
+                
+                self.alarmRef.queryOrderedByChild("addedByUser")
+                    .queryEqualToValue(self.currentUser.uid)
+                    .observeEventType(.Value, withBlock: { snapshot in
+                        var newAlarms = [Alarm]()
+                    
+                        for item in snapshot.children {
+                            let alarmUnit = Alarm(snapshot: item as! FDataSnapshot)
+                            newAlarms.append(alarmUnit)
+                        }
+                    
+                        self.alarms = newAlarms
+                        self.tableView.reloadData()
+                    })
+            }
+        }
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        // Dispose of any resources that can be recreated.d
+        print("WELP")
     }
     
     // MARK: - Table view data source
@@ -112,9 +79,11 @@ class HomeAlarmTableVC: UITableViewController {
         //let image : UIImage = UIImage(named: "Question_Flat.png")! <- maybe use a clock image
         //cell.imageView!.image = image // need image for each quiz
         
-        cell.AlarmText.text = "\(self.alarms[indexPath.row].time) on \(self.alarms[indexPath.row].date)"
-        cell.CutoffTime.text = "Snooze Time: \(self.alarms[indexPath.row].cutoffTime)"
-        
+        //format cell here
+        var currentAlarm = self.alarms[indexPath.row]
+        currentAlarm.toDisplayFormat()
+        cell.AlarmText.text = "\(currentAlarm.alarmString)"
+        cell.CutoffTime.text = "Snooze Time: \(currentAlarm.cutoffString)"
         return cell
     }
 }

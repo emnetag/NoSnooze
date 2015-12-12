@@ -85,7 +85,7 @@
                                 </tableViewCellContentView>
                                 <animations/>
                                 <connections>
-                                    <segue destination="HxX-XH-oY8" kind="show" id="5tP-cH-syC"/>
+                                    <segue destination="HxX-XH-oY8" kind="show" identifier="addMembers" id="5tP-cH-syC"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -201,7 +201,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Snooze Time: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VIT-Ld-Cfc">
-                                            <rect key="frame" x="15" y="57" width="171" height="14"/>
+                                            <rect key="frame" x="15" y="57" width="289" height="30"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -273,9 +273,19 @@
                             <outlet property="delegate" destination="HxX-XH-oY8" id="pua-l3-YVS"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Add Friends" id="a7w-xS-kq2"/>
+                    <navigationItem key="navigationItem" title="Add Friends" id="a7w-xS-kq2">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="5P5-qP-Pyr">
+                            <connections>
+                                <segue destination="Foy-wP-bzL" kind="unwind" unwindAction="unwindToEditAlarm:" id="1Pz-Kt-ZJ4"/>
+                            </connections>
+                        </barButtonItem>
+                        <connections>
+                            <outlet property="backBarButtonItem" destination="5P5-qP-Pyr" id="iRs-Ls-bX6"/>
+                        </connections>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SGu-op-Tbg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Foy-wP-bzL" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1606" y="762"/>
         </scene>

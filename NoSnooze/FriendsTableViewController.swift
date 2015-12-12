@@ -19,6 +19,9 @@ class FriendsTableViewController: UITableViewController {
     var friends = [NSDictionary]()
     var friendsCount: Int!
     
+    var currentAlarm: Alarm!
+    var tempMembers = [String]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -82,8 +85,24 @@ class FriendsTableViewController: UITableViewController {
         
         return cell
     }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let friendCell = tableView.cellForRowAtIndexPath(indexPath)
+        let idStr = "facebook:\(self.friends[indexPath.row]["id"] as! String)"
+        
+        if friendCell?.accessoryType == .Checkmark {
+            friendCell?.accessoryType = .None
+            self.tempMembers.removeAtIndex(indexPath.row)
+        } else {
+            friendCell?.accessoryType = .Checkmark
+            self.tempMembers.append(idStr)
+        }
+        print("I have \(tempMembers.count) temp members")
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
 
-
+    
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
@@ -119,14 +138,12 @@ class FriendsTableViewController: UITableViewController {
     }
     */
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        let destinationVC = segue.destinationViewController as! EditAlarmTableVC
+        destinationVC.alarmMembers = tempMembers
     }
-    */
 
 }
