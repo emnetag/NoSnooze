@@ -66,6 +66,7 @@ class EditAlarmTableVC: UITableViewController {
         }
         
         if cutoffTime.timeIntervalSince1970 > alarmTime.timeIntervalSince1970 {
+            
             print("Saving Alarm...")
             
             var newAlarm = Alarm(alarmTime: alarmTime, userID: self.currentUser.uid, name: self.alarmLabel, cutoffTime: cutoffTime, members: alarmMembers, minFriends: numFriends)
@@ -74,12 +75,38 @@ class EditAlarmTableVC: UITableViewController {
                 newAlarm.toStorageFormat()
             }
 
-            self.rootRef.childByAppendingPath("alarms")
-                .childByAutoId().setValue(newAlarm.toAnyObject())
+            let newAlarmRef = self.rootRef.childByAppendingPath("alarms").childByAutoId()
+            
+            let alarmID = newAlarmRef.key!
+            
+            //Saves new alarm
+//            newAlarmRef.setValue(newAlarm.toAnyObject())
+            
+            //Sends invites to new alarm if there are any
+            sendInvites(newAlarm, invitesRef: rootRef.childByAppendingPath("invites"), alarmID: alarmID)
+            
         } else {
+            
             print("Cutoff Time must be after the alarm time")
+            
         }
         
+    }
+    
+    func sendInvites(alarm: Alarm, invitesRef: Firebase, alarmID: String) {
+        if (alarm.members != nil) || (alarm.members?.count == 0) {
+            let people = alarm.members!
+        
+            people.forEach({ (memberID) -> (Void) in
+                print("Inviting \(memberID)...")
+                
+                
+//                invitesRef.childByAppendingPath("\(memberID)").setValue(alarmID)
+            })
+            
+        } else {
+            print("Alarm has no other members")
+        }
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -136,23 +163,35 @@ class EditAlarmTableVC: UITableViewController {
     
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        /*if(indexPath.row <= 1) {
-            return cells[indexPath.section][indexPath.row] as! UITableViewCell
+        /*
+            if(indexPath.row <= 1) {
+                return cells[indexPath.section][indexPath.row] as! UITableViewCell
         }*/
+        
         var cell : UITableViewCell
+        
         if(indexPath.row <= 1) {
+        
             cell = cells[indexPath.section][indexPath.row] as! UITableViewCell
+        
         } else if (indexPath.row == 2) {
             // Can create cell models here
+            
             // Description -> goes to popup text box?, Add Friends -> goes to new VC, (Optional) Repeatable -> Is a (on/off) button
+            
             cell = tableView.dequeueReusableCellWithIdentifier("EditLabelCell", forIndexPath: indexPath)
+            
             cell.textLabel?.text = alarmOptions[indexPath.row - 2]
+            
             cell.detailTextLabel?.text = alarmLabel
             
         } else {
+            
             cell = tableView.dequeueReusableCellWithIdentifier("AddFriendCell", forIndexPath: indexPath)
+            
             cell.textLabel?.text = alarmOptions[indexPath.row - 2]
         }
+        
         return cell
     }
     

@@ -17,9 +17,11 @@ class FriendsTableViewController: UITableViewController {
     var currentUserID: String!
     
     var friends = [NSDictionary]()
+    
     var friendsCount: Int!
     
     var currentAlarm: Alarm!
+    
     var tempMembers = [String]()
     
     override func viewDidLoad() {
@@ -50,6 +52,7 @@ class FriendsTableViewController: UITableViewController {
                             let friend = friendObj as? NSDictionary
                             self.friends.append(friend!)
                         })
+                        
                         self.tableView.reloadData()
                         print("I have \(self.friends.count) friends")
                     }
