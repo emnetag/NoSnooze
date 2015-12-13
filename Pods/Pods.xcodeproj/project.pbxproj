@@ -7,42 +7,71 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		012A7E018F3D34F159894EBD7EACACF9 /* Empty.m in Sources */ = {isa = PBXBuildFile; fileRef = 0401DE2C84CC6127B571BF399EE81C42 /* Empty.m */; };
-		048B9C440B647B72ECF5590491A56F0F /* DatePickerCell-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 532B15AEFFD9ACD08BB65112FE394611 /* DatePickerCell-dummy.m */; };
-		191DE2EB9A35585AE0A88BA9F833A1F4 /* FTransactionResult.h in Headers */ = {isa = PBXBuildFile; fileRef = E814141EFADEE24CB3E1BB6E6C6FF7EE /* FTransactionResult.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1C04A7CD5B70C4561F6D98C882731C65 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6204446BD9150A17B12E81B4A6F9CA8 /* Security.framework */; };
-		1C3EF85CD30E6FF2E51471BD5B3CEB29 /* Firebase.h in Headers */ = {isa = PBXBuildFile; fileRef = 2ACF09F13D45586CA23AD47ACF4E294E /* Firebase.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1D925BB011B04DDED982C7946571A67A /* FAuthType.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A303A4054D8C28E90365E9E7D1F7280 /* FAuthType.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1D9D7FF5237C8CC91EF58DC45AC274FB /* Firebase-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BCE0374FEB9BB1DBB2E9EE2D1C198B5 /* Firebase-dummy.m */; };
-		239B10F388840841389B7F09648735B1 /* FEventType.h in Headers */ = {isa = PBXBuildFile; fileRef = E25328E09F16A45A359CAE2B28979064 /* FEventType.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		24698B82008FDAC90BA5E0BD7F169A16 /* DatePickerCell-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4255CBDAECCB30D3C82C52DCC21446EB /* DatePickerCell-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2F1496011DBBB75777645194AAAFE92D /* FirebaseApp.h in Headers */ = {isa = PBXBuildFile; fileRef = 0BAB590A77471FB7966DB8F93BBEC394 /* FirebaseApp.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		47A62511D5BFE84607B11E30419292A4 /* DatePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF46CDE8DFCC665FAB251212FBE077F8 /* DatePickerCell.swift */; };
-		4B0EFAAA29109D9A705A27EFFA10FAE2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77C49D928448B31FB9A7D5AE5C8D6C4E /* Foundation.framework */; };
-		4D75CF0089B20355B17A851513C4A002 /* FQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = 705B8765569153ED0BCA8831226B56C9 /* FQuery.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		54B0AE06C3CC41046F50DF7E6D7FD940 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77C49D928448B31FB9A7D5AE5C8D6C4E /* Foundation.framework */; };
-		60F9139BDD38565B78214C4FC5F5729D /* Firebase-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F77C14888709023E9D7366365B2C76BA /* Firebase-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6646DA26298257396C7FFE141BB84CC3 /* FirebaseServerValue.h in Headers */ = {isa = PBXBuildFile; fileRef = 505538BCC961B86345A2C3D6F4091ED2 /* FirebaseServerValue.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		67926BC872C78253F0E36CAA936557B6 /* Pods-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BCC458FDD5F692BBB2BFC64BB5701FC /* Pods-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C23FCF31260D47CEC1494A292DAA1A1E /* FAuthData.h in Headers */ = {isa = PBXBuildFile; fileRef = C200894EA9CFE8BC6FE29804CCC72032 /* FAuthData.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DB05A9DD8244D10C28B6915C514AE15F /* FMutableData.h in Headers */ = {isa = PBXBuildFile; fileRef = FE9409928491480586BB591C6C1F785A /* FMutableData.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DF2830258018D00738E02E19BBF78DC8 /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 894E5DA93A9F359521A89826BE6DA777 /* Pods-dummy.m */; };
-		DFEFD913378E500F1159CDDAFADF3568 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77C49D928448B31FB9A7D5AE5C8D6C4E /* Foundation.framework */; };
-		E1A883FEBDEED9B85D90D6BE2080F218 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6166BE40C18BC6BF0EED92CAB212EC33 /* SystemConfiguration.framework */; };
-		E3FBB5B462A14E8ACC9B340227DE4BE1 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60F85758B54CB0D843A3E97DFFB2F21F /* CFNetwork.framework */; };
-		E60FA42EEC3ECC48701DB55986D25D69 /* FConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = CA7D645D1DD2E75D2DCB5255EE9A5874 /* FConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E8B534D15D2B25919ACD898217266891 /* FDataSnapshot.h in Headers */ = {isa = PBXBuildFile; fileRef = C3C797B622A2ED1F7BD214E362D4DFF0 /* FDataSnapshot.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		012A7E018F3D34F159894EBD7EACACF9 /* Empty.m in Sources */ = {isa = PBXBuildFile; fileRef = CB16E98B054FD0AB7CCD6AFF229F4AAF /* Empty.m */; };
+		032A53F0C2EC6AABF0C768BDC8782E90 /* FirebaseArray.m in Sources */ = {isa = PBXBuildFile; fileRef = CF6F44AB6B31D49E35B3F78C84A208C8 /* FirebaseArray.m */; };
+		048B9C440B647B72ECF5590491A56F0F /* DatePickerCell-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C0A05769550817B64D0AF81E6C03451 /* DatePickerCell-dummy.m */; };
+		0C1AA751C4AD6A33AC9421B48A242253 /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 217045D94C5701EA84AF8F7994287E43 /* Firebase.framework */; };
+		0D5B53FD2E44D1946EABFA4D5860C2DE /* FirebaseCollectionViewDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 89E31844A1957943392439BD7E5D1547 /* FirebaseCollectionViewDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0EA1B983FA3B39FB54ED6DC0A34A9B0B /* FirebaseCollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 9448C08DEDCCD7530A2F1C1A8E5075B3 /* FirebaseCollectionViewDataSource.m */; };
+		191DE2EB9A35585AE0A88BA9F833A1F4 /* FTransactionResult.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D82E84692FC26AE4765BD68207BDFB2 /* FTransactionResult.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1AA7073BC509023807E1C0EEAB566660 /* FirebaseUI-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B8FFE2A29E322D4C33FFD98CF149415 /* FirebaseUI-dummy.m */; };
+		1C04A7CD5B70C4561F6D98C882731C65 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A245A96712843BBE0819631D65A4229E /* Security.framework */; };
+		1C3EF85CD30E6FF2E51471BD5B3CEB29 /* Firebase.h in Headers */ = {isa = PBXBuildFile; fileRef = 50291273F84EEEC693E4815C6903329A /* Firebase.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1D925BB011B04DDED982C7946571A67A /* FAuthType.h in Headers */ = {isa = PBXBuildFile; fileRef = D562A81E1B862CE267FD0F195A4E74BC /* FAuthType.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1D9D7FF5237C8CC91EF58DC45AC274FB /* Firebase-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BA6CA5F523CB47C4A1B2FC4E31053437 /* Firebase-dummy.m */; };
+		239B10F388840841389B7F09648735B1 /* FEventType.h in Headers */ = {isa = PBXBuildFile; fileRef = E0728171F4CB6AAA45517FCDC360C6C2 /* FEventType.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24698B82008FDAC90BA5E0BD7F169A16 /* DatePickerCell-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5E9AD6922B0D5C32280B6C7A7BF85EAE /* DatePickerCell-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		25E16FE8A5946E9970401219D1BAE96C /* XCodeMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = F49FD1339709CA2F09D2D6FA0242AAE7 /* XCodeMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2F1496011DBBB75777645194AAAFE92D /* FirebaseApp.h in Headers */ = {isa = PBXBuildFile; fileRef = 430BE090AB94EA2D9B446315836E5D63 /* FirebaseApp.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		365254E947FBF70FD6F3DE1EDD56FF39 /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 894E5DA93A9F359521A89826BE6DA777 /* Pods-dummy.m */; };
+		45CA513DC4C24E3A41286B04809438AB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 372681D3E77F7EF08DDC3FAEAE20BBC7 /* UIKit.framework */; };
+		47A62511D5BFE84607B11E30419292A4 /* DatePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD5C458B7E210657C3A71A513A03773 /* DatePickerCell.swift */; };
+		4B0EFAAA29109D9A705A27EFFA10FAE2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E04911B3E5627830B7CFEAFA7165DCA /* Foundation.framework */; };
+		4D75CF0089B20355B17A851513C4A002 /* FQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = 69D662863E486FBCB9B8D6BDB1830266 /* FQuery.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		60F9139BDD38565B78214C4FC5F5729D /* Firebase-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A0ADB52217A1D73356D6BDA376FC8E3B /* Firebase-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6646DA26298257396C7FFE141BB84CC3 /* FirebaseServerValue.h in Headers */ = {isa = PBXBuildFile; fileRef = DF1ED5B5C54BF6583987AEC3E0FC2B61 /* FirebaseServerValue.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		74C9E168F6AFE739E39D6CF8DA6A5B2B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E04911B3E5627830B7CFEAFA7165DCA /* Foundation.framework */; };
+		89EAD59606DE92AA48176AC2A4790147 /* Pods-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BCC458FDD5F692BBB2BFC64BB5701FC /* Pods-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8AD3B3E50E5196D3B1B0D1C4B8DC2FAC /* FirebaseUI-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EC1158D23ACEF47F40B390D9E9D60EAC /* FirebaseUI-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8CD27E07105480879EE1F6F890350E88 /* FirebaseArray.h in Headers */ = {isa = PBXBuildFile; fileRef = C4D605D0BB918EF63CE756B6B760B761 /* FirebaseArray.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AAAA3966D14B35F66E2F1C4389294A70 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E04911B3E5627830B7CFEAFA7165DCA /* Foundation.framework */; };
+		C23FCF31260D47CEC1494A292DAA1A1E /* FAuthData.h in Headers */ = {isa = PBXBuildFile; fileRef = 63598883434084B126AE910C4DED7663 /* FAuthData.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D1429B28713704BD7AC532D45B785E25 /* FirebaseDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 6B270E8B68ABEF4CF5CABE06D93FA0A1 /* FirebaseDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D75570074A0404679F2483958FC68977 /* FirebaseTableViewDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 274A44061F4577220D627A3EA53467BF /* FirebaseTableViewDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB05A9DD8244D10C28B6915C514AE15F /* FMutableData.h in Headers */ = {isa = PBXBuildFile; fileRef = 7BA4B5553596D44666DBE9452653102D /* FMutableData.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DFEFD913378E500F1159CDDAFADF3568 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E04911B3E5627830B7CFEAFA7165DCA /* Foundation.framework */; };
+		E1A883FEBDEED9B85D90D6BE2080F218 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A56A3CE3CE70E3C06F4E2DEE7255BDB2 /* SystemConfiguration.framework */; };
+		E3FBB5B462A14E8ACC9B340227DE4BE1 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD4C04E2E60230D953E057B39C9C9837 /* CFNetwork.framework */; };
+		E60FA42EEC3ECC48701DB55986D25D69 /* FConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 236010017ABAF0D490682B591D6EB75E /* FConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E8B534D15D2B25919ACD898217266891 /* FDataSnapshot.h in Headers */ = {isa = PBXBuildFile; fileRef = E43D399CE2C59D5CAE7D1F26F6896CB1 /* FDataSnapshot.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F0D10E69D37D6D6F6DD3EFF0C5B039EF /* FirebaseArrayDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CCFA29E64A7B65BC5D29E7A350030B6 /* FirebaseArrayDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FAEAFB06340B23ABD3C59F7DB6EBE69F /* FirebaseDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = D3203F45C4E4EF92815FA1096B0E3D8E /* FirebaseDataSource.m */; };
+		FE1E4AD771804DD5CC6DF08A8DCF7BDB /* FirebaseTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = B0A31332507AEC71007C51B210892D7C /* FirebaseTableViewDataSource.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		21ACF5172D7C30E5F9F331A00FAC33BF /* PBXContainerItemProxy */ = {
+		12FAB8AE3E9B9FB7A248AF95A4C53FBC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = B7AC9326D819482593FE118E915409D7;
 			remoteInfo = Firebase;
 		};
-		A087E55B637A4E098E6E17634DF84786 /* PBXContainerItemProxy */ = {
+		88A5AA5DE9126760A72AD523B0D1E652 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F25A39724C1F236915EF8279D2B63339;
+			remoteInfo = FirebaseUI;
+		};
+		B2418B15F19433F42A5F5CDD393183F9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B7AC9326D819482593FE118E915409D7;
+			remoteInfo = Firebase;
+		};
+		EF038A38D5FE1C4CC0C850B1B894CE8A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
@@ -52,58 +81,87 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0401DE2C84CC6127B571BF399EE81C42 /* Empty.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = Empty.m; sourceTree = "<group>"; };
-		06B6065BB85EFB294E4A7A34EA9531BB /* Firebase.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Firebase.modulemap; sourceTree = "<group>"; };
-		0A3B72E91730F1B4BE8213DE72B9B3C6 /* DatePickerCell.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = DatePickerCell.modulemap; sourceTree = "<group>"; };
-		0A6F92761F76B8AB9BDA949BD432AD5D /* DatePickerCell-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DatePickerCell-prefix.pch"; sourceTree = "<group>"; };
-		0BAB590A77471FB7966DB8F93BBEC394 /* FirebaseApp.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FirebaseApp.h; sourceTree = "<group>"; };
-		10320CB7D4F812C721B74EAAD12B133E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2ACF09F13D45586CA23AD47ACF4E294E /* Firebase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = Firebase.h; sourceTree = "<group>"; };
+		02A1D6EEB15208D9DAD64B444E29693D /* Firebase-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Firebase-prefix.pch"; sourceTree = "<group>"; };
+		14EA94E3EFB81D55C1ACE3DD2D0DB9E5 /* DatePickerCell.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = DatePickerCell.modulemap; sourceTree = "<group>"; };
+		217045D94C5701EA84AF8F7994287E43 /* Firebase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Firebase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		236010017ABAF0D490682B591D6EB75E /* FConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FConfig.h; sourceTree = "<group>"; };
+		274A44061F4577220D627A3EA53467BF /* FirebaseTableViewDataSource.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FirebaseTableViewDataSource.h; path = FirebaseUI/Core/API/FirebaseTableViewDataSource.h; sourceTree = "<group>"; };
+		28ACF8B46F029D6696D8FED32E583D32 /* FirebaseUI.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = FirebaseUI.modulemap; sourceTree = "<group>"; };
 		2BCC458FDD5F692BBB2BFC64BB5701FC /* Pods-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-umbrella.h"; sourceTree = "<group>"; };
-		40A408C1E502B23ECBEEF9F42FB5452F /* DatePickerCell.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DatePickerCell.xcconfig; sourceTree = "<group>"; };
-		4255CBDAECCB30D3C82C52DCC21446EB /* DatePickerCell-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DatePickerCell-umbrella.h"; sourceTree = "<group>"; };
-		505538BCC961B86345A2C3D6F4091ED2 /* FirebaseServerValue.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FirebaseServerValue.h; sourceTree = "<group>"; };
-		532B15AEFFD9ACD08BB65112FE394611 /* DatePickerCell-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DatePickerCell-dummy.m"; sourceTree = "<group>"; };
-		60F85758B54CB0D843A3E97DFFB2F21F /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
-		6166BE40C18BC6BF0EED92CAB212EC33 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
-		6E9C50DE6B7AA26525D29B546933DDF9 /* Firebase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Firebase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		705B8765569153ED0BCA8831226B56C9 /* FQuery.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FQuery.h; sourceTree = "<group>"; };
-		7282592E842D9FED9C82A92071054330 /* DatePickerCell.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DatePickerCell.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		77C49D928448B31FB9A7D5AE5C8D6C4E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		372681D3E77F7EF08DDC3FAEAE20BBC7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		430BE090AB94EA2D9B446315836E5D63 /* FirebaseApp.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FirebaseApp.h; sourceTree = "<group>"; };
+		430DF706A18B5A4244AE6BA5877AF095 /* FirebaseUI-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FirebaseUI-prefix.pch"; sourceTree = "<group>"; };
+		4CCFA29E64A7B65BC5D29E7A350030B6 /* FirebaseArrayDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FirebaseArrayDelegate.h; path = FirebaseUI/Core/API/FirebaseArrayDelegate.h; sourceTree = "<group>"; };
+		4D82E84692FC26AE4765BD68207BDFB2 /* FTransactionResult.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FTransactionResult.h; sourceTree = "<group>"; };
+		4E46C8A702BB4D567AE203714A201241 /* DatePickerCell-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DatePickerCell-prefix.pch"; sourceTree = "<group>"; };
+		4EBBB7E7C18EEA72018FA2FDE6221F7C /* Firebase.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Firebase.modulemap; sourceTree = "<group>"; };
+		4F1FFD2E817C8459D074D991BE9FD8F2 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4FF957B2FA9C72BB0DB1C1059EB57256 /* DatePickerCell.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DatePickerCell.xcconfig; sourceTree = "<group>"; };
+		50291273F84EEEC693E4815C6903329A /* Firebase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = Firebase.h; sourceTree = "<group>"; };
+		5E04911B3E5627830B7CFEAFA7165DCA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		5E9AD6922B0D5C32280B6C7A7BF85EAE /* DatePickerCell-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DatePickerCell-umbrella.h"; sourceTree = "<group>"; };
+		63598883434084B126AE910C4DED7663 /* FAuthData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FAuthData.h; sourceTree = "<group>"; };
+		69644C2DC88A65E1944B07DE337F0F00 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		69D662863E486FBCB9B8D6BDB1830266 /* FQuery.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FQuery.h; sourceTree = "<group>"; };
+		6B270E8B68ABEF4CF5CABE06D93FA0A1 /* FirebaseDataSource.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FirebaseDataSource.h; path = FirebaseUI/Core/API/FirebaseDataSource.h; sourceTree = "<group>"; };
+		6B8FFE2A29E322D4C33FFD98CF149415 /* FirebaseUI-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FirebaseUI-dummy.m"; sourceTree = "<group>"; };
+		6C87AD8FC5A91042655F071E5E9C91E6 /* libFirebaseStatic.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libFirebaseStatic.a; sourceTree = "<group>"; };
+		6DD5C458B7E210657C3A71A513A03773 /* DatePickerCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DatePickerCell.swift; path = Source/DatePickerCell.swift; sourceTree = "<group>"; };
+		73B4E3A705314B701FEDA31794BD7137 /* Firebase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Firebase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		79A9DEDC89FE8336BF5FEDAAF75BF7FC /* Pods.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Pods.modulemap; sourceTree = "<group>"; };
-		7BCE0374FEB9BB1DBB2E9EE2D1C198B5 /* Firebase-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Firebase-dummy.m"; sourceTree = "<group>"; };
+		7BA4B5553596D44666DBE9452653102D /* FMutableData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FMutableData.h; sourceTree = "<group>"; };
 		87B213035BAC5F75386F62D3C75D2342 /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = "<group>"; };
+		88B381644524486C39EFD675A3601BF3 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		894E5DA93A9F359521A89826BE6DA777 /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dummy.m"; sourceTree = "<group>"; };
-		8A303A4054D8C28E90365E9E7D1F7280 /* FAuthType.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FAuthType.h; sourceTree = "<group>"; };
-		90AD330DBE411F0C8B3D52BBB02DE9D5 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		89E31844A1957943392439BD7E5D1547 /* FirebaseCollectionViewDataSource.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FirebaseCollectionViewDataSource.h; path = FirebaseUI/Core/API/FirebaseCollectionViewDataSource.h; sourceTree = "<group>"; };
+		9448C08DEDCCD7530A2F1C1A8E5075B3 /* FirebaseCollectionViewDataSource.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FirebaseCollectionViewDataSource.m; path = FirebaseUI/Core/Implementation/FirebaseCollectionViewDataSource.m; sourceTree = "<group>"; };
 		977577C045EDA9D9D1F46E2598D19FC7 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.debug.xcconfig; sourceTree = "<group>"; };
-		B16F9F39E520F78B75F0FA2597FDC587 /* Firebase.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Firebase.xcconfig; sourceTree = "<group>"; };
+		9C0A05769550817B64D0AF81E6C03451 /* DatePickerCell-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DatePickerCell-dummy.m"; sourceTree = "<group>"; };
+		9C6D0EB15FB6DB658A5B0BE7901A367A /* DatePickerCell.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DatePickerCell.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0ADB52217A1D73356D6BDA376FC8E3B /* Firebase-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Firebase-umbrella.h"; sourceTree = "<group>"; };
+		A245A96712843BBE0819631D65A4229E /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
+		A56A3CE3CE70E3C06F4E2DEE7255BDB2 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
+		B0A31332507AEC71007C51B210892D7C /* FirebaseTableViewDataSource.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FirebaseTableViewDataSource.m; path = FirebaseUI/Core/Implementation/FirebaseTableViewDataSource.m; sourceTree = "<group>"; };
+		B9DD660C7BA9A5F87EF6B388AEC2A8F8 /* FirebaseUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FirebaseUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		C200894EA9CFE8BC6FE29804CCC72032 /* FAuthData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FAuthData.h; sourceTree = "<group>"; };
-		C3C797B622A2ED1F7BD214E362D4DFF0 /* FDataSnapshot.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FDataSnapshot.h; sourceTree = "<group>"; };
-		C6204446BD9150A17B12E81B4A6F9CA8 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
-		C7647535FC00488C2FE3D19486ED6518 /* libFirebaseStatic.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libFirebaseStatic.a; sourceTree = "<group>"; };
-		CA7D645D1DD2E75D2DCB5255EE9A5874 /* FConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FConfig.h; sourceTree = "<group>"; };
+		BA6CA5F523CB47C4A1B2FC4E31053437 /* Firebase-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Firebase-dummy.m"; sourceTree = "<group>"; };
+		C4D605D0BB918EF63CE756B6B760B761 /* FirebaseArray.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FirebaseArray.h; path = FirebaseUI/Core/API/FirebaseArray.h; sourceTree = "<group>"; };
+		CB16E98B054FD0AB7CCD6AFF229F4AAF /* Empty.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = Empty.m; sourceTree = "<group>"; };
 		CBC0F7C552B739C909B650A0F42F7F38 /* Pods-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-resources.sh"; sourceTree = "<group>"; };
+		CD38C90DD74FE3E63ED42B3FFAE6C917 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF6F44AB6B31D49E35B3F78C84A208C8 /* FirebaseArray.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FirebaseArray.m; path = FirebaseUI/Core/Implementation/FirebaseArray.m; sourceTree = "<group>"; };
 		D0405803033A2A777B8E4DFA0C1800ED /* Pods-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-acknowledgements.markdown"; sourceTree = "<group>"; };
-		D801A1BC19F140FD59AEA509A8EB2B82 /* Firebase-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Firebase-prefix.pch"; sourceTree = "<group>"; };
+		D3203F45C4E4EF92815FA1096B0E3D8E /* FirebaseDataSource.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FirebaseDataSource.m; path = FirebaseUI/Core/Implementation/FirebaseDataSource.m; sourceTree = "<group>"; };
+		D562A81E1B862CE267FD0F195A4E74BC /* FAuthType.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FAuthType.h; sourceTree = "<group>"; };
 		DA312349A49333542E6F4B36B329960E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.release.xcconfig; sourceTree = "<group>"; };
-		E25328E09F16A45A359CAE2B28979064 /* FEventType.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FEventType.h; sourceTree = "<group>"; };
-		E3F8F1B259A6B5DB34538AA6310EC490 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD4C04E2E60230D953E057B39C9C9837 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
+		DF1ED5B5C54BF6583987AEC3E0FC2B61 /* FirebaseServerValue.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FirebaseServerValue.h; sourceTree = "<group>"; };
+		E0728171F4CB6AAA45517FCDC360C6C2 /* FEventType.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FEventType.h; sourceTree = "<group>"; };
+		E1E034BA8D38C790474998C765D3901B /* FirebaseUI.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FirebaseUI.xcconfig; sourceTree = "<group>"; };
+		E43D399CE2C59D5CAE7D1F26F6896CB1 /* FDataSnapshot.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FDataSnapshot.h; sourceTree = "<group>"; };
 		E7F21354943D9F42A70697D5A5EF72E9 /* Pods-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-frameworks.sh"; sourceTree = "<group>"; };
-		E814141EFADEE24CB3E1BB6E6C6FF7EE /* FTransactionResult.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FTransactionResult.h; sourceTree = "<group>"; };
 		E8446514FBAD26C0E18F24A5715AEF67 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F77C14888709023E9D7366365B2C76BA /* Firebase-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Firebase-umbrella.h"; sourceTree = "<group>"; };
-		FE9409928491480586BB591C6C1F785A /* FMutableData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FMutableData.h; sourceTree = "<group>"; };
-		FF46CDE8DFCC665FAB251212FBE077F8 /* DatePickerCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DatePickerCell.swift; path = Source/DatePickerCell.swift; sourceTree = "<group>"; };
+		EC1158D23ACEF47F40B390D9E9D60EAC /* FirebaseUI-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FirebaseUI-umbrella.h"; sourceTree = "<group>"; };
+		F22ED3952133C785896C74BFD45CC213 /* Firebase.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Firebase.xcconfig; sourceTree = "<group>"; };
+		F49FD1339709CA2F09D2D6FA0242AAE7 /* XCodeMacros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XCodeMacros.h; path = FirebaseUI/Util/XCodeMacros.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		0115D6CAE26CFF41C82A0A5D77527315 /* Frameworks */ = {
+		0650BAB4FBC83A800D6532D3F06F093B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				54B0AE06C3CC41046F50DF7E6D7FD940 /* Foundation.framework in Frameworks */,
+				0C1AA751C4AD6A33AC9421B48A242253 /* Firebase.framework in Frameworks */,
+				AAAA3966D14B35F66E2F1C4389294A70 /* Foundation.framework in Frameworks */,
+				45CA513DC4C24E3A41286B04809438AB /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A2A33E3D990C28C470D63877DA88EA06 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				74C9E168F6AFE739E39D6CF8DA6A5B2B /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,56 +187,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		14B8B9B15ECBE87983FF987239AB2D7B /* Frameworks */ = {
+		179F86E851D01ABF616DEC4112E44519 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				843A690C4A272ACCFA5202DC4499C74E /* iOS */,
+				C4D605D0BB918EF63CE756B6B760B761 /* FirebaseArray.h */,
+				CF6F44AB6B31D49E35B3F78C84A208C8 /* FirebaseArray.m */,
+				4CCFA29E64A7B65BC5D29E7A350030B6 /* FirebaseArrayDelegate.h */,
+				89E31844A1957943392439BD7E5D1547 /* FirebaseCollectionViewDataSource.h */,
+				9448C08DEDCCD7530A2F1C1A8E5075B3 /* FirebaseCollectionViewDataSource.m */,
+				6B270E8B68ABEF4CF5CABE06D93FA0A1 /* FirebaseDataSource.h */,
+				D3203F45C4E4EF92815FA1096B0E3D8E /* FirebaseDataSource.m */,
+				274A44061F4577220D627A3EA53467BF /* FirebaseTableViewDataSource.h */,
+				B0A31332507AEC71007C51B210892D7C /* FirebaseTableViewDataSource.m */,
+				F49FD1339709CA2F09D2D6FA0242AAE7 /* XCodeMacros.h */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		2E22F74175BDFBCB229CA66A9F3D20DD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				217045D94C5701EA84AF8F7994287E43 /* Firebase.framework */,
+				B45EA1CF3090E535B5F0B7CE4D51A79B /* iOS */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		62BECD86432A07E8F86B6BCDB5B2FF0B /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				D911B8FC3B76E909F95C407080B0F6D1 /* DatePickerCell */,
-				6DBE8E0C01EECF9A3C300855419D4809 /* Firebase */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		6DBE8E0C01EECF9A3C300855419D4809 /* Firebase */ = {
-			isa = PBXGroup;
-			children = (
-				0401DE2C84CC6127B571BF399EE81C42 /* Empty.m */,
-				C200894EA9CFE8BC6FE29804CCC72032 /* FAuthData.h */,
-				8A303A4054D8C28E90365E9E7D1F7280 /* FAuthType.h */,
-				CA7D645D1DD2E75D2DCB5255EE9A5874 /* FConfig.h */,
-				C3C797B622A2ED1F7BD214E362D4DFF0 /* FDataSnapshot.h */,
-				E25328E09F16A45A359CAE2B28979064 /* FEventType.h */,
-				2ACF09F13D45586CA23AD47ACF4E294E /* Firebase.h */,
-				0BAB590A77471FB7966DB8F93BBEC394 /* FirebaseApp.h */,
-				505538BCC961B86345A2C3D6F4091ED2 /* FirebaseServerValue.h */,
-				FE9409928491480586BB591C6C1F785A /* FMutableData.h */,
-				705B8765569153ED0BCA8831226B56C9 /* FQuery.h */,
-				E814141EFADEE24CB3E1BB6E6C6FF7EE /* FTransactionResult.h */,
-				976743D38C6797882BDD0CEFEA6A9F7E /* Frameworks */,
-				7408D96C37232EB70B0A6106E43D0B8B /* Support Files */,
-			);
-			path = Firebase;
-			sourceTree = "<group>";
-		};
-		7408D96C37232EB70B0A6106E43D0B8B /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				06B6065BB85EFB294E4A7A34EA9531BB /* Firebase.modulemap */,
-				B16F9F39E520F78B75F0FA2597FDC587 /* Firebase.xcconfig */,
-				7BCE0374FEB9BB1DBB2E9EE2D1C198B5 /* Firebase-dummy.m */,
-				D801A1BC19F140FD59AEA509A8EB2B82 /* Firebase-prefix.pch */,
-				F77C14888709023E9D7366365B2C76BA /* Firebase-umbrella.h */,
-				90AD330DBE411F0C8B3D52BBB02DE9D5 /* Info.plist */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/Firebase";
 			sourceTree = "<group>";
 		};
 		75D98FF52E597A11900E131B6C4E1ADA /* Pods */ = {
@@ -199,58 +231,70 @@
 			path = "Target Support Files/Pods";
 			sourceTree = "<group>";
 		};
+		79DB085062420CDA481A51BA1992A536 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9C6D0EB15FB6DB658A5B0BE7901A367A /* DatePickerCell.framework */,
+				73B4E3A705314B701FEDA31794BD7137 /* Firebase.framework */,
+				B9DD660C7BA9A5F87EF6B388AEC2A8F8 /* FirebaseUI.framework */,
+				CD38C90DD74FE3E63ED42B3FFAE6C917 /* Pods.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
-				14B8B9B15ECBE87983FF987239AB2D7B /* Frameworks */,
-				62BECD86432A07E8F86B6BCDB5B2FF0B /* Pods */,
-				B296B999F939DA671CCE661BF2BCD4EB /* Products */,
+				2E22F74175BDFBCB229CA66A9F3D20DD /* Frameworks */,
+				CD03F9BD3AE20664117F2B39C552CC85 /* Pods */,
+				79DB085062420CDA481A51BA1992A536 /* Products */,
 				B7B80995527643776607AFFA75B91E24 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		843A690C4A272ACCFA5202DC4499C74E /* iOS */ = {
+		88B468814C12E7DEDFDF7F1D989249CE /* DatePickerCell */ = {
 			isa = PBXGroup;
 			children = (
-				60F85758B54CB0D843A3E97DFFB2F21F /* CFNetwork.framework */,
-				77C49D928448B31FB9A7D5AE5C8D6C4E /* Foundation.framework */,
-				C6204446BD9150A17B12E81B4A6F9CA8 /* Security.framework */,
-				6166BE40C18BC6BF0EED92CAB212EC33 /* SystemConfiguration.framework */,
+				6DD5C458B7E210657C3A71A513A03773 /* DatePickerCell.swift */,
+				DEC0EFB4F525EB6BDB172889436B1318 /* Support Files */,
 			);
-			name = iOS;
+			path = DatePickerCell;
 			sourceTree = "<group>";
 		};
-		974776D31C9C992100A77D932C6CB2C7 /* Support Files */ = {
+		94C79C8E6CE006B0394B8942A1D9BA04 /* FirebaseUI */ = {
 			isa = PBXGroup;
 			children = (
-				0A3B72E91730F1B4BE8213DE72B9B3C6 /* DatePickerCell.modulemap */,
-				40A408C1E502B23ECBEEF9F42FB5452F /* DatePickerCell.xcconfig */,
-				532B15AEFFD9ACD08BB65112FE394611 /* DatePickerCell-dummy.m */,
-				0A6F92761F76B8AB9BDA949BD432AD5D /* DatePickerCell-prefix.pch */,
-				4255CBDAECCB30D3C82C52DCC21446EB /* DatePickerCell-umbrella.h */,
-				10320CB7D4F812C721B74EAAD12B133E /* Info.plist */,
+				179F86E851D01ABF616DEC4112E44519 /* Core */,
+				9548BBF72F9CE3530F4ED52DCEBD2D71 /* Support Files */,
+			);
+			path = FirebaseUI;
+			sourceTree = "<group>";
+		};
+		9548BBF72F9CE3530F4ED52DCEBD2D71 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				28ACF8B46F029D6696D8FED32E583D32 /* FirebaseUI.modulemap */,
+				E1E034BA8D38C790474998C765D3901B /* FirebaseUI.xcconfig */,
+				6B8FFE2A29E322D4C33FFD98CF149415 /* FirebaseUI-dummy.m */,
+				430DF706A18B5A4244AE6BA5877AF095 /* FirebaseUI-prefix.pch */,
+				EC1158D23ACEF47F40B390D9E9D60EAC /* FirebaseUI-umbrella.h */,
+				4F1FFD2E817C8459D074D991BE9FD8F2 /* Info.plist */,
 			);
 			name = "Support Files";
-			path = "../Target Support Files/DatePickerCell";
+			path = "../Target Support Files/FirebaseUI";
 			sourceTree = "<group>";
 		};
-		976743D38C6797882BDD0CEFEA6A9F7E /* Frameworks */ = {
+		B45EA1CF3090E535B5F0B7CE4D51A79B /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				C7647535FC00488C2FE3D19486ED6518 /* libFirebaseStatic.a */,
+				DD4C04E2E60230D953E057B39C9C9837 /* CFNetwork.framework */,
+				5E04911B3E5627830B7CFEAFA7165DCA /* Foundation.framework */,
+				A245A96712843BBE0819631D65A4229E /* Security.framework */,
+				A56A3CE3CE70E3C06F4E2DEE7255BDB2 /* SystemConfiguration.framework */,
+				372681D3E77F7EF08DDC3FAEAE20BBC7 /* UIKit.framework */,
 			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		B296B999F939DA671CCE661BF2BCD4EB /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				7282592E842D9FED9C82A92071054330 /* DatePickerCell.framework */,
-				6E9C50DE6B7AA26525D29B546933DDF9 /* Firebase.framework */,
-				E3F8F1B259A6B5DB34538AA6310EC490 /* Pods.framework */,
-			);
-			name = Products;
+			name = iOS;
 			sourceTree = "<group>";
 		};
 		B7B80995527643776607AFFA75B91E24 /* Targets Support Files */ = {
@@ -261,13 +305,71 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		D911B8FC3B76E909F95C407080B0F6D1 /* DatePickerCell */ = {
+		BA25590A102DCEEE056E117C896DAAB2 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				FF46CDE8DFCC665FAB251212FBE077F8 /* DatePickerCell.swift */,
-				974776D31C9C992100A77D932C6CB2C7 /* Support Files */,
+				4EBBB7E7C18EEA72018FA2FDE6221F7C /* Firebase.modulemap */,
+				F22ED3952133C785896C74BFD45CC213 /* Firebase.xcconfig */,
+				BA6CA5F523CB47C4A1B2FC4E31053437 /* Firebase-dummy.m */,
+				02A1D6EEB15208D9DAD64B444E29693D /* Firebase-prefix.pch */,
+				A0ADB52217A1D73356D6BDA376FC8E3B /* Firebase-umbrella.h */,
+				69644C2DC88A65E1944B07DE337F0F00 /* Info.plist */,
 			);
-			path = DatePickerCell;
+			name = "Support Files";
+			path = "../Target Support Files/Firebase";
+			sourceTree = "<group>";
+		};
+		BDC454E980A9E25ACBBAE051727A2F99 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6C87AD8FC5A91042655F071E5E9C91E6 /* libFirebaseStatic.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CD03F9BD3AE20664117F2B39C552CC85 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				88B468814C12E7DEDFDF7F1D989249CE /* DatePickerCell */,
+				F225E3627917B74A3EBC0F5528742CAE /* Firebase */,
+				94C79C8E6CE006B0394B8942A1D9BA04 /* FirebaseUI */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		DEC0EFB4F525EB6BDB172889436B1318 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				14EA94E3EFB81D55C1ACE3DD2D0DB9E5 /* DatePickerCell.modulemap */,
+				4FF957B2FA9C72BB0DB1C1059EB57256 /* DatePickerCell.xcconfig */,
+				9C0A05769550817B64D0AF81E6C03451 /* DatePickerCell-dummy.m */,
+				4E46C8A702BB4D567AE203714A201241 /* DatePickerCell-prefix.pch */,
+				5E9AD6922B0D5C32280B6C7A7BF85EAE /* DatePickerCell-umbrella.h */,
+				88B381644524486C39EFD675A3601BF3 /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/DatePickerCell";
+			sourceTree = "<group>";
+		};
+		F225E3627917B74A3EBC0F5528742CAE /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				CB16E98B054FD0AB7CCD6AFF229F4AAF /* Empty.m */,
+				63598883434084B126AE910C4DED7663 /* FAuthData.h */,
+				D562A81E1B862CE267FD0F195A4E74BC /* FAuthType.h */,
+				236010017ABAF0D490682B591D6EB75E /* FConfig.h */,
+				E43D399CE2C59D5CAE7D1F26F6896CB1 /* FDataSnapshot.h */,
+				E0728171F4CB6AAA45517FCDC360C6C2 /* FEventType.h */,
+				50291273F84EEEC693E4815C6903329A /* Firebase.h */,
+				430BE090AB94EA2D9B446315836E5D63 /* FirebaseApp.h */,
+				DF1ED5B5C54BF6583987AEC3E0FC2B61 /* FirebaseServerValue.h */,
+				7BA4B5553596D44666DBE9452653102D /* FMutableData.h */,
+				69D662863E486FBCB9B8D6BDB1830266 /* FQuery.h */,
+				4D82E84692FC26AE4765BD68207BDFB2 /* FTransactionResult.h */,
+				BDC454E980A9E25ACBBAE051727A2F99 /* Frameworks */,
+				BA25590A102DCEEE056E117C896DAAB2 /* Support Files */,
+			);
+			path = Firebase;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -300,11 +402,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		742BC5BDC7B7F88A5593F80EEE0CE933 /* Headers */ = {
+		6CFFDEF84B4850BE0E726B7CCF0BF343 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				67926BC872C78253F0E36CAA936557B6 /* Pods-umbrella.h in Headers */,
+				89EAD59606DE92AA48176AC2A4790147 /* Pods-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF022F06567C653444777DD9728C9721 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CD27E07105480879EE1F6F890350E88 /* FirebaseArray.h in Headers */,
+				F0D10E69D37D6D6F6DD3EFF0C5B039EF /* FirebaseArrayDelegate.h in Headers */,
+				0D5B53FD2E44D1946EABFA4D5860C2DE /* FirebaseCollectionViewDataSource.h in Headers */,
+				D1429B28713704BD7AC532D45B785E25 /* FirebaseDataSource.h in Headers */,
+				D75570074A0404679F2483958FC68977 /* FirebaseTableViewDataSource.h in Headers */,
+				8AD3B3E50E5196D3B1B0D1C4B8DC2FAC /* FirebaseUI-umbrella.h in Headers */,
+				25E16FE8A5946E9970401219D1BAE96C /* XCodeMacros.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,26 +441,7 @@
 			);
 			name = DatePickerCell;
 			productName = DatePickerCell;
-			productReference = 7282592E842D9FED9C82A92071054330 /* DatePickerCell.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		741D7A024C5F5756A1593510BB201621 /* Pods */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 1D09E566E2BA758B46190684E5725FEB /* Build configuration list for PBXNativeTarget "Pods" */;
-			buildPhases = (
-				0D43FC6C053A3E67B2F214B0B99835D1 /* Sources */,
-				0115D6CAE26CFF41C82A0A5D77527315 /* Frameworks */,
-				742BC5BDC7B7F88A5593F80EEE0CE933 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				6F41336B0A9C846555D0A8D5175B1426 /* PBXTargetDependency */,
-				F568128E66387E7C2AEC45B7FE657152 /* PBXTargetDependency */,
-			);
-			name = Pods;
-			productName = Pods;
-			productReference = E3F8F1B259A6B5DB34538AA6310EC490 /* Pods.framework */;
+			productReference = 9C6D0EB15FB6DB658A5B0BE7901A367A /* DatePickerCell.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		B7AC9326D819482593FE118E915409D7 /* Firebase */ = {
@@ -361,7 +458,45 @@
 			);
 			name = Firebase;
 			productName = Firebase;
-			productReference = 6E9C50DE6B7AA26525D29B546933DDF9 /* Firebase.framework */;
+			productReference = 73B4E3A705314B701FEDA31794BD7137 /* Firebase.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		BCC6DCE51D25A3ABCA0E1552CC271C7C /* Pods */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4DBB9791BA42BCE2F8548AF1662FFBA9 /* Build configuration list for PBXNativeTarget "Pods" */;
+			buildPhases = (
+				82FF66D1433AA67930AF829C70796AE2 /* Sources */,
+				A2A33E3D990C28C470D63877DA88EA06 /* Frameworks */,
+				6CFFDEF84B4850BE0E726B7CCF0BF343 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A8D0D6B10D759E475D91C43C13F277D1 /* PBXTargetDependency */,
+				6EFF47163C5D36CDC7A860076B70671C /* PBXTargetDependency */,
+				6A91EDDA631F05DC003C7496FBE27B8C /* PBXTargetDependency */,
+			);
+			name = Pods;
+			productName = Pods;
+			productReference = CD38C90DD74FE3E63ED42B3FFAE6C917 /* Pods.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		F25A39724C1F236915EF8279D2B63339 /* FirebaseUI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 167C924E6756C9EB1C08667ECCE53E52 /* Build configuration list for PBXNativeTarget "FirebaseUI" */;
+			buildPhases = (
+				42994C2E42BC1C9177E92BE2430A65C9 /* Sources */,
+				0650BAB4FBC83A800D6532D3F06F093B /* Frameworks */,
+				BF022F06567C653444777DD9728C9721 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9C9DE33426D4908A61BA93BEEF72B3E8 /* PBXTargetDependency */,
+			);
+			name = FirebaseUI;
+			productName = FirebaseUI;
+			productReference = B9DD660C7BA9A5F87EF6B388AEC2A8F8 /* FirebaseUI.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -381,23 +516,28 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = B296B999F939DA671CCE661BF2BCD4EB /* Products */;
+			productRefGroup = 79DB085062420CDA481A51BA1992A536 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				733206DFBBCC49D3502AE07C330E98E6 /* DatePickerCell */,
 				B7AC9326D819482593FE118E915409D7 /* Firebase */,
-				741D7A024C5F5756A1593510BB201621 /* Pods */,
+				F25A39724C1F236915EF8279D2B63339 /* FirebaseUI */,
+				BCC6DCE51D25A3ABCA0E1552CC271C7C /* Pods */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		0D43FC6C053A3E67B2F214B0B99835D1 /* Sources */ = {
+		42994C2E42BC1C9177E92BE2430A65C9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF2830258018D00738E02E19BBF78DC8 /* Pods-dummy.m in Sources */,
+				032A53F0C2EC6AABF0C768BDC8782E90 /* FirebaseArray.m in Sources */,
+				0EA1B983FA3B39FB54ED6DC0A34A9B0B /* FirebaseCollectionViewDataSource.m in Sources */,
+				FAEAFB06340B23ABD3C59F7DB6EBE69F /* FirebaseDataSource.m in Sources */,
+				FE1E4AD771804DD5CC6DF08A8DCF7BDB /* FirebaseTableViewDataSource.m in Sources */,
+				1AA7073BC509023807E1C0EEAB566660 /* FirebaseUI-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,164 +559,45 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		82FF66D1433AA67930AF829C70796AE2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				365254E947FBF70FD6F3DE1EDD56FF39 /* Pods-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		6F41336B0A9C846555D0A8D5175B1426 /* PBXTargetDependency */ = {
+		6A91EDDA631F05DC003C7496FBE27B8C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = DatePickerCell;
-			target = 733206DFBBCC49D3502AE07C330E98E6 /* DatePickerCell */;
-			targetProxy = A087E55B637A4E098E6E17634DF84786 /* PBXContainerItemProxy */;
+			name = FirebaseUI;
+			target = F25A39724C1F236915EF8279D2B63339 /* FirebaseUI */;
+			targetProxy = 88A5AA5DE9126760A72AD523B0D1E652 /* PBXContainerItemProxy */;
 		};
-		F568128E66387E7C2AEC45B7FE657152 /* PBXTargetDependency */ = {
+		6EFF47163C5D36CDC7A860076B70671C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Firebase;
 			target = B7AC9326D819482593FE118E915409D7 /* Firebase */;
-			targetProxy = 21ACF5172D7C30E5F9F331A00FAC33BF /* PBXContainerItemProxy */;
+			targetProxy = 12FAB8AE3E9B9FB7A248AF95A4C53FBC /* PBXContainerItemProxy */;
+		};
+		9C9DE33426D4908A61BA93BEEF72B3E8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Firebase;
+			target = B7AC9326D819482593FE118E915409D7 /* Firebase */;
+			targetProxy = B2418B15F19433F42A5F5CDD393183F9 /* PBXContainerItemProxy */;
+		};
+		A8D0D6B10D759E475D91C43C13F277D1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = DatePickerCell;
+			target = 733206DFBBCC49D3502AE07C330E98E6 /* DatePickerCell */;
+			targetProxy = EF038A38D5FE1C4CC0C850B1B894CE8A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0467E1A5681AEC62AF8F127EBB086C21 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DA312349A49333542E6F4B36B329960E /* Pods.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods/Pods.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = Pods;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		36099D3D23BB564DA994D33625C7AE06 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B16F9F39E520F78B75F0FA2597FDC587 /* Firebase.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Firebase/Firebase-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Firebase/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Firebase/Firebase.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = Firebase;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		488F95F5C29376B9FEEED78BA67C34FE /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 40A408C1E502B23ECBEEF9F42FB5452F /* DatePickerCell.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/DatePickerCell/DatePickerCell-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/DatePickerCell/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/DatePickerCell/DatePickerCell.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = DatePickerCell;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		7FDFA2D14AF0575E9B310F2D20A35869 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B16F9F39E520F78B75F0FA2597FDC587 /* Firebase.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Firebase/Firebase-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Firebase/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Firebase/Firebase.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = Firebase;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		9911017BD4307738AEB8C21A24CAE923 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 40A408C1E502B23ECBEEF9F42FB5452F /* DatePickerCell.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/DatePickerCell/DatePickerCell-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/DatePickerCell/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/DatePickerCell/DatePickerCell.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = DatePickerCell;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		9E0C3501BC573BE4F2C9F238095E05F7 /* Debug */ = {
+		535F5DFBB98D7E1F42C0D84CAD694CD5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 977577C045EDA9D9D1F46E2598D19FC7 /* Pods.debug.xcconfig */;
 			buildSettings = {
@@ -589,7 +610,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				INFOPLIST_FILE = "Target Support Files/Pods/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods/Pods.modulemap";
@@ -607,7 +628,88 @@
 			};
 			name = Debug;
 		};
-		C074F63C9EE7CB4D8C618390A32CEC35 /* Debug */ = {
+		6A12C1AE4F4CCA35BC0F38AE90629255 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F22ED3952133C785896C74BFD45CC213 /* Firebase.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Firebase/Firebase-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Firebase/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Firebase/Firebase.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = Firebase;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		7224AD649174A88C25AF79BCC0C24B68 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F22ED3952133C785896C74BFD45CC213 /* Firebase.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Firebase/Firebase-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Firebase/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Firebase/Firebase.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = Firebase;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		81A94C35695EC3A3727F1B764FFBE9FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E1E034BA8D38C790474998C765D3901B /* FirebaseUI.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/FirebaseUI/FirebaseUI-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/FirebaseUI/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/FirebaseUI/FirebaseUI.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = FirebaseUI;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		A70CDAD61F90AC503C7D04CC22DA2923 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -639,14 +741,99 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				ONLY_ACTIVE_ARCH = YES;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
 		};
-		E43846B588E1892F3093F3B7082B6DFB /* Release */ = {
+		BE0D34360C43F4B13053741F5DE2CECE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DA312349A49333542E6F4B36B329960E /* Pods.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods/Pods.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		CF7FE08E605C0E4FBC3D7F6A0A4C51A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4FF957B2FA9C72BB0DB1C1059EB57256 /* DatePickerCell.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/DatePickerCell/DatePickerCell-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/DatePickerCell/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/DatePickerCell/DatePickerCell.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = DatePickerCell;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		F676007FB680E4380CD11E62EF464F89 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4FF957B2FA9C72BB0DB1C1059EB57256 /* DatePickerCell.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/DatePickerCell/DatePickerCell-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/DatePickerCell/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/DatePickerCell/DatePickerCell.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = DatePickerCell;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		FB45FFD90572718D82AB9092B750F0CA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -673,21 +860,48 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SYMROOT = "${SRCROOT}/../build";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
+		FC5865BFDFF4C8B874B02FBBA52BFF81 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E1E034BA8D38C790474998C765D3901B /* FirebaseUI.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/FirebaseUI/FirebaseUI-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/FirebaseUI/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/FirebaseUI/FirebaseUI.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = FirebaseUI;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1D09E566E2BA758B46190684E5725FEB /* Build configuration list for PBXNativeTarget "Pods" */ = {
+		167C924E6756C9EB1C08667ECCE53E52 /* Build configuration list for PBXNativeTarget "FirebaseUI" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9E0C3501BC573BE4F2C9F238095E05F7 /* Debug */,
-				0467E1A5681AEC62AF8F127EBB086C21 /* Release */,
+				81A94C35695EC3A3727F1B764FFBE9FE /* Debug */,
+				FC5865BFDFF4C8B874B02FBBA52BFF81 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -695,8 +909,8 @@
 		2784404EC6ED301DA87B7F2D2542A913 /* Build configuration list for PBXNativeTarget "DatePickerCell" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9911017BD4307738AEB8C21A24CAE923 /* Debug */,
-				488F95F5C29376B9FEEED78BA67C34FE /* Release */,
+				CF7FE08E605C0E4FBC3D7F6A0A4C51A1 /* Debug */,
+				F676007FB680E4380CD11E62EF464F89 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -704,8 +918,8 @@
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C074F63C9EE7CB4D8C618390A32CEC35 /* Debug */,
-				E43846B588E1892F3093F3B7082B6DFB /* Release */,
+				A70CDAD61F90AC503C7D04CC22DA2923 /* Debug */,
+				FB45FFD90572718D82AB9092B750F0CA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -713,8 +927,17 @@
 		49B346C14D532324DCD14D0FA1347BC6 /* Build configuration list for PBXNativeTarget "Firebase" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7FDFA2D14AF0575E9B310F2D20A35869 /* Debug */,
-				36099D3D23BB564DA994D33625C7AE06 /* Release */,
+				6A12C1AE4F4CCA35BC0F38AE90629255 /* Debug */,
+				7224AD649174A88C25AF79BCC0C24B68 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4DBB9791BA42BCE2F8548AF1662FFBA9 /* Build configuration list for PBXNativeTarget "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				535F5DFBB98D7E1F42C0D84CAD694CD5 /* Debug */,
+				BE0D34360C43F4B13053741F5DE2CECE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

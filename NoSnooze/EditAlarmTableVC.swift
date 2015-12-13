@@ -9,6 +9,7 @@
 import UIKit
 import DatePickerCell
 import Firebase
+import FirebaseUI
 
 class EditAlarmTableVC: UITableViewController {
 
@@ -22,8 +23,9 @@ class EditAlarmTableVC: UITableViewController {
     var currentUser: User!
     var alarmMembers: [String]!
     var alarmStruct: Alarm!
-    let rootRef = Firebase(url: "https://nosnooze.firebaseio.com")
     
+    let rootRef = Firebase(url: "https://nosnooze.firebaseio.com")
+
     @IBAction func unwindToEditAlarm(segue: UIStoryboardSegue) {
         self.tableView.reloadData()
     }

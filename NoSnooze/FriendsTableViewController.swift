@@ -10,6 +10,7 @@ import UIKit
 import FBSDKCoreKit
 import FBSDKLoginKit
 import Foundation
+import FirebaseUI
 
 class FriendsTableViewController: UITableViewController {
 
