@@ -30,7 +30,8 @@ class EditAlarmTableVC: UITableViewController {
     
     @IBAction func saveButton(sender: UIBarButtonItem) {
         // Saves the date, time, friends, and alarm label
-        print("Saving...")
+        print("Validating...")
+        var valid : Bool = true
         
         //Get tableCell Data
         let cells = tableView.visibleCells
@@ -61,11 +62,23 @@ class EditAlarmTableVC: UITableViewController {
         
         var numFriends = 0
         
-        if minFriends.text != nil {
+        if minFriends.text! != "" {
             numFriends = NSNumberFormatter().numberFromString(minFriends.text!)!.integerValue
+            if numFriends >= alarmMembers.count {
+                valid = false
+            }
+        } else {
+            valid = false
+        }
+        if valid {
+            let alertController = UIAlertController(title: "Invalid Number of Friends", message:
+                "Number of friends must be less than or equal to invited friends", preferredStyle: UIAlertControllerStyle.Alert)
+            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+            
+            self.presentViewController(alertController, animated: true, completion: nil)
         }
         
-        if cutoffTime.timeIntervalSince1970 > alarmTime.timeIntervalSince1970 {
+        if cutoffTime.timeIntervalSince1970 > alarmTime.timeIntervalSince1970 && valid {
             print("Saving Alarm...")
             
             var newAlarm = Alarm(alarmTime: alarmTime, userID: self.currentUser.uid, name: self.alarmLabel, cutoffTime: cutoffTime, members: alarmMembers, minFriends: numFriends)
@@ -172,18 +185,7 @@ class EditAlarmTableVC: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return 0
     }*/
-    
-    /*
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("AlarmCell", forIndexPath: indexPath)
-    //let image : UIImage = UIImage(named: "Question_Flat.png")! <- maybe use a clock image
-    cell.imageView!.image = image // need image for each quiz
-    cell.textLabel?.text = subjects[indexPath.row]
-    cell.detailTextLabel!.text = descriptions[indexPath.row] // description goes here
-    
-    return cell
-    }
-    */
+
     
     /*
     // Override to support conditional editing of the table view.

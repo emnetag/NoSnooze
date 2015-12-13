@@ -58,8 +58,7 @@ class HomeAlarmTableVC: UITableViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.d
-        print("WELP")
+        // Dispose of any resources that can be recreated
     }
     
     // MARK: - Table view data source
@@ -73,11 +72,39 @@ class HomeAlarmTableVC: UITableViewController {
     }
     
     
+    // Override to support editing the table view.
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+            
+            self.rootRef.observeAuthEventWithBlock { (authData) -> Void in
+                if authData != nil {
+                    self.currentUser = User(authData: authData)
+                    
+                    self.alarmRef.queryOrderedByChild("addedByUser")
+                        .queryEqualToValue(self.currentUser.uid)
+                        .observeEventType(.Value, withBlock: { snapshot in
+                            var newAlarms = [Alarm]()
+                            
+                            for item in snapshot.children {
+                                let alarmUnit = Alarm(snapshot: item as! FDataSnapshot)
+                                newAlarms.append(alarmUnit)
+                            }
+                            
+                            self.alarms = newAlarms
+                            self.tableView.reloadData()
+                        })
+                }
+            }
+            // Delete the row from the data source
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            
+        }
+    }
+    
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("AlarmCell", forIndexPath: indexPath) as! AlarmTableViewCell
         
-        //let image : UIImage = UIImage(named: "Question_Flat.png")! <- maybe use a clock image
-        //cell.imageView!.image = image // need image for each quiz
         
         //format cell here
         var currentAlarm = self.alarms[indexPath.row]
