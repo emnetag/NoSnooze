@@ -103,7 +103,6 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="Wd6-cj-7Cf">
                             <connections>
                                 <action selector="saveButton:" destination="b9N-YT-G8l" id="yXT-L0-3a5"/>
-                                <segue destination="GsV-eI-dfn" kind="unwind" unwindAction="unwindToAlarmHome:" id="7UL-9T-NPv"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

@@ -78,7 +78,14 @@ class EditAlarmTableVC: UITableViewController {
                 .childByAutoId().setValue(newAlarm.toAnyObject())
         } else {
             print("Cutoff Time must be after the alarm time")
+            let alertController = UIAlertController(title: "Invalid Alarm Time", message:
+                "Cutoff Time must be later than alarm time", preferredStyle: UIAlertControllerStyle.Alert)
+            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+            
+            self.presentViewController(alertController, animated: true, completion: nil)
         }
+        
+        
         
     }
     
