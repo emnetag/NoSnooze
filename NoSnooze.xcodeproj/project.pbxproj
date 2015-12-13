@@ -29,6 +29,9 @@
 		CE85E56C1C0E5C17003BC274 /* NoSnoozeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE85E56B1C0E5C17003BC274 /* NoSnoozeTests.swift */; };
 		CE85E5771C0E5C17003BC274 /* NoSnoozeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE85E5761C0E5C17003BC274 /* NoSnoozeUITests.swift */; };
 		CEE442021C1A7E6C00EC6DB6 /* FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE442011C1A7E6C00EC6DB6 /* FriendsTableViewController.swift */; };
+		CEE5E52F1C1CFB19001AD023 /* DatePickerCell.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEE5E52C1C1CFB19001AD023 /* DatePickerCell.framework */; };
+		CEE5E5301C1CFB19001AD023 /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEE5E52D1C1CFB19001AD023 /* Firebase.framework */; };
+		CEE5E5311C1CFB19001AD023 /* FirebaseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEE5E52E1C1CFB19001AD023 /* FirebaseUI.framework */; };
 		CEFBAED41C0FDE50003EA6FE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFBAED31C0FDE50003EA6FE /* User.swift */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +83,9 @@
 		CE85E5761C0E5C17003BC274 /* NoSnoozeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoSnoozeUITests.swift; sourceTree = "<group>"; };
 		CE85E5781C0E5C17003BC274 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEE442011C1A7E6C00EC6DB6 /* FriendsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsTableViewController.swift; sourceTree = "<group>"; };
+		CEE5E52C1C1CFB19001AD023 /* DatePickerCell.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DatePickerCell.framework; path = "Pods/../build/Debug-iphoneos/DatePickerCell.framework"; sourceTree = "<group>"; };
+		CEE5E52D1C1CFB19001AD023 /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Firebase.framework; path = "Pods/../build/Debug-iphoneos/Firebase.framework"; sourceTree = "<group>"; };
+		CEE5E52E1C1CFB19001AD023 /* FirebaseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseUI.framework; path = "Pods/../build/Debug-iphoneos/FirebaseUI.framework"; sourceTree = "<group>"; };
 		CEE765231C0ED8C30051C4BC /* NoSnooze-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NoSnooze-Bridging-Header.h"; sourceTree = "<group>"; };
 		CEFBAED31C0FDE50003EA6FE /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -89,6 +95,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEE5E52F1C1CFB19001AD023 /* DatePickerCell.framework in Frameworks */,
+				CEE5E5301C1CFB19001AD023 /* Firebase.framework in Frameworks */,
+				CEE5E5311C1CFB19001AD023 /* FirebaseUI.framework in Frameworks */,
 				9D54CBBE1C0E94A900A7AFBA /* FBSDKLoginKit.framework in Frameworks */,
 				9D54CBBD1C0E94A800A7AFBA /* FBSDKCoreKit.framework in Frameworks */,
 				9D54CBBF1C0E94A900A7AFBA /* FBSDKShareKit.framework in Frameworks */,
@@ -125,6 +134,9 @@
 		9D54CBB81C0E946300A7AFBA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CEE5E52C1C1CFB19001AD023 /* DatePickerCell.framework */,
+				CEE5E52D1C1CFB19001AD023 /* Firebase.framework */,
+				CEE5E52E1C1CFB19001AD023 /* FirebaseUI.framework */,
 				9D54CBB91C0E94A800A7AFBA /* FBSDKCoreKit.framework */,
 				9D54CBBA1C0E94A800A7AFBA /* FBSDKLoginKit.framework */,
 				9D54CBBB1C0E94A800A7AFBA /* FBSDKShareKit.framework */,
@@ -556,8 +568,10 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					/Users/iguest/Documents/FacebookSDK,
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = NoSnooze/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.uw.ischool.NoSnooze;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -576,8 +590,10 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					/Users/iguest/Documents/FacebookSDK,
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = NoSnooze/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.uw.ischool.NoSnooze;
 				PRODUCT_NAME = "$(TARGET_NAME)";

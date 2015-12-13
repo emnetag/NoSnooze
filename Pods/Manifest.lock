@@ -1,13 +1,17 @@
 PODS:
   - DatePickerCell (1.0.2)
   - Firebase (2.4.3)
+  - FirebaseUI/Core (0.3.1):
+    - Firebase (~> 2.2)
 
 DEPENDENCIES:
   - DatePickerCell
   - Firebase (>= 2.3.2)
+  - FirebaseUI/Core (~> 0.3)
 
 SPEC CHECKSUMS:
   DatePickerCell: b2abd1f6ba08f01da11baee73a503d6dc33f3118
   Firebase: 48179995b561e2262c5d4060ecdffca45fbbff8b
+  FirebaseUI: 62f01e067dcfc5c903d8b9cb7d77d03fa163c71a
 
 COCOAPODS: 0.39.0

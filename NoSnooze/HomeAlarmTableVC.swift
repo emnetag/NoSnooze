@@ -8,14 +8,17 @@
 
 import UIKit
 import Firebase
-
+import FirebaseUI
 
 class HomeAlarmTableVC: UITableViewController {
     
     var alarms : [Alarm] = []
     var currentUser: User!
+    
     let rootRef = Firebase(url: "https://nosnooze.firebaseio.com/")
     let alarmRef = Firebase(url: "https://nosnooze.firebaseio.com/alarms")
+    
+    let inviteRef = Firebase(url: "https://nosnooze.firebaseio.com/invites")
     
     
     //let formatter = NSDateFormatter()
@@ -23,6 +26,7 @@ class HomeAlarmTableVC: UITableViewController {
     //formatter.dateFromString("")
     //retrieve data from firebase
     //add to array of tableview cells
+    
     @IBAction func unwindToAlarmHome(segue: UIStoryboardSegue) {
         
     }
@@ -31,6 +35,12 @@ class HomeAlarmTableVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.leftBarButtonItem = self.editButtonItem()
+        
+        self.inviteRef.observeEventType(.ChildAdded, withBlock: { snapshot in
+            print("New invite added...")
+            
+            
+        })
     }
     
     override func viewDidAppear(animated: Bool) {
