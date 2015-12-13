@@ -86,31 +86,20 @@ class HomeAlarmTableVC: UITableViewController {
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             
-            self.rootRef.observeAuthEventWithBlock { (authData) -> Void in
-                if authData != nil {
-                    self.currentUser = User(authData: authData)
-                    
-                    self.alarmRef.queryOrderedByChild("addedByUser")
-                        .queryEqualToValue(self.currentUser.uid)
-                        .observeEventType(.Value, withBlock: { snapshot in
-                            var newAlarms = [Alarm]()
-                            
-                            for item in snapshot.children {
-                                let alarmUnit = Alarm(snapshot: item as! FDataSnapshot)
-                                newAlarms.append(alarmUnit)
-                            }
-                            
-                            self.alarms = newAlarms
-                            self.tableView.reloadData()
-                        })
-                }
-            }
+            
             // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            alarms[indexPath.row].ref!.removeValue()
+            alarms.removeAtIndex(indexPath.row)
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Left)
+            tableView.reloadData()
             
         }
     }
     
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool
+    {
+        return true
+    }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("AlarmCell", forIndexPath: indexPath) as! AlarmTableViewCell

@@ -66,13 +66,13 @@ class EditAlarmTableVC: UITableViewController {
         
         if minFriends.text! != "" {
             numFriends = NSNumberFormatter().numberFromString(minFriends.text!)!.integerValue
-            if numFriends >= alarmMembers.count {
+            if numFriends > alarmMembers.count {
                 valid = false
             }
         } else {
             valid = false
         }
-        if valid {
+        if !valid {
             let alertController = UIAlertController(title: "Invalid Number of Friends", message:
                 "Number of friends must be less than or equal to invited friends", preferredStyle: UIAlertControllerStyle.Alert)
             alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
@@ -92,13 +92,13 @@ class EditAlarmTableVC: UITableViewController {
 
             let newAlarmRef = self.rootRef.childByAppendingPath("alarms").childByAutoId()
             
-            let alarmID = newAlarmRef.key!
+            //let alarmID = newAlarmRef.key!
             
             //Saves new alarm
-//            newAlarmRef.setValue(newAlarm.toAnyObject())
+            newAlarmRef.setValue(newAlarm.toAnyObject())
             
             //Sends invites to new alarm if there are any
-            sendInvites(newAlarm, invitesRef: rootRef.childByAppendingPath("invites"), alarmID: alarmID)
+            //sendInvites(newAlarm, invitesRef: rootRef.childByAppendingPath("invites"), alarmID: alarmID)
             
         } else {
             
@@ -114,7 +114,7 @@ class EditAlarmTableVC: UITableViewController {
         
     }
     
-    func sendInvites(alarm: Alarm, invitesRef: Firebase, alarmID: String) {
+    /*func sendInvites(alarm: Alarm, invitesRef: Firebase, alarmID: String) {
         if (alarm.members != nil) || (alarm.members?.count == 0) {
             let people = alarm.members!
         
@@ -128,7 +128,7 @@ class EditAlarmTableVC: UITableViewController {
         } else {
             print("Alarm has no other members")
         }
-    }
+    }*/
     
     override func viewDidAppear(animated: Bool) {
         self.rootRef.observeAuthEventWithBlock { (authData) -> Void in
