@@ -76,16 +76,21 @@ class EditAlarmTableVC: UITableViewController {
             if newAlarm.storageFormat == false {
                 newAlarm.toStorageFormat()
             }
-
-            let newAlarmRef = self.rootRef.childByAppendingPath("alarms").childByAutoId()
-            
-            let alarmID = newAlarmRef.key!
             
             //Saves new alarm
-//            newAlarmRef.setValue(newAlarm.toAnyObject())
+            let userRef = Firebase(url: "https://nosnooze.firebaseio.com/users").childByAppendingPath(currentUser.uid!)
+            
+            let newAlarmRef = userRef.childByAppendingPath("alarms").childByAutoId()
+            
+            //New alarm saved to firebaseio.com/users/userID/alarms/autoID
+            
+            newAlarmRef.setValue(newAlarm.toAnyObject())
+
+            let alarmKey = newAlarmRef.key!
+            print("Alarm Key = \(alarmKey)")
             
             //Sends invites to new alarm if there are any
-            sendInvites(newAlarm, invitesRef: rootRef.childByAppendingPath("invites"), alarmID: alarmID)
+            sendInvites(newAlarm.members!, alarmID: alarmKey)
             
         } else {
             
@@ -95,19 +100,16 @@ class EditAlarmTableVC: UITableViewController {
         
     }
     
-    func sendInvites(alarm: Alarm, invitesRef: Firebase, alarmID: String) {
-        if (alarm.members != nil) || (alarm.members?.count == 0) {
-            let people = alarm.members!
-        
-            people.forEach({ (memberID) -> (Void) in
-                print("Inviting \(memberID)...")
-                
-                
-//                invitesRef.childByAppendingPath("\(memberID)").setValue(alarmID)
-            })
-            
-        } else {
-            print("Alarm has no other members")
+    func sendInvites(members: [String], alarmID: String) {
+        let invitesRef = Firebase(url: "https://nosnooze.firebaseio.com/invites")
+        members.forEach { (userID) -> () in
+            let currentInvite = invitesRef.childByAppendingPath(userID).childByAutoId()
+            currentInvite.updateChildValues([
+                "alarmID": alarmID,
+                "userID": userID,
+                "inviteID": currentInvite.key,
+                "participating": false
+            ])
         }
     }
     

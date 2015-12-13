@@ -28,6 +28,7 @@
 		CE85E5611C0E5C17003BC274 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE85E55F1C0E5C17003BC274 /* LaunchScreen.storyboard */; };
 		CE85E56C1C0E5C17003BC274 /* NoSnoozeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE85E56B1C0E5C17003BC274 /* NoSnoozeTests.swift */; };
 		CE85E5771C0E5C17003BC274 /* NoSnoozeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE85E5761C0E5C17003BC274 /* NoSnoozeUITests.swift */; };
+		CEA693A41C1D0D3F00490467 /* Invite.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA693A31C1D0D3F00490467 /* Invite.swift */; };
 		CEE442021C1A7E6C00EC6DB6 /* FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE442011C1A7E6C00EC6DB6 /* FriendsTableViewController.swift */; };
 		CEE5E52F1C1CFB19001AD023 /* DatePickerCell.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEE5E52C1C1CFB19001AD023 /* DatePickerCell.framework */; };
 		CEE5E5301C1CFB19001AD023 /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEE5E52D1C1CFB19001AD023 /* Firebase.framework */; };
@@ -82,6 +83,7 @@
 		CE85E5721C0E5C17003BC274 /* NoSnoozeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NoSnoozeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE85E5761C0E5C17003BC274 /* NoSnoozeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoSnoozeUITests.swift; sourceTree = "<group>"; };
 		CE85E5781C0E5C17003BC274 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEA693A31C1D0D3F00490467 /* Invite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Invite.swift; sourceTree = "<group>"; };
 		CEE442011C1A7E6C00EC6DB6 /* FriendsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsTableViewController.swift; sourceTree = "<group>"; };
 		CEE5E52C1C1CFB19001AD023 /* DatePickerCell.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DatePickerCell.framework; path = "Pods/../build/Debug-iphoneos/DatePickerCell.framework"; sourceTree = "<group>"; };
 		CEE5E52D1C1CFB19001AD023 /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Firebase.framework; path = "Pods/../build/Debug-iphoneos/Firebase.framework"; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 			children = (
 				CEFBAED31C0FDE50003EA6FE /* User.swift */,
 				CE7D182A1C150AF400FC10EC /* Alarm.swift */,
+				CEA693A31C1D0D3F00490467 /* Invite.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -407,6 +410,7 @@
 				CEFBAED41C0FDE50003EA6FE /* User.swift in Sources */,
 				CEE442021C1A7E6C00EC6DB6 /* FriendsTableViewController.swift in Sources */,
 				CE69B5A71C1132ED0042EEA7 /* EditAlarmTableVC.swift in Sources */,
+				CEA693A41C1D0D3F00490467 /* Invite.swift in Sources */,
 				9D54CBC01C0E94A900A7AFBA /* README.md in Sources */,
 				CE69B5AC1C1132ED0042EEA7 /* ViewController.swift in Sources */,
 				CE69B5A01C1132D40042EEA7 /* AlarmFormViewController.swift in Sources */,

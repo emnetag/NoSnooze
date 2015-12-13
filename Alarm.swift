@@ -44,7 +44,7 @@ struct Alarm {
         self.dateFormatter.dateFormat = "EEE, d MMM yyyy HH:mm:ss Z"
         self.alarmString = dateFormatter.stringFromDate(alarmTime)
         self.cutoffString = dateFormatter.stringFromDate(cutoffTime)
-        self.members = members!
+        self.members = members
     }
 
     init(snapshot: FDataSnapshot) {
