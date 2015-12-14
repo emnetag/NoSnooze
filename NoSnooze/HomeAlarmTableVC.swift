@@ -94,16 +94,6 @@ class HomeAlarmTableVC: UITableViewController {
         })
     }
     
-    func listenForInvites(ref: Firebase) {
-        ref.observeEventType(.ChildAdded, withBlock: { inviteSnap in
-            if inviteSnap.hasChildren() {
-                
-            } else {
-                print("No invites for now")
-            }
-        })
-    }
-    
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         

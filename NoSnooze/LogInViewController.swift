@@ -120,7 +120,7 @@ class LogInViewController: UIViewController {
             } else {
                 self.updateUIAndSetCurrentUser(authData)
                 let sb = UIStoryboard(name: "LandingPage", bundle: nil)
-                let VC = sb.instantiateInitialViewController() as! UINavigationController
+                let VC = sb.instantiateInitialViewController() as! UITabBarController
                 self.presentViewController(VC, animated: true, completion: nil)              
             }
         }
