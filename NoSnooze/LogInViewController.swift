@@ -54,13 +54,14 @@ class LogInViewController: UIViewController {
             self.loginStatusLabel.hidden = true
             self.loginButton.hidden = false
             self.logoutButton.hidden = true
+            self.loginButton.setTitle("Log in with Facebook", forState: .Normal)
         } else {
             var statusText = ""
             
             if currentUser?.provider == "facebook" {
-                statusText = "Logged in as \(currentUser?.providerData["displayName"]) (Facebook)"
+                statusText = "Logged in as \(currentUser!.providerData["displayName"]!) (Facebook)"
             }
-            
+            self.loginButton.setTitle("Log in as \(currentUser!.providerData["displayName"]!)", forState: .Normal)
             self.loginStatusLabel.text = statusText
             self.loginStatusLabel.hidden = false
             
@@ -68,7 +69,7 @@ class LogInViewController: UIViewController {
             self.logoutButton.hidden = false
             
             //hide the login button for now
-            self.loginButton.hidden = true
+            //self.loginButton.hidden = true
         }
     }
     
@@ -76,41 +77,45 @@ class LogInViewController: UIViewController {
     @IBAction func loginDidTouch(sender: UIButton) {
         print("Login Button Pressed")
         
-        
-        self.facebookLogin.logInWithReadPermissions(["email", "user_friends"], fromViewController: self) {
-            (facebookResult, facebookError) -> Void in
-            
-            if facebookError != nil {
-                print("Facebook login failed. \(facebookError)")
-            } else if facebookResult.isCancelled {
-                print("Facebook login was cancelled.")
-            } else {
-                let accessToken = FBSDKAccessToken.currentAccessToken().tokenString
+        if sender.titleLabel?.text == "Log in with Facebook" {
+            self.facebookLogin.logInWithReadPermissions(["email", "user_friends"], fromViewController: self) {
+                (facebookResult, facebookError) -> Void in
                 
-                self.ref.authWithOAuthProvider("facebook", token: accessToken,
-                    withCompletionBlock: { (error, authData) -> Void in
-                        
-                        if error != nil {
-                            print("Login failed. \(error)")
-                        } else {
-                            let newUser = [
-                                "provider": authData.provider,
-                                "displayName": authData.providerData["displayName"]!,
-                                "uid": authData.uid
-                            ]
+                if facebookError != nil {
+                    print("Facebook login failed. \(facebookError)")
+                } else if facebookResult.isCancelled {
+                    print("Facebook login was cancelled.")
+                } else {
+                    let accessToken = FBSDKAccessToken.currentAccessToken().tokenString
+                    
+                    self.ref.authWithOAuthProvider("facebook", token: accessToken,
+                        withCompletionBlock: { (error, authData) -> Void in
                             
-                            print("Added user \(newUser["displayName"]))")
-                            
-                            self.ref.childByAppendingPath("users")
-                               .childByAppendingPath(authData.uid).updateChildValues(newUser)
-                            
-                            let sb = UIStoryboard(name: "LandingPage", bundle: nil)
-                            let VC = sb.instantiateInitialViewController() as! UINavigationController
-                            self.presentViewController(VC, animated: true, completion: nil)
+                            if error != nil {
+                                print("Login failed. \(error)")
+                            } else {
+                                let newUser = [
+                                    "provider": authData.provider,
+                                    "displayName": authData.providerData["displayName"]!,
+                                    "uid": authData.uid
+                                ]
+                                
+                                print("Added user \(newUser["displayName"]))")
+                                
+                                self.ref.childByAppendingPath("users")
+                                   .childByAppendingPath(authData.uid).updateChildValues(newUser)
 
-                        }
-                })
+                                let sb = UIStoryboard(name: "LandingPage", bundle: nil)
+                                let VC = sb.instantiateInitialViewController() as! UITabBarController
+                                self.presentViewController(VC, animated: true, completion: nil)
+                            }
+                    })
+                }
             }
+        } else {
+            let sb = UIStoryboard(name: "LandingPage", bundle: nil)
+            let VC = sb.instantiateInitialViewController() as! UITabBarController
+            self.presentViewController(VC, animated: true, completion: nil)
         }
     }
     
@@ -119,11 +124,10 @@ class LogInViewController: UIViewController {
             if authData == nil {
                 print("No one is home")
             } else {
-                print("Someone is home, \(authData.providerData["displayName"]!) to be specific")
                 self.updateUIAndSetCurrentUser(authData)
-//                let sb = UIStoryboard(name: "LandingPage", bundle: nil)
-//                let VC = sb.instantiateInitialViewController() as! UINavigationController
-//                self.presentViewController(VC, animated: true, completion: nil)              
+                //let sb = UIStoryboard(name: "LandingPage", bundle: nil)
+                //let VC = sb.instantiateInitialViewController() as! UITabBarController
+                //self.presentViewController(VC, animated: true, completion: nil)
             }
         }
     }

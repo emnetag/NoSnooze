@@ -15,7 +15,6 @@
 		9D54CBC01C0E94A900A7AFBA /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 9D54CBBC1C0E94A800A7AFBA /* README.md */; };
 		AC20819D1C1A5AF300550F3A /* AlarmActive.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC20819C1C1A5AF300550F3A /* AlarmActive.storyboard */; };
 		B708C08B63CCCD1318823802 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 000450177A5F6754508F954E /* Pods.framework */; };
-		CE69B5A01C1132D40042EEA7 /* AlarmFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE69B59F1C1132D40042EEA7 /* AlarmFormViewController.swift */; };
 		CE69B5A71C1132ED0042EEA7 /* EditAlarmTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE69B5A11C1132ED0042EEA7 /* EditAlarmTableVC.swift */; };
 		CE69B5A91C1132ED0042EEA7 /* HomeAlarmTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE69B5A31C1132ED0042EEA7 /* HomeAlarmTableVC.swift */; };
 		CE69B5AB1C1132ED0042EEA7 /* LabelAlarmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE69B5A51C1132ED0042EEA7 /* LabelAlarmVC.swift */; };
@@ -33,6 +32,8 @@
 		CEE5E52F1C1CFB19001AD023 /* DatePickerCell.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEE5E52C1C1CFB19001AD023 /* DatePickerCell.framework */; };
 		CEE5E5301C1CFB19001AD023 /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEE5E52D1C1CFB19001AD023 /* Firebase.framework */; };
 		CEE5E5311C1CFB19001AD023 /* FirebaseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEE5E52E1C1CFB19001AD023 /* FirebaseUI.framework */; };
+		CEE6F06C1C1ED43B00FF466F /* InvitesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE6F06B1C1ED43B00FF466F /* InvitesTableViewController.swift */; };
+		CEE6F06E1C1EDD0E00FF466F /* InviteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE6F06D1C1EDD0E00FF466F /* InviteTableViewCell.swift */; };
 		CEFBAED41C0FDE50003EA6FE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFBAED31C0FDE50003EA6FE /* User.swift */; };
 /* End PBXBuildFile section */
 
@@ -64,7 +65,6 @@
 		9D54CBBC1C0E94A800A7AFBA /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		AC20819C1C1A5AF300550F3A /* AlarmActive.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AlarmActive.storyboard; sourceTree = "<group>"; };
 		BB69201CCEF9598C1EB4A300 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		CE69B59F1C1132D40042EEA7 /* AlarmFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmFormViewController.swift; sourceTree = "<group>"; };
 		CE69B5A11C1132ED0042EEA7 /* EditAlarmTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditAlarmTableVC.swift; sourceTree = "<group>"; };
 		CE69B5A31C1132ED0042EEA7 /* HomeAlarmTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeAlarmTableVC.swift; sourceTree = "<group>"; };
 		CE69B5A51C1132ED0042EEA7 /* LabelAlarmVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelAlarmVC.swift; sourceTree = "<group>"; };
@@ -88,6 +88,8 @@
 		CEE5E52C1C1CFB19001AD023 /* DatePickerCell.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DatePickerCell.framework; path = "Pods/../build/Debug-iphoneos/DatePickerCell.framework"; sourceTree = "<group>"; };
 		CEE5E52D1C1CFB19001AD023 /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Firebase.framework; path = "Pods/../build/Debug-iphoneos/Firebase.framework"; sourceTree = "<group>"; };
 		CEE5E52E1C1CFB19001AD023 /* FirebaseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseUI.framework; path = "Pods/../build/Debug-iphoneos/FirebaseUI.framework"; sourceTree = "<group>"; };
+		CEE6F06B1C1ED43B00FF466F /* InvitesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvitesTableViewController.swift; sourceTree = "<group>"; };
+		CEE6F06D1C1EDD0E00FF466F /* InviteTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteTableViewCell.swift; sourceTree = "<group>"; };
 		CEE765231C0ED8C30051C4BC /* NoSnooze-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NoSnooze-Bridging-Header.h"; sourceTree = "<group>"; };
 		CEFBAED31C0FDE50003EA6FE /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -177,7 +179,7 @@
 				54E677111C113953003E14F1 /* LandingPage.storyboard */,
 				CE85E5561C0E5C17003BC274 /* AppDelegate.swift */,
 				CE85E5581C0E5C17003BC274 /* LogInViewController.swift */,
-				CE69B59F1C1132D40042EEA7 /* AlarmFormViewController.swift */,
+				CEE6F06B1C1ED43B00FF466F /* InvitesTableViewController.swift */,
 				CE69B5A11C1132ED0042EEA7 /* EditAlarmTableVC.swift */,
 				CE69B5A31C1132ED0042EEA7 /* HomeAlarmTableVC.swift */,
 				CE69B5A51C1132ED0042EEA7 /* LabelAlarmVC.swift */,
@@ -190,6 +192,7 @@
 				CE85E5621C0E5C17003BC274 /* Info.plist */,
 				CEE765231C0ED8C30051C4BC /* NoSnooze-Bridging-Header.h */,
 				54AB74CC1C1A6C6900993BD4 /* AlarmTableViewCell.swift */,
+				CEE6F06D1C1EDD0E00FF466F /* InviteTableViewCell.swift */,
 			);
 			path = NoSnooze;
 			sourceTree = "<group>";
@@ -413,11 +416,12 @@
 				CEA693A41C1D0D3F00490467 /* Invite.swift in Sources */,
 				9D54CBC01C0E94A900A7AFBA /* README.md in Sources */,
 				CE69B5AC1C1132ED0042EEA7 /* ViewController.swift in Sources */,
-				CE69B5A01C1132D40042EEA7 /* AlarmFormViewController.swift in Sources */,
 				CE69B5AB1C1132ED0042EEA7 /* LabelAlarmVC.swift in Sources */,
 				CE7D182B1C150AF400FC10EC /* Alarm.swift in Sources */,
 				CE85E5591C0E5C17003BC274 /* LogInViewController.swift in Sources */,
 				CE85E5571C0E5C17003BC274 /* AppDelegate.swift in Sources */,
+				CEE6F06C1C1ED43B00FF466F /* InvitesTableViewController.swift in Sources */,
+				CEE6F06E1C1EDD0E00FF466F /* InviteTableViewCell.swift in Sources */,
 				54AB74CD1C1A6C6900993BD4 /* AlarmTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
