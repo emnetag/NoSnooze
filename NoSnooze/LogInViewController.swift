@@ -77,7 +77,7 @@ class LogInViewController: UIViewController {
     @IBAction func loginDidTouch(sender: UIButton) {
         print("Login Button Pressed")
         
-        if sender.titleLabel?.text == "Log in with Facebook" {
+        if sender.titleLabel?.text == "Log In With Facebook" {
             self.facebookLogin.logInWithReadPermissions(["email", "user_friends"], fromViewController: self) {
                 (facebookResult, facebookError) -> Void in
                 

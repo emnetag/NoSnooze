@@ -17,7 +17,7 @@ class EditAlarmTableVC: UITableViewController {
     
     var cells: NSArray = []
     
-    var alarmOptions = ["Label","Add friends to Alarm","Minimum # of Friends"]
+    var alarmOptions = ["Label","Add Friends","Minimum # of Friends"]
     var alarmLabel = "Alarm"
     
     var currentUser: User!
@@ -39,7 +39,6 @@ class EditAlarmTableVC: UITableViewController {
     override func viewDidLoad() {
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 44
-        
         // The DatePickerCell.
         let datePickerCell1 = DatePickerCell(style: UITableViewCellStyle.Default, reuseIdentifier: nil)
         datePickerCell1.leftLabel.text = "Time"
@@ -64,6 +63,12 @@ class EditAlarmTableVC: UITableViewController {
         }
     }
 
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == 0 {
+            return "Set your alarm!"
+        }
+        return ""
+    }
     
     
     @IBAction func saveButton(sender: UIBarButtonItem) {
