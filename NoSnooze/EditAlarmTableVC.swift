@@ -21,14 +21,50 @@ class EditAlarmTableVC: UITableViewController {
     var alarmLabel = "Alarm"
     
     var currentUser: User!
+    
     var alarmMembers = [String]()
     var alarmStruct: Alarm!
     
-    let rootRef = Firebase(url: "https://nosnooze.firebaseio.com")
+    var rootRef: Firebase!
+    var alarmsRef: Firebase!
+    var myUserRef: Firebase!
+    var invitesRef: Firebase!
+    var usersRef: Firebase!
+    
 
     @IBAction func unwindToEditAlarm(segue: UIStoryboardSegue) {
         self.tableView.reloadData()
     }
+    
+    override func viewDidLoad() {
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.estimatedRowHeight = 44
+        
+        // The DatePickerCell.
+        let datePickerCell1 = DatePickerCell(style: UITableViewCellStyle.Default, reuseIdentifier: nil)
+        datePickerCell1.leftLabel.text = "Time"
+        let datePickerCell2 = DatePickerCell(style: UITableViewCellStyle.Default, reuseIdentifier: nil)
+        datePickerCell2.leftLabel.text = "Cutoff Snooze"
+        // Cells is a 2D array containing sections and rows.
+        cells = [[datePickerCell1, datePickerCell2]]
+        
+        //Initialize Firebase Refs
+        rootRef = Firebase(url: "https://nosnooze.firebaseio.com/")
+        alarmsRef = Firebase(url: "https://nosnooze.firebaseio.com/alarms")
+        usersRef = Firebase(url: "https://nosnooze.firebaseio.com/users")
+        invitesRef = Firebase(url: "https://nosnooze.firebaseio.com/invites")
+        
+        rootRef.observeAuthEventWithBlock { (authData) -> Void in
+            if authData != nil {
+                self.currentUser = User(authData: authData)
+                self.myUserRef = Firebase(url: "https://nosnooze.firebaseio.com/users/\(authData.uid!)")
+            } else {
+                print("No one is home")
+            }
+        }
+    }
+
+    
     
     @IBAction func saveButton(sender: UIBarButtonItem) {
         // Saves the date, time, friends, and alarm label
@@ -87,20 +123,21 @@ class EditAlarmTableVC: UITableViewController {
 
             print("Saving Alarm...")
             
+            
             var newAlarm = Alarm(alarmTime: alarmTime, userID: self.currentUser.uid, name: self.alarmLabel, cutoffTime: cutoffTime, members: alarmMembers, minFriends: numFriends)
             
             if newAlarm.storageFormat == false {
                 newAlarm.toStorageFormat()
             }
 
-            //Saves reference to alarm in /users/currentUserID/alarms/autoID
-            let userRef = Firebase(url: "https://nosnooze.firebaseio.com/users").childByAppendingPath(currentUser.uid!)
-            let newAlarmRef = userRef.childByAppendingPath("alarms").childByAutoId()
+            //Saves alarm in /users/currentUserID/alarms/autoID
+
+            let newAlarmRef = myUserRef.childByAppendingPath("alarms").childByAutoId()
+            newAlarmRef.setValue(newAlarm.toAnyObject())
             let alarmKey = newAlarmRef.key!
-            newAlarmRef.setValue([alarmKey : true])
             
-            // Saves actual alarm inside /alarms/alarmID
-            rootRef.childByAppendingPath("alarms").childByAppendingPath(alarmKey).setValue(newAlarm.toAnyObject())
+            // Also saves alarm inside /alarms/alarmID
+            alarmsRef.childByAppendingPath(alarmKey).setValue(newAlarm.toAnyObject())
             
             //Sends invites to new alarm if there are any
             sendInvites(newAlarm.members!, alarmID: alarmKey)
@@ -115,13 +152,14 @@ class EditAlarmTableVC: UITableViewController {
 
         }
 
-    
     }
     
     func sendInvites(members: [String], alarmID: String) {
         let invitesRef = Firebase(url: "https://nosnooze.firebaseio.com/invites")
         members.forEach { (userID) -> () in
-            let currentInvite = invitesRef.childByAppendingPath(userID).childByAutoId()
+            
+            // Invite is saved to /invites/memberID/alarmID
+            let currentInvite = invitesRef.childByAppendingPath("\(userID)/\(alarmID)")
             currentInvite.updateChildValues([
                 "alarmID": alarmID,
                 "userID": userID,
@@ -132,26 +170,7 @@ class EditAlarmTableVC: UITableViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
-        self.rootRef.observeAuthEventWithBlock { (authData) -> Void in
-            if authData != nil {
-                self.currentUser = User(authData: authData)
-            } else {
-                print("No one is home")
-            }
-        }
-    }
-    
-    override func viewDidLoad() {
-        self.tableView.rowHeight = UITableViewAutomaticDimension
-        self.tableView.estimatedRowHeight = 44
-        
-        // The DatePickerCell.
-        let datePickerCell1 = DatePickerCell(style: UITableViewCellStyle.Default, reuseIdentifier: nil)
-        datePickerCell1.leftLabel.text = "Time"
-        let datePickerCell2 = DatePickerCell(style: UITableViewCellStyle.Default, reuseIdentifier: nil)
-        datePickerCell2.leftLabel.text = "Cutoff Snooze"
-        // Cells is a 2D array containing sections and rows.
-        cells = [[datePickerCell1, datePickerCell2]]
+        //view Did Appear
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {

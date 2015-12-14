@@ -103,11 +103,10 @@ class LogInViewController: UIViewController {
                             
                             self.ref.childByAppendingPath("users")
                                .childByAppendingPath(authData.uid).updateChildValues(newUser)
-                            
+
                             let sb = UIStoryboard(name: "LandingPage", bundle: nil)
                             let VC = sb.instantiateInitialViewController() as! UINavigationController
                             self.presentViewController(VC, animated: true, completion: nil)
-
                         }
                 })
             }
@@ -119,11 +118,10 @@ class LogInViewController: UIViewController {
             if authData == nil {
                 print("No one is home")
             } else {
-                print("Someone is home, \(authData.providerData["displayName"]!) to be specific")
                 self.updateUIAndSetCurrentUser(authData)
-//                let sb = UIStoryboard(name: "LandingPage", bundle: nil)
-//                let VC = sb.instantiateInitialViewController() as! UINavigationController
-//                self.presentViewController(VC, animated: true, completion: nil)              
+                let sb = UIStoryboard(name: "LandingPage", bundle: nil)
+                let VC = sb.instantiateInitialViewController() as! UINavigationController
+                self.presentViewController(VC, animated: true, completion: nil)              
             }
         }
     }

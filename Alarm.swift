@@ -27,7 +27,7 @@ struct Alarm {
     let addedByUser: String!
     
     let ref: Firebase?
-    let dateFormatter: NSDateFormatter = NSDateFormatter()
+    let dateFormatter = NSDateFormatter()
     
     var members: [String]?
     
@@ -63,8 +63,7 @@ struct Alarm {
         self.storageFormat = true
         members = snapshot.value["members"] as? Array
     }
-    
-    
+        
     mutating func toDisplayFormat() -> Void {
         self.dateFormatter.dateFormat = "EEE, MMM dd"
         let dateShort = dateFormatter.stringFromDate(alarmTime)
@@ -87,7 +86,7 @@ struct Alarm {
         self.storageFormat = true
     }
     
-    func toAnyObject() -> AnyObject {
+    mutating func toAnyObject() -> AnyObject {
         return [
             "members": members as! AnyObject,
             "alarmTime": alarmString,
