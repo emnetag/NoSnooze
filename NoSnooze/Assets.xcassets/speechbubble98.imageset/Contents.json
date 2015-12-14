@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "Alarm Clock-25.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "speechbubble98.png",
       "scale" : "2x"
     },
     {

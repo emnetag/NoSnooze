@@ -44,6 +44,7 @@ class LogInViewController: UIViewController {
         self.ref.unauth()
         self.facebookLogin.logOut()
         updateUIAndSetCurrentUser(nil)
+        self.loginButton.setTitle("Log In With Facebook", forState: .Normal)
     }
     
     func updateUIAndSetCurrentUser(currentUser: FAuthData?) -> Void {
@@ -54,7 +55,7 @@ class LogInViewController: UIViewController {
             self.loginStatusLabel.hidden = true
             self.loginButton.hidden = false
             self.logoutButton.hidden = true
-            self.loginButton.setTitle("Log in with Facebook", forState: .Normal)
+            
         } else {
             var statusText = ""
             
@@ -123,6 +124,7 @@ class LogInViewController: UIViewController {
         self.ref.observeAuthEventWithBlock { (authData) -> Void in
             if authData == nil {
                 print("No one is home")
+                self.logoutButton.hidden = true
             } else {
                 self.updateUIAndSetCurrentUser(authData)
                 //let sb = UIStoryboard(name: "LandingPage", bundle: nil)

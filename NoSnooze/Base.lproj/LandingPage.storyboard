@@ -272,7 +272,7 @@
         <scene sceneID="q7E-dV-New">
             <objects>
                 <navigationController id="ioW-Cy-ITh" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="My Alarms" image="Alarm Clock-25" id="WzL-3K-lML"/>
+                    <tabBarItem key="tabBarItem" title="My Alarms" image="clocks26" id="WzL-3K-lML"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="uGF-z0-GRI">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -365,7 +365,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Chat" image="Chat Filled-25" id="1fk-3b-a7m"/>
+                    <tabBarItem key="tabBarItem" title="Chat" image="speechbubble98" id="1fk-3b-a7m"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zzP-m2-iM5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -376,7 +376,7 @@
         <scene sceneID="nrH-Gi-2Ic">
             <objects>
                 <navigationController title="Invites" automaticallyAdjustsScrollViewInsets="NO" id="Q3Z-gJ-jq7" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Invites" image="Inbox-25" id="PgW-4p-Kck"/>
+                    <tabBarItem key="tabBarItem" title="Invites" image="tray9" id="PgW-4p-Kck"/>
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="tzU-nE-hPa">
@@ -394,8 +394,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Alarm Clock-25" width="25" height="25"/>
-        <image name="Chat Filled-25" width="25" height="25"/>
-        <image name="Inbox-25" width="25" height="25"/>
+        <image name="clocks26" width="32" height="32"/>
+        <image name="speechbubble98" width="32" height="32"/>
+        <image name="tray9" width="32" height="32"/>
     </resources>
 </document>
