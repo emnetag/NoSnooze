@@ -177,7 +177,13 @@ class HomeAlarmTableVC: UITableViewController {
         var currentAlarm = self.alarms[indexPath.row]
         currentAlarm.toDisplayFormat()
         cell.AlarmText.text = "\(currentAlarm.alarmString)"
-        cell.CutoffTime.text = "Snooze Time: \(currentAlarm.cutoffString)"
+        
+        let text: NSString = "\(currentAlarm.name), Snooze Time: \(currentAlarm.cutoffString)"
+        let attributedText: NSMutableAttributedString = NSMutableAttributedString(string: text as String)
+        
+        attributedText.addAttributes([NSFontAttributeName: UIFont.boldSystemFontOfSize(15)], range: NSRange(location: 0, length: (currentAlarm.name! as! NSString).length))
+
+        cell.CutoffTime.attributedText = attributedText
         return cell
     }
 }
