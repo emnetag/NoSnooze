@@ -96,61 +96,38 @@ class HomeAlarmTableVC: UITableViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        
-//        var invite: Invite?
-//        self.myInvitesRef.observeSingleEventOfType(.ChildAdded, withBlock: { inviteSnap in
-//            
-//            if inviteSnap.hasChildren() {
-//                invite = Invite(snapshot: inviteSnap)
-//                print("I have been invited to \(invite!.alarmID!)")
-//                
-//                let tempRef = self.alarmsRef.childByAppendingPath(invite!.alarmID!)
-//
-//                tempRef.observeSingleEventOfType(.Value, withBlock: {alarmSnap in
-//                    
-//                    let alarm = Alarm(snapshot: alarmSnap)
-//                    print(alarm.addedByUser!)
-//                    
-//                    //show Alert Controller
-//                    self.showAlertForAlarm(alarm, alarmID: invite!.alarmID!, inviteID: invite!.inviteID!)
-//                    
-//                })
-//            } else {
-//                print("No invites for now")
-//            }
-//        })
     }
     
-    func showAlertForAlarm(alarm: Alarm, alarmID: String, inviteID: String) {
-        print("Showing alert...")
-        
-        self.usersRef.childByAppendingPath(alarm.addedByUser!).observeSingleEventOfType(.Value, withBlock: {userSnap in
-            let userName = userSnap.value["displayName"] as! String
-            
-            let inviteMessage = "\(userName) invited you to their alarm. Would you like to join?"
-            
-            let alertController = UIAlertController(title: "Alarm Invitation", message: inviteMessage, preferredStyle: .Alert)
-
-            // User rejected alarm
-            alertController.addAction(UIAlertAction(title: "Nope", style: .Cancel, handler: {(alert: UIAlertAction!) in
-                print("Invite was declined")
+//    func showAlertForAlarm(alarm: Alarm, alarmID: String, inviteID: String) {
+//        print("Showing alert...")
+//        
+//        self.usersRef.childByAppendingPath(alarm.addedByUser!).observeSingleEventOfType(.Value, withBlock: {userSnap in
+//            let userName = userSnap.value["displayName"] as! String
+//            
+//            let inviteMessage = "\(userName) invited you to their alarm. Would you like to join?"
+//            
+//            let alertController = UIAlertController(title: "Alarm Invitation", message: inviteMessage, preferredStyle: .Alert)
+//
+//            // User rejected alarm
+//            alertController.addAction(UIAlertAction(title: "Nope", style: .Cancel, handler: {(alert: UIAlertAction!) in
+//                print("Invite was declined")
+////                self.invitesRef.childByAppendingPath(inviteID).removeValue()
+//            }))
+//            
+//            // User accepts alarm
+//            alertController.addAction(UIAlertAction(title: "Okay", style: .Default, handler: {(alert: UIAlertAction!) in
+//                print("Invite was acccepted")
+//                
+//                // Alarm is saved to /users/userid/alarms/alarmid
+////                self.myAlarmsRef.childByAppendingPath(alarmID).setValue(alarm.toAnyObject())
+//                
+//                //Removte invite for user
 //                self.invitesRef.childByAppendingPath(inviteID).removeValue()
-            }))
-            
-            // User accepts alarm
-            alertController.addAction(UIAlertAction(title: "Okay", style: .Default, handler: {(alert: UIAlertAction!) in
-                print("Invite was acccepted")
-                
-                // Alarm is saved to /users/userid/alarms/alarmid
-//                self.myAlarmsRef.childByAppendingPath(alarmID).setValue(alarm.toAnyObject())
-                
-                //Removte invite for user
-                self.invitesRef.childByAppendingPath(inviteID).removeValue()
-            }))
-            
-            self.presentViewController(alertController, animated: true, completion: nil)
-        })
-    }
+//            }))
+//            
+//            self.presentViewController(alertController, animated: true, completion: nil)
+//        })
+//    }
     
     
     
@@ -173,9 +150,14 @@ class HomeAlarmTableVC: UITableViewController {
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             // Delete the row from the data source
+            let alarmKey = alarms[indexPath.row].ref!.key!
             alarms[indexPath.row].ref!.removeValue()
-            alarms.removeAtIndex(indexPath.row)
             
+            // Delete from /alarms/alarmID as well
+            self.alarmsRef.childByAppendingPath(alarmKey).removeValue()
+            
+            alarms.removeAtIndex(indexPath.row)
+
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Left)
             
             tableView.reloadData()
