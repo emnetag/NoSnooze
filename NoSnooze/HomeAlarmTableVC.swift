@@ -29,6 +29,8 @@ class HomeAlarmTableVC: UITableViewController {
     
     var keys: [String]!
     
+    //var timer:[(name: Alarm, value: NSTimer)] = []
+    
     @IBAction func unwindToAlarmHome(segue: UIStoryboardSegue) {
         
     }
@@ -74,11 +76,12 @@ class HomeAlarmTableVC: UITableViewController {
                 self.tableView.reloadData()
             })
         })
-    
+        
         var invite: Invite?
         self.myInvitesRef.observeSingleEventOfType(.ChildAdded, withBlock: { inviteSnap in
             
             if inviteSnap.hasChildren() {
+                
                 invite = Invite(snapshot: inviteSnap)
                 print("I have been invited to \(invite!.alarmID!)")
                 
@@ -165,6 +168,7 @@ class HomeAlarmTableVC: UITableViewController {
             
             tableView.reloadData()
         }
+        // NSLog("Why hello: DIS HOW MANY ALARMS YOU GOT! \(alarms.count)")
     }
     
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool
@@ -178,9 +182,14 @@ class HomeAlarmTableVC: UITableViewController {
         
         //format cell here
         var currentAlarm = self.alarms[indexPath.row]
+        /*var s = NSTimer()
+        timer.append(name: currentAlarm, value: currentAlarm.alarmTime.timeIntervalSinceNow)
+        NSLog("HELLO 2 ALL \(self.alarms[0].dateFormatter.description)")
+        NSLog("HELLO 3 ALL \(self.alarms[0].alarmTime.timeIntervalSinceNow)") */
         currentAlarm.toDisplayFormat()
         cell.AlarmText.text = "\(currentAlarm.alarmString)"
         cell.CutoffTime.text = "Snooze Time: \(currentAlarm.cutoffString)"
+       // NSLog("Why hello: DIS HOW MANY ALARMS YOU GOT! \(alarms.count)")
         return cell
     }
 }
