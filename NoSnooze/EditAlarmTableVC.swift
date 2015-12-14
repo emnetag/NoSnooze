@@ -21,7 +21,7 @@ class EditAlarmTableVC: UITableViewController {
     var alarmLabel = "Alarm"
     
     var currentUser: User!
-    var alarmMembers: [String]!
+    var alarmMembers = [String]()
     var alarmStruct: Alarm!
     
     let rootRef = Firebase(url: "https://nosnooze.firebaseio.com")
@@ -64,7 +64,7 @@ class EditAlarmTableVC: UITableViewController {
         
         var numFriends = 0
         
-        if minFriends.text! != "" {
+        if minFriends.text!.isEmpty == false {
             numFriends = NSNumberFormatter().numberFromString(minFriends.text!)!.integerValue
             if numFriends > alarmMembers.count {
                 valid = false
@@ -82,6 +82,7 @@ class EditAlarmTableVC: UITableViewController {
             self.presentViewController(alertController, animated: true, completion: nil)
         }
         
+        
         if cutoffTime.timeIntervalSince1970 > alarmTime.timeIntervalSince1970 && valid {
 
             print("Saving Alarm...")
@@ -92,17 +93,14 @@ class EditAlarmTableVC: UITableViewController {
                 newAlarm.toStorageFormat()
             }
 
-            //Saves new alarm
+            //Saves reference to alarm in /users/currentUserID/alarms/autoID
             let userRef = Firebase(url: "https://nosnooze.firebaseio.com/users").childByAppendingPath(currentUser.uid!)
-            
             let newAlarmRef = userRef.childByAppendingPath("alarms").childByAutoId()
-            
-            //New alarm saved to firebaseio.com/users/userID/alarms/autoID
-            
-            newAlarmRef.setValue(newAlarm.toAnyObject())
-
             let alarmKey = newAlarmRef.key!
-            print("Alarm Key = \(alarmKey)")
+            newAlarmRef.setValue([alarmKey : true])
+            
+            // Saves actual alarm inside /alarms/alarmID
+            rootRef.childByAppendingPath("alarms").childByAppendingPath(alarmKey).setValue(newAlarm.toAnyObject())
             
             //Sends invites to new alarm if there are any
             sendInvites(newAlarm.members!, alarmID: alarmKey)
@@ -116,7 +114,8 @@ class EditAlarmTableVC: UITableViewController {
             self.presentViewController(alertController, animated: true, completion: nil)
 
         }
-        
+
+    
     }
     
     func sendInvites(members: [String], alarmID: String) {

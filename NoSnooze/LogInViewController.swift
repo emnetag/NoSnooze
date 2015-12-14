@@ -98,10 +98,11 @@ class LogInViewController: UIViewController {
                                 "displayName": authData.providerData["displayName"]!,
                                 "uid": authData.uid
                             ]
+                            
                             print("Added user \(newUser["displayName"]))")
                             
                             self.ref.childByAppendingPath("users")
-                               .childByAppendingPath(authData.uid).setValue(newUser)
+                               .childByAppendingPath(authData.uid).updateChildValues(newUser)
                             
                             let sb = UIStoryboard(name: "LandingPage", bundle: nil)
                             let VC = sb.instantiateInitialViewController() as! UINavigationController

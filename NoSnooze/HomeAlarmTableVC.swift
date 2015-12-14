@@ -16,12 +16,18 @@ class HomeAlarmTableVC: UITableViewController {
     var currentUser: User!
     
     var rootRef: Firebase!
-    var alarmRef: Firebase!
-    var invitesRef: Firebase!
+    
+    var alarmsRef: Firebase!
+    
+    var myAlarmsRef: Firebase!
+    
+    var myInvitesRef: Firebase!
+    
     var usersRef: Firebase!
     
     var alarmHandle: UInt!
-    var invitesHandle: UInt!
+    
+    var keys: [String]!
     
     @IBAction func unwindToAlarmHome(segue: UIStoryboardSegue) {
         
@@ -30,21 +36,25 @@ class HomeAlarmTableVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.rootRef = Firebase(url: "https://nosnooze.firebaseio.com/")
-
+        
         self.rootRef.observeAuthEventWithBlock { (authData) -> Void in
             if authData != nil {
+                
                 self.currentUser = User(authData: authData)
+                
                 //usersRef = /users
                 self.usersRef = Firebase(url: "https://nosnooze.firebaseio.com/users")
                 
-                //alarmRef = /users/userID/alarms
-                self.alarmRef = self.usersRef.childByAppendingPath(authData.uid!).childByAppendingPath("alarms")
+                //alarmsRef = /alarms
+                self.alarmsRef = Firebase(url: "https://nosnooze.firebaseio.com/alarms")
                 
-                //inviteRef = /invites/userID
-                self.invitesRef = Firebase(url: "https://nosnooze.firebaseio.com/invites/").childByAppendingPath(authData.uid!)
+                //myAlarmsRef = /users/userID/alarms
+                self.myAlarmsRef = self.usersRef.childByAppendingPath(authData.uid!).childByAppendingPath("alarms")
                 
-                print("Invites ref key is \(self.invitesRef.key)")
+                //myInvitesRef = /invites/userID
+                self.myInvitesRef = Firebase(url: "https://nosnooze.firebaseio.com/invites/").childByAppendingPath(authData.uid!)
             } else {
                 print("Auth Data is nil")
             }
@@ -55,40 +65,38 @@ class HomeAlarmTableVC: UITableViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        
-        alarmHandle = self.alarmRef
-            .observeEventType(.Value, withBlock: { snapshot in
-                
-                var newAlarms = [Alarm]()
-                    
-                for item in snapshot.children {
-                    let alarmUnit = Alarm(snapshot: item as! FDataSnapshot)
-                    newAlarms.append(alarmUnit)
-                }
-                self.alarms = newAlarms
+        alarmHandle = self.myAlarmsRef.observeEventType(.ChildAdded, withBlock: { snapshot in
+            let alarmKey = snapshot.key
+            self.alarms = [Alarm]()
+            self.alarmsRef.childByAppendingPath(alarmKey).observeSingleEventOfType(.Value, withBlock: {snapshot in
+                let newAlarm = Alarm(snapshot: snapshot)
+                self.alarms.append(newAlarm)
                 self.tableView.reloadData()
+            })
         })
-        
-//        var invite: Invite?
-//        invitesHandle = self.invitesRef?.observeEventType(.ChildAdded, withBlock: { inviteSnap in
-//            if inviteSnap != nil {
-//                invite = Invite(snapshot: inviteSnap)
-//                print("I have been invited to \(invite!.alarmID!)")
-//                
-//                let tempRef = self.alarmRef.childByAppendingPath(invite!.alarmID!)
-//                
-//                tempRef.observeSingleEventOfType(.Value, withBlock: {alarmSnap in
-//                    let alarm = Alarm(snapshot: alarmSnap)
-//                    print(alarm.addedByUser!)
-//                    
-//                    //show Alert Controller
-//                    self.showAlertForAlarm(alarm, alarmID: invite!.alarmID!, inviteID: invite!.inviteID)
-//                    
-//                })
-//            } else {
-//                print("No invites for now")
-//            }
-//        })
+    
+        var invite: Invite?
+        self.myInvitesRef.observeSingleEventOfType(.ChildAdded, withBlock: { inviteSnap in
+            
+            if inviteSnap.hasChildren() {
+                invite = Invite(snapshot: inviteSnap)
+                print("I have been invited to \(invite!.alarmID!)")
+                
+                let tempRef = self.alarmsRef.childByAppendingPath(invite!.alarmID!)
+                
+                tempRef.observeSingleEventOfType(.Value, withBlock: {alarmSnap in
+                    
+                    let alarm = Alarm(snapshot: alarmSnap)
+                    print(alarm.addedByUser!)
+                    
+                    //show Alert Controller
+                    self.showAlertForAlarm(alarm, alarmID: invite!.alarmID!, inviteID: invite!.inviteID!)
+                    
+                })
+            } else {
+                print("No invites for now")
+            }
+        })
     }
     
     func showAlertForAlarm(alarm: Alarm, alarmID: String, inviteID: String) {
@@ -104,7 +112,7 @@ class HomeAlarmTableVC: UITableViewController {
             alertController.addAction(UIAlertAction(title: "Nope", style: .Cancel, handler: {(alert: UIAlertAction!) in
                 // User cancelled alarm
                 print("Invite was declined")
-                self.invitesRef.childByAppendingPath(inviteID).removeValue()
+                self.myInvitesRef.childByAppendingPath(inviteID).removeValue()
             }))
             
             alertController.addAction(UIAlertAction(title: "Okay", style: .Default, handler: {(alert: UIAlertAction!) in
@@ -112,13 +120,12 @@ class HomeAlarmTableVC: UITableViewController {
                 // User accepts alarm
                 
                 // Alarm is saved to /users/userid/alarms/alarmid
-                self.usersRef
-                    .childByAppendingPath(self.currentUser.uid!)
+                self.usersRef.childByAppendingPath(self.currentUser.uid!)
                     .childByAppendingPath("alarms")
-                    .childByAppendingPath(alarmID).setValue(alarm.toAnyObject())
+                    .childByAppendingPath(alarmID).setValue(["\(alarmID)": true])
                 
                 //Removte invite for user
-                self.invitesRef.childByAppendingPath(inviteID).removeValue()
+                self.myInvitesRef.childByAppendingPath(inviteID).removeValue()
             }))
             
             self.presentViewController(alertController, animated: true, completion: nil)
@@ -127,9 +134,7 @@ class HomeAlarmTableVC: UITableViewController {
     
     
     override func viewDidDisappear(animated: Bool) {
-        super.viewDidAppear(animated)
-        alarmRef.removeObserverWithHandle(alarmHandle)
-//        invitesRef.removeObserverWithHandle(invitesHandle)
+        super.viewDidDisappear(animated)
     }
     
     override func didReceiveMemoryWarning() {
@@ -151,9 +156,13 @@ class HomeAlarmTableVC: UITableViewController {
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             // Delete the row from the data source
+            
             alarms[indexPath.row].ref!.removeValue()
+            
             alarms.removeAtIndex(indexPath.row)
+            
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Left)
+            
             tableView.reloadData()
         }
     }
