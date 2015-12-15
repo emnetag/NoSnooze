@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="3ef-ZR-1ER">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="3ef-ZR-1ER">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
-        <!--Active Alarm-->
+        <!--Alarm View Controller-->
         <scene sceneID="d5g-at-cQl">
             <objects>
-                <viewController id="3ef-ZR-1ER" customClass="Active_Alarm" customModule="NoSnooze" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AlarmViewController" id="3ef-ZR-1ER" customClass="AlarmViewController" customModule="NoSnooze" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="DUX-Lk-0Ib"/>
                         <viewControllerLayoutGuide type="bottom" id="iLm-g4-fg9"/>
@@ -17,12 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Friends" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ced-oA-5nh">
-                                <rect key="frame" x="272" y="113" width="57" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oq3-Jh-5fI">
                                 <rect key="frame" x="206" y="451" width="187" height="30"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -39,50 +33,31 @@
                                     <action selector="readyPressed:" destination="3ef-ZR-1ER" eventType="touchUpInside" id="bZA-xO-b70"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KBs-0s-eY9">
-                                <rect key="frame" x="246" y="289" width="104" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LCt-NX-eDq">
-                                <rect key="frame" x="246" y="349" width="113" height="30"/>
-                                <state key="normal" title="start countdown"/>
-                                <connections>
-                                    <action selector="startTimer:" destination="3ef-ZR-1ER" eventType="touchUpInside" id="Ew1-wR-i2b"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Alarm Name!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FA7-Na-nSG">
                                 <rect key="frame" x="251" y="47" width="99" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xhL-1M-Wzf">
-                                <rect key="frame" x="283" y="379" width="39" height="30"/>
-                                <state key="normal" title="Reset"/>
-                                <connections>
-                                    <action selector="resetTimer:" destination="3ef-ZR-1ER" eventType="touchUpInside" id="mrJ-zx-VUR"/>
-                                </connections>
-                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Friends" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ced-oA-5nh">
+                                <rect key="frame" x="272" y="113" width="57" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="FA7-Na-nSG" firstAttribute="centerX" secondItem="nAD-XL-ZsW" secondAttribute="centerX" id="A09-7w-ZpN"/>
-                            <constraint firstItem="LCt-NX-eDq" firstAttribute="centerX" secondItem="nAD-XL-ZsW" secondAttribute="centerX" id="Ih1-JX-qRz"/>
                             <constraint firstItem="oq3-Jh-5fI" firstAttribute="centerX" secondItem="nAD-XL-ZsW" secondAttribute="centerX" id="NwX-j4-hKS"/>
-                            <constraint firstItem="xhL-1M-Wzf" firstAttribute="centerX" secondItem="nAD-XL-ZsW" secondAttribute="centerX" id="VSJ-QI-D1s"/>
                             <constraint firstItem="ced-oA-5nh" firstAttribute="centerX" secondItem="nAD-XL-ZsW" secondAttribute="centerX" id="dIG-Xd-6qz"/>
-                            <constraint firstItem="KBs-0s-eY9" firstAttribute="centerX" secondItem="nAD-XL-ZsW" secondAttribute="centerX" id="nmL-4a-Fil"/>
                             <constraint firstItem="WyZ-0l-ayd" firstAttribute="centerX" secondItem="nAD-XL-ZsW" secondAttribute="centerX" id="rdO-oN-3pI"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="alarmName" destination="FA7-Na-nSG" id="HD2-qa-yJ7"/>
-                        <outlet property="countdown" destination="LCt-NX-eDq" id="0vD-JO-fXf"/>
                         <outlet property="readyUp" destination="WyZ-0l-ayd" id="5KB-yy-SRr"/>
                         <outlet property="snoozeButton" destination="oq3-Jh-5fI" id="uqG-OJ-M6C"/>
-                        <outlet property="thatime" destination="KBs-0s-eY9" id="vsE-KL-uqD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qz4-wE-xwX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -102,7 +77,7 @@
                                 <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="q3U-gZ-N2w" id="V1y-Yi-ohk">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>

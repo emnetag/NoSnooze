@@ -56,13 +56,19 @@ class HomeAlarmTableVC: UITableViewController {
     
     func timerDidEnd(timer:NSTimer){
         timeCount = timeCount - timeInterval
-       // NSLog("TIMER: \(timeCount)")
+        NSLog("Time Count: \(timeCount) interval: \(timeInterval)")
         if timeCount <= 0 {
-            //timer2.
+            var alarmer:Alarm!
+            for timeTuple in timer2 {
+                if(timeTuple.name == timer) {
+                    alarmer = timeTuple.value
+                }
+            }
             let sb = UIStoryboard(name: "AlarmActive", bundle: nil)
-            let VC = sb.instantiateInitialViewController() as UIViewController!
-            self.presentViewController(VC, animated: true, completion: nil)
+            let VC = sb.instantiateViewControllerWithIdentifier("AlarmViewController") as UIViewController! as! AlarmViewController
+            VC.currAlarm = alarmer
             timer.invalidate()
+            self.presentViewController(VC, animated: true, completion: nil)
         }
     }
     override func viewWillAppear(animated: Bool) {
@@ -127,21 +133,28 @@ class HomeAlarmTableVC: UITableViewController {
         })
         NSLog("HUE HUE HUE HUE HUE \(alarms.count)")
         timer2.removeAll()
-        for alarm1 in self.alarms {
-            if(alarm1.alarmTime.timeIntervalSinceNow < 86400 && alarm1.alarmTime.timeIntervalSinceNow > 0) {
-                NSLog("This is the alarm time for \(alarm1.name): \(alarm1.alarmTime.timeIntervalSinceNow)")
-                var timer3:NSTimer = timer
+        if(self.alarms.count > 1) {
+            self.alarms = self.alarms.sort({ $0.alarmTime.timeIntervalSinceNow < $1.alarmTime.timeIntervalSinceNow })
+        }
+        var index = 0
+        var found = false
+        while(index < alarms.count && !found) {
+            if(alarms[index].alarmTime.timeIntervalSinceNow < 86400 && alarms[index].alarmTime.timeIntervalSinceNow > 0) {
+                found = true
+                NSLog("This is the alarm time for \(alarms[index].name): \(alarms[index].alarmTime.timeIntervalSinceNow)")
                 timeInterval = 0.05
-                timeCount = alarm1.alarmTime.timeIntervalSinceNow
-                timer3 = NSTimer.scheduledTimerWithTimeInterval(timeInterval,
+                timeCount = alarms[index].alarmTime.timeIntervalSinceNow
+                timer.invalidate()
+                timer = NSTimer.scheduledTimerWithTimeInterval(timeInterval,
                     target: self,
                     selector: "timerDidEnd:",
                     userInfo: "this",
                     repeats: true) //repeating timer in the second iteration
-                timer2.append((name: timer3, value: alarm1))
+                timer2.append((name: timer, value: alarms[index]))
                 //NSLog("\(timer2.description)")
                 
             }
+            index++
         }
         
     }

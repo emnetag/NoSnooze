@@ -218,7 +218,7 @@ class EditAlarmTableVC: UITableViewController {
         
         if(indexPath.row <= 1) {
         
-            cell = cells[indexPath.section][indexPath.row] as! UITableViewCell
+            cell = (cells[indexPath.section] as! NSArray)[indexPath.row] as! UITableViewCell
         
         } else if (indexPath.row == 2) {
             // Can create cell models here
