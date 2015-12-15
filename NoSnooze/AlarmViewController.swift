@@ -25,21 +25,25 @@ class AlarmViewController: UIViewController {
         super.viewDidLoad()
         timer.invalidate()
         let audioFilePath = NSBundle.mainBundle().pathForResource("alarm", ofType: "mp3")
-        alarmName.text = currAlarm.name
-        if(currAlarm.members != nil) {
-            var friends2 = ""
-            for member in currAlarm.members! {
-                friends2+=" \(member),"
-            }
+        if(currAlarm != nil) {
+            alarmName.text = currAlarm.name
+            if(currAlarm.members != nil) {
+                var friends2 = ""
+                for member in currAlarm.members! {
+                    friends2+=" \(member),"
+                }
             Friends.text = friends2
         }
-        timeCount = currAlarm.cutoffTime.timeIntervalSinceNow
-        Cutoff.text = timeString(timeCount)
-        timer = NSTimer.scheduledTimerWithTimeInterval(timeInterval,
-            target: self,
-            selector: "timerDidEnd:",
-            userInfo: "Timer",
-            repeats: true) 
+            if(currAlarm.cutoffTime != nil) {
+                timeCount = currAlarm.cutoffTime.timeIntervalSinceNow
+                Cutoff.text = timeString(timeCount)
+                timer = NSTimer.scheduledTimerWithTimeInterval(timeInterval,
+                    target: self,
+                    selector: "timerDidEnd:",
+                    userInfo: "Timer",
+                    repeats: true)
+            }
+        }
         if audioFilePath != nil {
             
             let audioFileUrl = NSURL.fileURLWithPath(audioFilePath!)
