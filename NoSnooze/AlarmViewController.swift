@@ -11,15 +11,27 @@ import AVFoundation
 
 class AlarmViewController: UIViewController {
     
+    @IBOutlet var Cutoff: UILabel!
     var audioPlayer:AVAudioPlayer!
     @IBOutlet var alarmName: UILabel!
     @IBOutlet var snoozeButton: UIButton!
     @IBOutlet var readyUp: UIButton!
     var currAlarm : Alarm!
+    var timer = NSTimer()
+    let timeInterval:NSTimeInterval = 0.05
+    var timeCount:NSTimeInterval = 0.0
     override func viewDidLoad() {
         super.viewDidLoad()
+        timer.invalidate()
         let audioFilePath = NSBundle.mainBundle().pathForResource("alarm", ofType: "mp3")
         alarmName.text = currAlarm.name
+        timeCount = currAlarm.cutoffTime.timeIntervalSinceNow
+        Cutoff.text = timeString(timeCount)
+        timer = NSTimer.scheduledTimerWithTimeInterval(timeInterval,
+            target: self,
+            selector: "timerDidEnd:",
+            userInfo: "Timer",
+            repeats: true) 
         if audioFilePath != nil {
             
             let audioFileUrl = NSURL.fileURLWithPath(audioFilePath!)
@@ -30,12 +42,33 @@ class AlarmViewController: UIViewController {
         }
         
     }
+    func timerDidEnd(timer:NSTimer){
+        timeCount = timeCount - timeInterval
+        if timeCount <= 0 {
+            timer.invalidate()
+            audioPlayer.stop()
+            let sb = UIStoryboard(name: "LandingPage", bundle: nil)
+            let VC = sb.instantiateInitialViewController() as UIViewController!
+            self.presentViewController(VC, animated: true, completion: nil)
+        } else {
+            Cutoff.text = timeString(timeCount)
+        }
+        
+    }
+    func timeString(time:NSTimeInterval) -> String {
+        let minutes = Int(time) / 60
+        //let seconds = Int(time) % 60
+        let seconds = time - Double(minutes) * 60
+        let secondsFraction = seconds - Double(Int(seconds))
+        return String(format:"%02i:%02i.%01i",minutes,Int(seconds),Int(secondsFraction * 10.0))
+    }
     
     @IBAction func snoozePressed(sender: AnyObject) {
         audioPlayer.stop()
     }
     @IBAction func readyPressed(sender: AnyObject) {
         audioPlayer.stop()
+        timer.invalidate()
         let sb = UIStoryboard(name: "LandingPage", bundle: nil)
         let VC = sb.instantiateInitialViewController() as UIViewController!
         self.presentViewController(VC, animated: true, completion: nil)

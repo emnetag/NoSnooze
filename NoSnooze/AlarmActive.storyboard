@@ -45,16 +45,30 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rSw-us-Yga">
+                                <rect key="frame" x="251" y="403" width="99" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time till Cutoff:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rb9-tY-0eO">
+                                <rect key="frame" x="238" y="374" width="122" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="FA7-Na-nSG" firstAttribute="centerX" secondItem="nAD-XL-ZsW" secondAttribute="centerX" id="A09-7w-ZpN"/>
+                            <constraint firstItem="rSw-us-Yga" firstAttribute="centerX" secondItem="nAD-XL-ZsW" secondAttribute="centerX" id="AmK-iE-HuM"/>
                             <constraint firstItem="oq3-Jh-5fI" firstAttribute="centerX" secondItem="nAD-XL-ZsW" secondAttribute="centerX" id="NwX-j4-hKS"/>
                             <constraint firstItem="ced-oA-5nh" firstAttribute="centerX" secondItem="nAD-XL-ZsW" secondAttribute="centerX" id="dIG-Xd-6qz"/>
                             <constraint firstItem="WyZ-0l-ayd" firstAttribute="centerX" secondItem="nAD-XL-ZsW" secondAttribute="centerX" id="rdO-oN-3pI"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="Cutoff" destination="rSw-us-Yga" id="twt-u0-ORg"/>
                         <outlet property="alarmName" destination="FA7-Na-nSG" id="HD2-qa-yJ7"/>
                         <outlet property="readyUp" destination="WyZ-0l-ayd" id="5KB-yy-SRr"/>
                         <outlet property="snoozeButton" destination="oq3-Jh-5fI" id="uqG-OJ-M6C"/>
@@ -63,34 +77,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qz4-wE-xwX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="150" y="351"/>
-        </scene>
-        <!--Table View Controller-->
-        <scene sceneID="F3d-J2-Bgx">
-            <objects>
-                <tableViewController id="myT-O1-49a" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ZsU-b5-f21">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCell" id="q3U-gZ-N2w">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="q3U-gZ-N2w" id="V1y-Yi-ohk">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="myT-O1-49a" id="jIg-K4-iR8"/>
-                            <outlet property="delegate" destination="myT-O1-49a" id="I1U-xS-oyz"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rsh-0L-Isa" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="150" y="1222"/>
         </scene>
     </scenes>
 </document>
