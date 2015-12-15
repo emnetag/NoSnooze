@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		54793CCE1C1FB9BD00F653E8 /* ViewInviteTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54793CCD1C1FB9BD00F653E8 /* ViewInviteTableVC.swift */; };
 		54AB74CD1C1A6C6900993BD4 /* AlarmTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AB74CC1C1A6C6900993BD4 /* AlarmTableViewCell.swift */; };
 		54E677131C113953003E14F1 /* LandingPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54E677111C113953003E14F1 /* LandingPage.storyboard */; };
 		9D54CBBD1C0E94A800A7AFBA /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D54CBB91C0E94A800A7AFBA /* FBSDKCoreKit.framework */; };
@@ -56,6 +57,7 @@
 
 /* Begin PBXFileReference section */
 		000450177A5F6754508F954E /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		54793CCD1C1FB9BD00F653E8 /* ViewInviteTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewInviteTableVC.swift; sourceTree = "<group>"; };
 		54AB74CC1C1A6C6900993BD4 /* AlarmTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmTableViewCell.swift; sourceTree = "<group>"; };
 		54E677121C113953003E14F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LandingPage.storyboard; sourceTree = "<group>"; };
 		5F7107326DDB52B2EC0ABE40 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 				CE85E5581C0E5C17003BC274 /* LogInViewController.swift */,
 				CEE6F06B1C1ED43B00FF466F /* InvitesTableViewController.swift */,
 				CE69B5A11C1132ED0042EEA7 /* EditAlarmTableVC.swift */,
+				54793CCD1C1FB9BD00F653E8 /* ViewInviteTableVC.swift */,
 				CE69B5A31C1132ED0042EEA7 /* HomeAlarmTableVC.swift */,
 				CE69B5A51C1132ED0042EEA7 /* LabelAlarmVC.swift */,
 				CEE442011C1A7E6C00EC6DB6 /* FriendsTableViewController.swift */,
@@ -419,6 +422,7 @@
 				CE69B5AB1C1132ED0042EEA7 /* LabelAlarmVC.swift in Sources */,
 				CE7D182B1C150AF400FC10EC /* Alarm.swift in Sources */,
 				CE85E5591C0E5C17003BC274 /* LogInViewController.swift in Sources */,
+				54793CCE1C1FB9BD00F653E8 /* ViewInviteTableVC.swift in Sources */,
 				CE85E5571C0E5C17003BC274 /* AppDelegate.swift in Sources */,
 				CEE6F06C1C1ED43B00FF466F /* InvitesTableViewController.swift in Sources */,
 				CEE6F06E1C1EDD0E00FF466F /* InviteTableViewCell.swift in Sources */,

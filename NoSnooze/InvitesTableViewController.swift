@@ -11,7 +11,7 @@ import Firebase
 
 class InvitesTableViewController: UITableViewController {
     var invites: [Alarm] = []
-    
+    var rawInvites : [Alarm] = []
     var rootRef: Firebase!
     
     var invitesRef: Firebase!
@@ -48,6 +48,7 @@ class InvitesTableViewController: UITableViewController {
                             self.alarmsRef.childByAppendingPath(myAlarmID).observeSingleEventOfType(.Value, withBlock: { alarmSnap in
                                 let alarm = Alarm(snapshot: alarmSnap)
                                 self.invites.append(alarm)
+                                self.rawInvites.append(alarm)
                                 print(self.invites.count)
                                 self.tableView.reloadData()
                             })
@@ -65,6 +66,7 @@ class InvitesTableViewController: UITableViewController {
         super.viewDidDisappear(animated)
         rootRef.removeAllObservers()
         invitesRef.removeAllObservers()
+        invites = []
     }
 
 
@@ -130,14 +132,17 @@ class InvitesTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        let destinationVC = segue.destinationViewController as! ViewInviteTableVC
+        let index = tableView.indexPathForSelectedRow!
+        destinationVC.alarm = rawInvites[index.row]
     }
-    */
+    
 
 }
