@@ -29,7 +29,10 @@ class HomeAlarmTableVC: UITableViewController {
     
     var keys: [String]!
     
-    //var timer:[(name: Alarm, value: NSTimer)] = []
+    var timer2:[(name: NSTimer, value: Alarm)] = []
+    var timer = NSTimer()
+    var timeInterval:NSTimeInterval = 0.0
+    var timeCount:NSTimeInterval =  0.0
     @IBAction func unwindToAlarmHome(segue: UIStoryboardSegue) {
         
     }
@@ -43,6 +46,25 @@ class HomeAlarmTableVC: UITableViewController {
         self.navigationItem.leftBarButtonItem = self.editButtonItem()
     }
     
+    func timeString(time:NSTimeInterval) -> String {
+        let minutes = Int(time) / 60
+        //let seconds = Int(time) % 60
+        let seconds = time - Double(minutes) * 60
+        let secondsFraction = seconds - Double(Int(seconds))
+        return String(format:"%02i:%02i.%01i",minutes,Int(seconds),Int(secondsFraction * 10.0))
+    }
+    
+    func timerDidEnd(timer:NSTimer){
+        timeCount = timeCount - timeInterval
+       // NSLog("TIMER: \(timeCount)")
+        if timeCount <= 0 {
+            //timer2.
+            let sb = UIStoryboard(name: "AlarmActive", bundle: nil)
+            let VC = sb.instantiateInitialViewController() as UIViewController!
+            self.presentViewController(VC, animated: true, completion: nil)
+            timer.invalidate()
+        }
+    }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         //ANYTHING THAT REQUIRES USERID HAS TO OCCUR INSIDE
@@ -103,6 +125,25 @@ class HomeAlarmTableVC: UITableViewController {
                 }
             })
         })
+        NSLog("HUE HUE HUE HUE HUE \(alarms.count)")
+        timer2.removeAll()
+        for alarm1 in self.alarms {
+            if(alarm1.alarmTime.timeIntervalSinceNow < 86400 && alarm1.alarmTime.timeIntervalSinceNow > 0) {
+                NSLog("This is the alarm time for \(alarm1.name): \(alarm1.alarmTime.timeIntervalSinceNow)")
+                var timer3:NSTimer = timer
+                timeInterval = 0.05
+                timeCount = alarm1.alarmTime.timeIntervalSinceNow
+                timer3 = NSTimer.scheduledTimerWithTimeInterval(timeInterval,
+                    target: self,
+                    selector: "timerDidEnd:",
+                    userInfo: "this",
+                    repeats: true) //repeating timer in the second iteration
+                timer2.append((name: timer3, value: alarm1))
+                //NSLog("\(timer2.description)")
+                
+            }
+        }
+        
     }
     
     
@@ -199,7 +240,6 @@ class HomeAlarmTableVC: UITableViewController {
             
             tableView.reloadData()
         }
-        // NSLog("Why hello: DIS HOW MANY ALARMS YOU GOT! \(alarms.count)")
     }
     
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool
@@ -213,14 +253,13 @@ class HomeAlarmTableVC: UITableViewController {
         
         //format cell here
         var currentAlarm = self.alarms[indexPath.row]
-        /*var s = NSTimer()
-        timer.append(name: currentAlarm, value: currentAlarm.alarmTime.timeIntervalSinceNow)
-        NSLog("HELLO 2 ALL \(self.alarms[0].dateFormatter.description)")
-        NSLog("HELLO 3 ALL \(self.alarms[0].alarmTime.timeIntervalSinceNow)") */
+        //var s = NSTimer()
+       // timer.append(name: currentAlarm, value: s)
+       // NSLog("HELLO 2 ALL \(self.alarms[0].dateFormatter.description)")
+        // NSLog("HELLO 3 ALL \(self.alarms[0].alarmTime.timeIntervalSinceNow)")
         currentAlarm.toDisplayFormat()
         cell.AlarmText.text = "\(currentAlarm.alarmString)"
         cell.CutoffTime.text = "Snooze Time: \(currentAlarm.cutoffString)"
-       // NSLog("Why hello: DIS HOW MANY ALARMS YOU GOT! \(alarms.count)")
         
         let text: NSString = "\(currentAlarm.name), Snooze Time: \(currentAlarm.cutoffString)"
         let attributedText: NSMutableAttributedString = NSMutableAttributedString(string: text as String)
