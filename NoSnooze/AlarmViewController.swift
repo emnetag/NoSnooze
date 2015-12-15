@@ -11,6 +11,7 @@ import AVFoundation
 
 class AlarmViewController: UIViewController {
     
+    @IBOutlet var Friends: UILabel!
     @IBOutlet var Cutoff: UILabel!
     var audioPlayer:AVAudioPlayer!
     @IBOutlet var alarmName: UILabel!
@@ -25,6 +26,13 @@ class AlarmViewController: UIViewController {
         timer.invalidate()
         let audioFilePath = NSBundle.mainBundle().pathForResource("alarm", ofType: "mp3")
         alarmName.text = currAlarm.name
+        if(currAlarm.members != nil) {
+            var friends2 = ""
+            for member in currAlarm.members! {
+                friends2+=" \(member),"
+            }
+            Friends.text = friends2
+        }
         timeCount = currAlarm.cutoffTime.timeIntervalSinceNow
         Cutoff.text = timeString(timeCount)
         timer = NSTimer.scheduledTimerWithTimeInterval(timeInterval,

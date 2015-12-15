@@ -39,8 +39,8 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Friends" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ced-oA-5nh">
-                                <rect key="frame" x="272" y="113" width="57" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Friends:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ced-oA-5nh">
+                                <rect key="frame" x="267" y="113" width="62" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -51,8 +51,14 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time till Cutoff:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rb9-tY-0eO">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Time till Cutoff:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rb9-tY-0eO">
                                 <rect key="frame" x="238" y="374" width="122" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="None" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VV6-KU-vOe">
+                                <rect key="frame" x="172" y="178" width="330" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -60,15 +66,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Rb9-tY-0eO" firstAttribute="centerX" secondItem="nAD-XL-ZsW" secondAttribute="centerX" id="7Qo-7d-jEm"/>
                             <constraint firstItem="FA7-Na-nSG" firstAttribute="centerX" secondItem="nAD-XL-ZsW" secondAttribute="centerX" id="A09-7w-ZpN"/>
                             <constraint firstItem="rSw-us-Yga" firstAttribute="centerX" secondItem="nAD-XL-ZsW" secondAttribute="centerX" id="AmK-iE-HuM"/>
                             <constraint firstItem="oq3-Jh-5fI" firstAttribute="centerX" secondItem="nAD-XL-ZsW" secondAttribute="centerX" id="NwX-j4-hKS"/>
                             <constraint firstItem="ced-oA-5nh" firstAttribute="centerX" secondItem="nAD-XL-ZsW" secondAttribute="centerX" id="dIG-Xd-6qz"/>
                             <constraint firstItem="WyZ-0l-ayd" firstAttribute="centerX" secondItem="nAD-XL-ZsW" secondAttribute="centerX" id="rdO-oN-3pI"/>
+                            <constraint firstItem="VV6-KU-vOe" firstAttribute="centerX" secondItem="nAD-XL-ZsW" secondAttribute="centerX" id="tmP-Az-bTD"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="Cutoff" destination="rSw-us-Yga" id="twt-u0-ORg"/>
+                        <outlet property="Friends" destination="VV6-KU-vOe" id="hpa-BF-xRz"/>
                         <outlet property="alarmName" destination="FA7-Na-nSG" id="HD2-qa-yJ7"/>
                         <outlet property="readyUp" destination="WyZ-0l-ayd" id="5KB-yy-SRr"/>
                         <outlet property="snoozeButton" destination="oq3-Jh-5fI" id="uqG-OJ-M6C"/>
