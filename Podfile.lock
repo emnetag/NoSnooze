@@ -3,15 +3,32 @@ PODS:
   - Firebase (2.4.3)
   - FirebaseUI/Core (0.3.1):
     - Firebase (~> 2.2)
+  - JSQMessagesViewController (5.3.2):
+    - JSQSystemSoundPlayer (= 1.5.2)
+  - JSQSystemSoundPlayer (1.5.2)
 
 DEPENDENCIES:
   - DatePickerCell
   - Firebase (>= 2.3.2)
   - FirebaseUI/Core (~> 0.3)
+  - JSQMessagesViewController (from `https://github.com/jessesquires/JSQMessagesViewController`,
+    branch `version_5.3.2_patch`)
+
+EXTERNAL SOURCES:
+  JSQMessagesViewController:
+    :branch: version_5.3.2_patch
+    :git: https://github.com/jessesquires/JSQMessagesViewController
+
+CHECKOUT OPTIONS:
+  JSQMessagesViewController:
+    :commit: 78b1797bc0ae273cf7a104853c8293acfaed174b
+    :git: https://github.com/jessesquires/JSQMessagesViewController
 
 SPEC CHECKSUMS:
   DatePickerCell: b2abd1f6ba08f01da11baee73a503d6dc33f3118
   Firebase: 48179995b561e2262c5d4060ecdffca45fbbff8b
   FirebaseUI: 62f01e067dcfc5c903d8b9cb7d77d03fa163c71a
+  JSQMessagesViewController: 6eedd009d4eabb6089ab7578130545899bea6c0f
+  JSQSystemSoundPlayer: 443466bd5f4537d0b7f15a0184244169ae65f8e5
 
 COCOAPODS: 0.39.0

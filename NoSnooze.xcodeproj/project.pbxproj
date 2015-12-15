@@ -18,6 +18,11 @@
 		AC74A85B1C2083E70009C2EF /* AlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC74A85A1C2083E70009C2EF /* AlarmViewController.swift */; };
 		AC74A85D1C2083EE0009C2EF /* alarm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AC74A85C1C2083EE0009C2EF /* alarm.mp3 */; };
 		B708C08B63CCCD1318823802 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 000450177A5F6754508F954E /* Pods.framework */; };
+		BE8226A51C20B44B007D9A1B /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8226A41C20B44B007D9A1B /* Group.swift */; };
+		BE8226A71C20B466007D9A1B /* GroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8226A61C20B466007D9A1B /* GroupTableViewCell.swift */; };
+		BE8226A91C20B492007D9A1B /* GroupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8226A81C20B492007D9A1B /* GroupTableViewController.swift */; };
+		BE8226AB1C20B6EC007D9A1B /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8226AA1C20B6EC007D9A1B /* MessagesViewController.swift */; };
+		BE8226AD1C20B71F007D9A1B /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8226AC1C20B71F007D9A1B /* Message.swift */; };
 		CE69B5A71C1132ED0042EEA7 /* EditAlarmTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE69B5A11C1132ED0042EEA7 /* EditAlarmTableVC.swift */; };
 		CE69B5A91C1132ED0042EEA7 /* HomeAlarmTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE69B5A31C1132ED0042EEA7 /* HomeAlarmTableVC.swift */; };
 		CE69B5AB1C1132ED0042EEA7 /* LabelAlarmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE69B5A51C1132ED0042EEA7 /* LabelAlarmVC.swift */; };
@@ -71,6 +76,12 @@
 		AC74A85A1C2083E70009C2EF /* AlarmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmViewController.swift; sourceTree = "<group>"; };
 		AC74A85C1C2083EE0009C2EF /* alarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = alarm.mp3; sourceTree = "<group>"; };
 		BB69201CCEF9598C1EB4A300 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		BE8226A41C20B44B007D9A1B /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		BE8226A61C20B466007D9A1B /* GroupTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupTableViewCell.swift; sourceTree = "<group>"; };
+		BE8226A81C20B492007D9A1B /* GroupTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupTableViewController.swift; sourceTree = "<group>"; };
+		BE8226AA1C20B6EC007D9A1B /* MessagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
+		BE8226AC1C20B71F007D9A1B /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Message.swift; path = NoSnooze/Message.swift; sourceTree = "<group>"; };
+		BE8226AE1C20B9A6007D9A1B /* FireChat-Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FireChat-Swift-Bridging-Header.h"; sourceTree = "<group>"; };
 		CE69B5A11C1132ED0042EEA7 /* EditAlarmTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditAlarmTableVC.swift; sourceTree = "<group>"; };
 		CE69B5A31C1132ED0042EEA7 /* HomeAlarmTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeAlarmTableVC.swift; sourceTree = "<group>"; };
 		CE69B5A51C1132ED0042EEA7 /* LabelAlarmVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelAlarmVC.swift; sourceTree = "<group>"; };
@@ -202,6 +213,10 @@
 				CEE765231C0ED8C30051C4BC /* NoSnooze-Bridging-Header.h */,
 				54AB74CC1C1A6C6900993BD4 /* AlarmTableViewCell.swift */,
 				CEE6F06D1C1EDD0E00FF466F /* InviteTableViewCell.swift */,
+				BE8226A61C20B466007D9A1B /* GroupTableViewCell.swift */,
+				BE8226A81C20B492007D9A1B /* GroupTableViewController.swift */,
+				BE8226AA1C20B6EC007D9A1B /* MessagesViewController.swift */,
+				BE8226AE1C20B9A6007D9A1B /* FireChat-Swift-Bridging-Header.h */,
 			);
 			path = NoSnooze;
 			sourceTree = "<group>";
@@ -230,6 +245,8 @@
 				CEFBAED31C0FDE50003EA6FE /* User.swift */,
 				CE7D182A1C150AF400FC10EC /* Alarm.swift */,
 				CEA693A31C1D0D3F00490467 /* Invite.swift */,
+				BE8226A41C20B44B007D9A1B /* Group.swift */,
+				BE8226AC1C20B71F007D9A1B /* Message.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -420,13 +437,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE69B5A91C1132ED0042EEA7 /* HomeAlarmTableVC.swift in Sources */,
+				BE8226A51C20B44B007D9A1B /* Group.swift in Sources */,
 				CEFBAED41C0FDE50003EA6FE /* User.swift in Sources */,
 				CEE442021C1A7E6C00EC6DB6 /* FriendsTableViewController.swift in Sources */,
+				BE8226A91C20B492007D9A1B /* GroupTableViewController.swift in Sources */,
 				CE69B5A71C1132ED0042EEA7 /* EditAlarmTableVC.swift in Sources */,
+				BE8226AD1C20B71F007D9A1B /* Message.swift in Sources */,
 				CEA693A41C1D0D3F00490467 /* Invite.swift in Sources */,
 				9D54CBC01C0E94A900A7AFBA /* README.md in Sources */,
 				AC74A85B1C2083E70009C2EF /* AlarmViewController.swift in Sources */,
 				CE69B5AC1C1132ED0042EEA7 /* ViewController.swift in Sources */,
+				BE8226AB1C20B6EC007D9A1B /* MessagesViewController.swift in Sources */,
+				BE8226A71C20B466007D9A1B /* GroupTableViewCell.swift in Sources */,
 				CE69B5AB1C1132ED0042EEA7 /* LabelAlarmVC.swift in Sources */,
 				CE7D182B1C150AF400FC10EC /* Alarm.swift in Sources */,
 				CE85E5591C0E5C17003BC274 /* LogInViewController.swift in Sources */,
