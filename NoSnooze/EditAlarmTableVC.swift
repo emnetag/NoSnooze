@@ -37,6 +37,7 @@ class EditAlarmTableVC: UITableViewController {
     }
     
     override func viewDidLoad() {
+                
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 44
         // The DatePickerCell.
@@ -72,6 +73,7 @@ class EditAlarmTableVC: UITableViewController {
     
     
     @IBAction func saveButton(sender: UIBarButtonItem) {
+        
         // Saves the date, time, friends, and alarm label
         print("Validating...")
         var valid : Bool = true
@@ -147,6 +149,9 @@ class EditAlarmTableVC: UITableViewController {
             //Sends invites to new alarm if there are any
             sendInvites(newAlarm.members!, alarmID: alarmKey)
             
+            
+            
+            
         } else {
             
             let alertController = UIAlertController(title: "Invalid Alarm Time", message:
@@ -172,6 +177,8 @@ class EditAlarmTableVC: UITableViewController {
                 "participating": false
             ])
         }
+        
+        self.navigationController?.popToRootViewControllerAnimated(true)
     }
     
     override func viewDidAppear(animated: Bool) {

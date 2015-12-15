@@ -22,6 +22,7 @@
 		CE69B5A91C1132ED0042EEA7 /* HomeAlarmTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE69B5A31C1132ED0042EEA7 /* HomeAlarmTableVC.swift */; };
 		CE69B5AB1C1132ED0042EEA7 /* LabelAlarmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE69B5A51C1132ED0042EEA7 /* LabelAlarmVC.swift */; };
 		CE69B5AC1C1132ED0042EEA7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE69B5A61C1132ED0042EEA7 /* ViewController.swift */; };
+		CE70793D1C20C4BD00CCE379 /* HomeTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE70793C1C20C4BD00CCE379 /* HomeTabBarViewController.swift */; };
 		CE7D182B1C150AF400FC10EC /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D182A1C150AF400FC10EC /* Alarm.swift */; };
 		CE85E5571C0E5C17003BC274 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE85E5561C0E5C17003BC274 /* AppDelegate.swift */; };
 		CE85E5591C0E5C17003BC274 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE85E5581C0E5C17003BC274 /* LogInViewController.swift */; };
@@ -75,6 +76,7 @@
 		CE69B5A31C1132ED0042EEA7 /* HomeAlarmTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeAlarmTableVC.swift; sourceTree = "<group>"; };
 		CE69B5A51C1132ED0042EEA7 /* LabelAlarmVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelAlarmVC.swift; sourceTree = "<group>"; };
 		CE69B5A61C1132ED0042EEA7 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CE70793C1C20C4BD00CCE379 /* HomeTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTabBarViewController.swift; sourceTree = "<group>"; };
 		CE7D182A1C150AF400FC10EC /* Alarm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alarm.swift; sourceTree = "<group>"; };
 		CE85E5531C0E5C17003BC274 /* NoSnooze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoSnooze.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE85E5561C0E5C17003BC274 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 				CEE765231C0ED8C30051C4BC /* NoSnooze-Bridging-Header.h */,
 				54AB74CC1C1A6C6900993BD4 /* AlarmTableViewCell.swift */,
 				CEE6F06D1C1EDD0E00FF466F /* InviteTableViewCell.swift */,
+				CE70793C1C20C4BD00CCE379 /* HomeTabBarViewController.swift */,
 			);
 			path = NoSnooze;
 			sourceTree = "<group>";
@@ -421,6 +424,7 @@
 			files = (
 				CE69B5A91C1132ED0042EEA7 /* HomeAlarmTableVC.swift in Sources */,
 				CEFBAED41C0FDE50003EA6FE /* User.swift in Sources */,
+				CE70793D1C20C4BD00CCE379 /* HomeTabBarViewController.swift in Sources */,
 				CEE442021C1A7E6C00EC6DB6 /* FriendsTableViewController.swift in Sources */,
 				CE69B5A71C1132ED0042EEA7 /* EditAlarmTableVC.swift in Sources */,
 				CEA693A41C1D0D3F00490467 /* Invite.swift in Sources */,
