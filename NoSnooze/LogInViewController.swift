@@ -17,7 +17,7 @@ class LogInViewController: UIViewController {
 
     @IBOutlet var loginButton: UIButton!
     @IBOutlet var logoutButton: UIButton!
-    @IBOutlet var loginStatusLabel: UILabel!
+    
     
     var currentUser: FAuthData!
     var ref = Firebase(url: "https://nosnooze.firebaseIO.com/")
@@ -26,10 +26,6 @@ class LogInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.loginStatusLabel.hidden = true
-        self.loginStatusLabel.lineBreakMode = .ByWordWrapping
-        self.loginStatusLabel.numberOfLines = 0
         
         //self.logoutButton.hidden = true
         
@@ -52,25 +48,20 @@ class LogInViewController: UIViewController {
         
         if self.currentUser == nil {
             print("CurrentUser is nil")
-            self.loginStatusLabel.hidden = true
             self.loginButton.hidden = false
             self.logoutButton.hidden = true
             
         } else {
-            var statusText = ""
-            
             if currentUser?.provider == "facebook" {
-                statusText = "Logged in as \(currentUser!.providerData["displayName"]!) (Facebook)"
+                self.loginButton.setTitle("Log in as \(currentUser!.providerData["displayName"]!)", forState: .Normal)
+                
+                //show the logout button
+                self.logoutButton.hidden = false
+                
+                //hide the login button for now
+                //self.loginButton.hidden = true
             }
-            self.loginButton.setTitle("Log in as \(currentUser!.providerData["displayName"]!)", forState: .Normal)
-            self.loginStatusLabel.text = statusText
-            self.loginStatusLabel.hidden = false
-            
-            //show the logout button
-            self.logoutButton.hidden = false
-            
-            //hide the login button for now
-            //self.loginButton.hidden = true
+
         }
     }
     

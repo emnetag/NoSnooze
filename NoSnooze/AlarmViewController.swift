@@ -13,18 +13,26 @@ class AlarmViewController: UIViewController {
     
     @IBOutlet var Friends: UILabel!
     @IBOutlet var Cutoff: UILabel!
+    
     var audioPlayer:AVAudioPlayer!
+    
+    
     @IBOutlet var alarmName: UILabel!
     @IBOutlet var snoozeButton: UIButton!
     @IBOutlet var readyUp: UIButton!
+    
     var currAlarm : Alarm!
     var timer = NSTimer()
     let timeInterval:NSTimeInterval = 0.05
     var timeCount:NSTimeInterval = 0.0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         timer.invalidate()
+        
         let audioFilePath = NSBundle.mainBundle().pathForResource("alarm", ofType: "mp3")
+        
         if(currAlarm != nil) {
             alarmName.text = currAlarm.name
             if(currAlarm.members != nil) {
@@ -44,6 +52,7 @@ class AlarmViewController: UIViewController {
                     repeats: true)
             }
         }
+        
         if audioFilePath != nil {
             
             let audioFileUrl = NSURL.fileURLWithPath(audioFilePath!)
@@ -54,6 +63,7 @@ class AlarmViewController: UIViewController {
         }
         
     }
+    
     func timerDidEnd(timer:NSTimer){
         timeCount = timeCount - timeInterval
         if timeCount <= 0 {
@@ -67,6 +77,7 @@ class AlarmViewController: UIViewController {
         }
         
     }
+    
     func timeString(time:NSTimeInterval) -> String {
         let minutes = Int(time) / 60
         //let seconds = Int(time) % 60
@@ -78,6 +89,7 @@ class AlarmViewController: UIViewController {
     @IBAction func snoozePressed(sender: AnyObject) {
         audioPlayer.stop()
     }
+    
     @IBAction func readyPressed(sender: AnyObject) {
         audioPlayer.stop()
         timer.invalidate()

@@ -131,6 +131,8 @@ class HomeAlarmTableVC: UITableViewController {
                 }
             })
         })
+        
+        
         NSLog("HUE HUE HUE HUE HUE \(alarms.count)")
         timer2.removeAll()
         if(self.alarms.count > 1) {

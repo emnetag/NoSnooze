@@ -182,7 +182,10 @@
 		CE85E5551C0E5C17003BC274 /* NoSnooze */ = {
 			isa = PBXGroup;
 			children = (
+				CE85E55F1C0E5C17003BC274 /* LaunchScreen.storyboard */,
 				54E677111C113953003E14F1 /* LandingPage.storyboard */,
+				AC20819C1C1A5AF300550F3A /* AlarmActive.storyboard */,
+				CE85E55A1C0E5C17003BC274 /* Main.storyboard */,
 				CE85E5561C0E5C17003BC274 /* AppDelegate.swift */,
 				CE85E5581C0E5C17003BC274 /* LogInViewController.swift */,
 				AC74A85C1C2083EE0009C2EF /* alarm.mp3 */,
@@ -194,10 +197,7 @@
 				CEE442011C1A7E6C00EC6DB6 /* FriendsTableViewController.swift */,
 				CE69B5A61C1132ED0042EEA7 /* ViewController.swift */,
 				AC74A85A1C2083E70009C2EF /* AlarmViewController.swift */,
-				CE85E55A1C0E5C17003BC274 /* Main.storyboard */,
 				CE85E55D1C0E5C17003BC274 /* Assets.xcassets */,
-				CE85E55F1C0E5C17003BC274 /* LaunchScreen.storyboard */,
-				AC20819C1C1A5AF300550F3A /* AlarmActive.storyboard */,
 				CE85E5621C0E5C17003BC274 /* Info.plist */,
 				CEE765231C0ED8C30051C4BC /* NoSnooze-Bridging-Header.h */,
 				54AB74CC1C1A6C6900993BD4 /* AlarmTableViewCell.swift */,
