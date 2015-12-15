@@ -66,7 +66,7 @@ class InvitesTableViewController: UITableViewController {
         super.viewDidDisappear(animated)
         rootRef.removeAllObservers()
         invitesRef.removeAllObservers()
-        invites = []
+        invites.removeAll()
     }
 
 

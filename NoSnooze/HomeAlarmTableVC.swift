@@ -56,7 +56,7 @@ class HomeAlarmTableVC: UITableViewController {
     
     func timerDidEnd(timer:NSTimer){
         timeCount = timeCount - timeInterval
-        NSLog("Time Count: \(timeCount) interval: \(timeInterval)")
+        //NSLog("Time Count: \(timeCount) interval: \(timeInterval)")
         if timeCount <= 0 {
             var alarmer:Alarm!
             for timeTuple in timer2 {

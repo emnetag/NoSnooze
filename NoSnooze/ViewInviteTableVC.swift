@@ -27,35 +27,27 @@ class ViewInviteTableVC: UITableViewController {
             if sender.titleLabel?.text == "Accept" {
                 self.currentUser = User(authData: authData)
                 self.myUserRef = Firebase(url: "https://nosnooze.firebaseio.com/users/\(authData.uid!)")
+                //let participatingRef = self.invitesRef.childByAppendingPath(self.rawAlarm.addedByUser).childByAppendingPath("participating")
+                //participatingRef.setValue(true as AnyObject)
+                var myInvitesRef : Firebase!
+                myInvitesRef = self.invitesRef.childByAppendingPath(authData.uid!).childByAppendingPath(self.alarm.key)
+                myInvitesRef.observeSingleEventOfType(.Value, withBlock: { inviteSnap in
+                    let a = myInvitesRef.childByAppendingPath("participating")
+                    a.setValue(true)
+                    //inviteSnap.setValue(true, forKeyPath: )
+                })
                 let newAlarmRef = self.myUserRef.childByAppendingPath("alarms").childByAppendingPath(self.rawAlarm.key)
                 newAlarmRef.setValue(self.rawAlarm.toAnyObject())
                 //let alarmKey = newAlarmRef.key!
                 sender.enabled = false
+                sender.backgroundColor = UIColor.grayColor()
             }
         }
     }
 
-    
-    @IBAction func acceptButton(sender: UIButton) {
-        rootRef.observeAuthEventWithBlock { (authData) -> Void in
-            if authData != nil {
-                print("User is logged in")
-                if sender.titleLabel?.text == "Accept" {
-                    self.currentUser = User(authData: authData)
-                    self.myUserRef = Firebase(url: "https://nosnooze.firebaseio.com/users/\(authData.uid!)")
-                    let newAlarmRef = self.myUserRef.childByAppendingPath("alarms").childByAppendingPath(self.rawAlarm.key)
-                    newAlarmRef.setValue(self.rawAlarm.toAnyObject())
-                    //let alarmKey = newAlarmRef.key!
-                    sender.enabled = false
-                }
-                //sender.backgroundColor = UIColor.grayColor()
-                //self.aButton.enabled = false
-            }
-        }
-    }
 
     
-        override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
         self.usersRef = Firebase(url: "https://nosnooze.firebaseio.com/users")
         self.alarmsRef = Firebase(url: "https://nosnooze.firebaseio.com/alarms")
@@ -74,11 +66,15 @@ class ViewInviteTableVC: UITableViewController {
                 self.tableView.reloadData()
                 
                 var myInvitesRef : Firebase!
-                myInvitesRef = self.invitesRef.childByAppendingPath("\(authData.uid!)/\(self.alarm.key)")
+                myInvitesRef = self.invitesRef.childByAppendingPath(authData.uid!).childByAppendingPath(self.alarm.key)
                 myInvitesRef.observeSingleEventOfType(.Value, withBlock: { inviteSnap in
+                    print(inviteSnap.value["participating"] as! Bool)
                     if (inviteSnap.value["participating"] as! Bool) == false {
                         self.alarmContent.append("Join Alarm?")
+                    } else {
+                        self.alarmContent.append("Currently Participating!")
                     }
+                    self.tableView.reloadData()
                 })
             }
         }
