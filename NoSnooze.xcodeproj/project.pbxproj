@@ -191,8 +191,8 @@
 				CE85E5561C0E5C17003BC274 /* AppDelegate.swift */,
 				CE85E5581C0E5C17003BC274 /* LogInViewController.swift */,
 				AC74A85C1C2083EE0009C2EF /* alarm.mp3 */,
-				CEE6F06B1C1ED43B00FF466F /* InvitesTableViewController.swift */,
 				CE69B5A11C1132ED0042EEA7 /* EditAlarmTableVC.swift */,
+				CEE6F06B1C1ED43B00FF466F /* InvitesTableViewController.swift */,
 				54793CCD1C1FB9BD00F653E8 /* ViewInviteTableVC.swift */,
 				CE69B5A31C1132ED0042EEA7 /* HomeAlarmTableVC.swift */,
 				CE69B5A51C1132ED0042EEA7 /* LabelAlarmVC.swift */,
@@ -308,6 +308,7 @@
 				TargetAttributes = {
 					CE85E5521C0E5C17003BC274 = {
 						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = HJ995SKCZC;
 					};
 					CE85E5661C0E5C17003BC274 = {
 						CreatedOnToolsVersion = 7.1.1;
@@ -588,6 +589,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -599,6 +602,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.uw.ischool.NoSnooze;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "NoSnooze/NoSnooze-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -610,6 +614,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -621,6 +627,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.uw.ischool.NoSnooze;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "NoSnooze/NoSnooze-Bridging-Header.h";
 			};
 			name = Release;

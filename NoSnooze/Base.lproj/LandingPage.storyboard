@@ -262,6 +262,12 @@
                                             <rect key="frame" x="113" y="48" width="201" height="30"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xBG-Pc-aI5">
+                                            <rect key="frame" x="15" y="0.0" width="345" height="44"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -356,7 +362,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xPz-2a-yoZ">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xPz-2a-yoZ">
                                             <rect key="frame" x="13" y="11" width="354" height="21"/>
                                             <animations/>
                                             <attributedString key="attributedText">
@@ -372,10 +378,10 @@
                                     </subviews>
                                     <animations/>
                                     <constraints>
-                                        <constraint firstItem="xPz-2a-yoZ" firstAttribute="leading" secondItem="9gd-qc-EBh" secondAttribute="leadingMargin" constant="5" id="Npe-pg-0I6"/>
-                                        <constraint firstItem="xPz-2a-yoZ" firstAttribute="centerY" secondItem="9gd-qc-EBh" secondAttribute="centerY" id="Vxy-bm-BvU"/>
-                                        <constraint firstItem="xPz-2a-yoZ" firstAttribute="trailing" secondItem="9gd-qc-EBh" secondAttribute="trailingMargin" id="cKN-1n-dSU"/>
-                                        <constraint firstItem="xPz-2a-yoZ" firstAttribute="top" secondItem="9gd-qc-EBh" secondAttribute="topMargin" constant="3" id="e3D-GI-7hs"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="xPz-2a-yoZ" secondAttribute="bottom" constant="9.5" id="0Hl-s3-oki"/>
+                                        <constraint firstItem="xPz-2a-yoZ" firstAttribute="top" secondItem="9gd-qc-EBh" secondAttribute="topMargin" constant="3" id="MSZ-k8-rqE"/>
+                                        <constraint firstItem="xPz-2a-yoZ" firstAttribute="trailing" secondItem="9gd-qc-EBh" secondAttribute="trailingMargin" id="cu2-Dc-UST"/>
+                                        <constraint firstItem="xPz-2a-yoZ" firstAttribute="leading" secondItem="9gd-qc-EBh" secondAttribute="leadingMargin" constant="5" id="zXE-ID-VDa"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <animations/>

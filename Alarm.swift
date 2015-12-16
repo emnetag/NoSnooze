@@ -63,6 +63,7 @@ struct Alarm {
         self.storageFormat = true
         members = snapshot.value["members"] as? Array
     }
+    
         
     mutating func toDisplayFormat() -> Void {
         self.dateFormatter.dateFormat = "EEE, MMM dd"
