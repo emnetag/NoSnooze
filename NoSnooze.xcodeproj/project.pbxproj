@@ -305,7 +305,7 @@
 				TargetAttributes = {
 					CE85E5521C0E5C17003BC274 = {
 						CreatedOnToolsVersion = 7.1.1;
-						DevelopmentTeam = HJ995SKCZC;
+						DevelopmentTeam = CJMWY5PXSQ;
 					};
 					CE85E5661C0E5C17003BC274 = {
 						CreatedOnToolsVersion = 7.1.1;
@@ -596,7 +596,7 @@
 				INFOPLIST_FILE = NoSnooze/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = edu.uw.ischool.NoSnooze;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.uw.ischool.NoSnooze.MBTeddy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "NoSnooze/NoSnooze-Bridging-Header.h";
@@ -621,7 +621,7 @@
 				INFOPLIST_FILE = NoSnooze/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = edu.uw.ischool.NoSnooze;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.uw.ischool.NoSnooze.MBTeddy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "NoSnooze/NoSnooze-Bridging-Header.h";
