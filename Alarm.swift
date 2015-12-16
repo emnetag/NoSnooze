@@ -47,8 +47,6 @@ struct Alarm {
         self.members = members
     }
     
-    init(d)
-
     init(snapshot: FDataSnapshot) {
         key = snapshot.key
         ref = snapshot.ref
