@@ -164,38 +164,6 @@ class HomeAlarmTableVC: UITableViewController {
         })
     }
     
-//    func showAlertForAlarm(alarm: Alarm, alarmID: String, inviteID: String) {
-//        print("Showing alert...")
-//        
-//        self.usersRef.childByAppendingPath(alarm.addedByUser!).observeSingleEventOfType(.Value, withBlock: {userSnap in
-//            let userName = userSnap.value["displayName"] as! String
-//            
-//            let inviteMessage = "\(userName) invited you to their alarm. Would you like to join?"
-//            
-//            let alertController = UIAlertController(title: "Alarm Invitation", message: inviteMessage, preferredStyle: .Alert)
-//
-//            // User rejected alarm
-//            alertController.addAction(UIAlertAction(title: "Nope", style: .Cancel, handler: {(alert: UIAlertAction!) in
-//                print("Invite was declined")
-////                self.invitesRef.childByAppendingPath(inviteID).removeValue()
-//            }))
-//            
-//            // User accepts alarm
-//            alertController.addAction(UIAlertAction(title: "Okay", style: .Default, handler: {(alert: UIAlertAction!) in
-//                print("Invite was acccepted")
-//                
-//                // Alarm is saved to /users/userid/alarms/alarmid
-////                self.myAlarmsRef.childByAppendingPath(alarmID).setValue(alarm.toAnyObject())
-//                
-//                //Removte invite for user
-//                self.invitesRef.childByAppendingPath(inviteID).removeValue()
-//            }))
-//            
-//            self.presentViewController(alertController, animated: true, completion: nil)
-//        })
-//    }
-    
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
