@@ -322,10 +322,10 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4EC-mq-XGb" id="9gd-qc-EBh">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xPz-2a-yoZ">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xPz-2a-yoZ">
                                             <rect key="frame" x="13" y="11" width="354" height="21"/>
                                             <attributedString key="attributedText">
                                                 <fragment content="Label">
@@ -339,10 +339,10 @@
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="xPz-2a-yoZ" firstAttribute="leading" secondItem="9gd-qc-EBh" secondAttribute="leadingMargin" constant="5" id="Npe-pg-0I6"/>
-                                        <constraint firstItem="xPz-2a-yoZ" firstAttribute="centerY" secondItem="9gd-qc-EBh" secondAttribute="centerY" id="Vxy-bm-BvU"/>
-                                        <constraint firstItem="xPz-2a-yoZ" firstAttribute="trailing" secondItem="9gd-qc-EBh" secondAttribute="trailingMargin" id="cKN-1n-dSU"/>
-                                        <constraint firstItem="xPz-2a-yoZ" firstAttribute="top" secondItem="9gd-qc-EBh" secondAttribute="topMargin" constant="3" id="e3D-GI-7hs"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="xPz-2a-yoZ" secondAttribute="bottom" constant="9.5" id="0Hl-s3-oki"/>
+                                        <constraint firstItem="xPz-2a-yoZ" firstAttribute="top" secondItem="9gd-qc-EBh" secondAttribute="topMargin" constant="3" id="MSZ-k8-rqE"/>
+                                        <constraint firstItem="xPz-2a-yoZ" firstAttribute="trailing" secondItem="9gd-qc-EBh" secondAttribute="trailingMargin" id="cu2-Dc-UST"/>
+                                        <constraint firstItem="xPz-2a-yoZ" firstAttribute="leading" secondItem="9gd-qc-EBh" secondAttribute="leadingMargin" constant="5" id="zXE-ID-VDa"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>

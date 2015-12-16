@@ -98,9 +98,9 @@ class HomeAlarmTableVC: UITableViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        alarmHandle = self.alarmsRef.observeEventType(.ChildAdded, withBlock: { snapshot in
-            let alarmKey = snapshot.key
-            self.alarms = [Alarm]()
+        /*alarmHandle = self.alarmsRef.observeEventType(.ChildAdded, withBlock: { snapshot in
+            //let alarmKey = snapshot.key
+            //self.alarms = [Alarm]()
             //This is picking up additional alarms
             /*self.alarmsRef.childByAppendingPath(alarmKey).observeSingleEventOfType(.Value, withBlock: {snapshot in
                 let newAlarm = Alarm(snapshot: snapshot)
@@ -130,7 +130,7 @@ class HomeAlarmTableVC: UITableViewController {
                     print("No invites for now")
                 }
             })
-        })
+        })*/
         NSLog("HUE HUE HUE HUE HUE \(alarms.count)")
         timer2.removeAll()
         if(self.alarms.count > 1) {
@@ -241,11 +241,27 @@ class HomeAlarmTableVC: UITableViewController {
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             // Delete the row from the data source
-            let alarmKey = alarms[indexPath.row].ref!.key!
-            alarms[indexPath.row].ref!.removeValue()
-            
-            // Delete from /alarms/alarmID as well
-            self.alarmsRef.childByAppendingPath(alarmKey).removeValue()
+            print(alarms.count)
+            let alarmKey = alarms[indexPath.row].key
+            // IF INVITED
+            rootRef.observeAuthEventWithBlock { (authData) -> Void in
+                if authData != nil {
+                    var myInvitesRef : Firebase!
+                    myInvitesRef = self.invitesRef.childByAppendingPath(authData.uid!).childByAppendingPath(alarmKey)
+                    myInvitesRef.observeSingleEventOfType(.Value, withBlock: { inviteSnap in
+                        if inviteSnap.hasChildren() {
+                        myInvitesRef.setValue(false, forKey: "participating")
+                            //.childByAppendingPath("participating")
+                        //a.setValue(false)
+                        } 
+                    })
+                    let myAlarmsRef = self.usersRef
+                        .childByAppendingPath(authData.uid!)
+                        .childByAppendingPath("alarms")
+                    myAlarmsRef.childByAppendingPath(alarmKey).removeValue()
+                }
+            }
+            // ELSE
             
             alarms.removeAtIndex(indexPath.row)
 
