@@ -46,6 +46,8 @@ struct Alarm {
         self.cutoffString = dateFormatter.stringFromDate(cutoffTime)
         self.members = members
     }
+    
+    init(d)
 
     init(snapshot: FDataSnapshot) {
         key = snapshot.key
