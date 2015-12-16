@@ -32,36 +32,35 @@ class InvitesTableViewController: UITableViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
         
         rootRef.observeAuthEventWithBlock { (authData) -> Void in
             if authData != nil {
                 
                 //get from /invites/userID all the invites
                 
-                self.invitesRef.childByAppendingPath(authData.uid!).observeEventType(.Value, withBlock: {inviteSnap in
-                    
-                    if inviteSnap.hasChildren() {
-                        for item in inviteSnap.children {
-                            let thing = item as! FDataSnapshot
-                            let myAlarmID = thing.value["alarmID"] as! String
-                            print(myAlarmID)
-                            
-                            // alarms/alarmID
-                            self.alarmsRef.childByAppendingPath(myAlarmID).observeSingleEventOfType(.Value, withBlock: { alarmSnap in
-                                let alarm = Alarm(snapshot: alarmSnap)
-                                self.invites.append(alarm)
-                                self.rawInvites.append(alarm)
-                                self.tableView.reloadData()
-                            })
-                        }
-                    }
+                self.invitesRef.childByAppendingPath(authData.uid!).observeEventType(.ChildAdded, withBlock: {inviteSnap in
+                    let alarmID = inviteSnap.value.objectForKey("alarmID") as! String
+                    print("Preparing to fetch alarm \(alarmID)")
+                    self.fetchAlarm(alarmID)
                 })
             }
         }
+
     }
     
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
+    func fetchAlarm(idStr: String) {
+        print("Fetching alarm \(idStr)")
+        
+        self.alarmsRef.childByAppendingPath(idStr).observeSingleEventOfType(.Value, withBlock: { alarmSnap in
+            let alarm = Alarm(snapshot: alarmSnap)
+            self.invites.append(alarm)
+            self.rawInvites.append(alarm)
+            self.tableView.reloadData()
+        })
     }
     
     
