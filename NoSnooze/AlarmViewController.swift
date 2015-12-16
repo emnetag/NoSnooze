@@ -26,6 +26,8 @@ class AlarmViewController: UIViewController {
     let timeInterval:NSTimeInterval = 0.05
     var timeCount:NSTimeInterval = 0.0
     
+    var snoozeTime:NSTimeInterval = 50000.0
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -66,6 +68,12 @@ class AlarmViewController: UIViewController {
     
     func timerDidEnd(timer:NSTimer){
         timeCount = timeCount - timeInterval
+        if(!snoozeButton.enabled) {
+            if((snoozeTime - 30) > timeCount && (snoozeTime - 30) > 0) {
+                snoozeButton.enabled = true
+                audioPlayer.play()
+            }
+        }
         if timeCount <= 0 {
             timer.invalidate()
             audioPlayer.stop()
@@ -88,6 +96,8 @@ class AlarmViewController: UIViewController {
     
     @IBAction func snoozePressed(sender: AnyObject) {
         audioPlayer.stop()
+        snoozeButton.enabled = false
+        snoozeTime = timeCount
     }
     
     @IBAction func readyPressed(sender: AnyObject) {

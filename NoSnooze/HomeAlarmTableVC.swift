@@ -98,42 +98,7 @@ class HomeAlarmTableVC: UITableViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        alarmHandle = self.alarmsRef.observeEventType(.ChildAdded, withBlock: { snapshot in
-            let alarmKey = snapshot.key
-            self.alarms = [Alarm]()
-            //This is picking up additional alarms
-            /*self.alarmsRef.childByAppendingPath(alarmKey).observeSingleEventOfType(.Value, withBlock: {snapshot in
-                let newAlarm = Alarm(snapshot: snapshot)
-                self.alarms.append(newAlarm)
-                self.tableView.reloadData()
-            }) */
-            var invite: Invite?
-            self.myInvitesRef.observeSingleEventOfType(.ChildAdded, withBlock: { inviteSnap in
-                
-                if inviteSnap.hasChildren() {
-                    
-                    invite = Invite(snapshot: inviteSnap)
-                    print("I have been invited to \(invite!.alarmID!)")
-                    
-                    let tempRef = self.alarmsRef.childByAppendingPath(invite!.alarmID!)
-                    
-                    tempRef.observeSingleEventOfType(.Value, withBlock: {alarmSnap in
-                        
-                        let alarm = Alarm(snapshot: alarmSnap)
-                        print(alarm.addedByUser!)
-                        
-                        //show Alert Controller
-                        //self.showAlertForAlarm(alarm, alarmID: invite!.alarmID!, inviteID: invite!.inviteID!)
-                        
-                    })
-                } else {
-                    print("No invites for now")
-                }
-            })
-        })
         
-        
-        NSLog("HUE HUE HUE HUE HUE \(alarms.count)")
         timer2.removeAll()
         if(self.alarms.count > 1) {
             self.alarms = self.alarms.sort({ $0.alarmTime.timeIntervalSinceNow < $1.alarmTime.timeIntervalSinceNow })
@@ -191,38 +156,6 @@ class HomeAlarmTableVC: UITableViewController {
         })
     }
     
-//    func showAlertForAlarm(alarm: Alarm, alarmID: String, inviteID: String) {
-//        print("Showing alert...")
-//        
-//        self.usersRef.childByAppendingPath(alarm.addedByUser!).observeSingleEventOfType(.Value, withBlock: {userSnap in
-//            let userName = userSnap.value["displayName"] as! String
-//            
-//            let inviteMessage = "\(userName) invited you to their alarm. Would you like to join?"
-//            
-//            let alertController = UIAlertController(title: "Alarm Invitation", message: inviteMessage, preferredStyle: .Alert)
-//
-//            // User rejected alarm
-//            alertController.addAction(UIAlertAction(title: "Nope", style: .Cancel, handler: {(alert: UIAlertAction!) in
-//                print("Invite was declined")
-////                self.invitesRef.childByAppendingPath(inviteID).removeValue()
-//            }))
-//            
-//            // User accepts alarm
-//            alertController.addAction(UIAlertAction(title: "Okay", style: .Default, handler: {(alert: UIAlertAction!) in
-//                print("Invite was acccepted")
-//                
-//                // Alarm is saved to /users/userid/alarms/alarmid
-////                self.myAlarmsRef.childByAppendingPath(alarmID).setValue(alarm.toAnyObject())
-//                
-//                //Removte invite for user
-//                self.invitesRef.childByAppendingPath(inviteID).removeValue()
-//            }))
-//            
-//            self.presentViewController(alertController, animated: true, completion: nil)
-//        })
-//    }
-    
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -243,11 +176,27 @@ class HomeAlarmTableVC: UITableViewController {
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             // Delete the row from the data source
-            let alarmKey = alarms[indexPath.row].ref!.key!
-            alarms[indexPath.row].ref!.removeValue()
-            
-            // Delete from /alarms/alarmID as well
-            self.alarmsRef.childByAppendingPath(alarmKey).removeValue()
+            print(alarms.count)
+            let alarmKey = alarms[indexPath.row].key
+            // IF INVITED
+            rootRef.observeAuthEventWithBlock { (authData) -> Void in
+                if authData != nil {
+                    var myInvitesRef : Firebase!
+                    myInvitesRef = self.invitesRef.childByAppendingPath(authData.uid!).childByAppendingPath(alarmKey)
+                    myInvitesRef.observeSingleEventOfType(.Value, withBlock: { inviteSnap in
+                        if inviteSnap.hasChildren() {
+                        myInvitesRef.setValue(false, forKey: "participating")
+                            //.childByAppendingPath("participating")
+                        //a.setValue(false)
+                        } 
+                    })
+                    let myAlarmsRef = self.usersRef
+                        .childByAppendingPath(authData.uid!)
+                        .childByAppendingPath("alarms")
+                    myAlarmsRef.childByAppendingPath(alarmKey).removeValue()
+                }
+            }
+            // ELSE
             
             alarms.removeAtIndex(indexPath.row)
 
