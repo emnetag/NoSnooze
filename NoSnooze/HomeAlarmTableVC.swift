@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FBSDKCoreKit
 import Firebase
 import FirebaseUI
 
@@ -43,6 +44,12 @@ class HomeAlarmTableVC: UITableViewController {
         usersRef = Firebase(url: "https://nosnooze.firebaseio.com/users")
         alarmsRef = Firebase(url: "https://nosnooze.firebaseio.com/alarms")
         invitesRef = Firebase(url: "https://nosnooze.firebaseio.com/invites")
+        
+        //TESTING PROFILE IMAGE
+        
+        
+
+        //TESTING PROFILE IMAGE
         self.navigationItem.leftBarButtonItem = self.editButtonItem()
     }
     
@@ -128,15 +135,15 @@ class HomeAlarmTableVC: UITableViewController {
     
     
     override func viewDidDisappear(animated: Bool) {
-            super.viewDidDisappear(animated)
-            rootRef.removeAllObservers()
-            usersRef.removeAllObservers()
-            alarmsRef.removeAllObservers()
-            invitesRef.removeAllObservers()
-            if self.myInvitesRef != nil {
-                self.myInvitesRef.removeAllObservers()
-            }
+        super.viewDidDisappear(animated)
+        rootRef.removeAllObservers()
+        usersRef.removeAllObservers()
+        alarmsRef.removeAllObservers()
+        invitesRef.removeAllObservers()
+        if self.myInvitesRef != nil {
+            self.myInvitesRef.removeAllObservers()
         }
+    }
     
     //using .Value and iterating through all alarms 
     //seems to be the only way to update the view

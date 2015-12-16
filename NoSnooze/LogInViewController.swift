@@ -98,7 +98,7 @@ class LogInViewController: UIViewController {
                                    .childByAppendingPath(authData.uid).updateChildValues(newUser)
 
                                 let sb = UIStoryboard(name: "LandingPage", bundle: nil)
-                                let VC = sb.instantiateInitialViewController() as! UITabBarController
+                                let VC = sb.instantiateInitialViewController() as! HomeTabBarViewController
                                 self.presentViewController(VC, animated: true, completion: nil)
                             }
                     })
@@ -106,7 +106,7 @@ class LogInViewController: UIViewController {
             }
         } else {
             let sb = UIStoryboard(name: "LandingPage", bundle: nil)
-            let VC = sb.instantiateInitialViewController() as! UITabBarController
+            let VC = sb.instantiateInitialViewController() as! HomeTabBarViewController
             self.presentViewController(VC, animated: true, completion: nil)
         }
     }

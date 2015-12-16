@@ -46,6 +46,8 @@ struct Alarm {
         self.cutoffString = dateFormatter.stringFromDate(cutoffTime)
         self.members = members
     }
+    
+    init(d)
 
     init(snapshot: FDataSnapshot) {
         key = snapshot.key
@@ -63,6 +65,7 @@ struct Alarm {
         self.storageFormat = true
         members = snapshot.value["members"] as? Array
     }
+    
         
     mutating func toDisplayFormat() -> Void {
         self.dateFormatter.dateFormat = "EEE, MMM dd"

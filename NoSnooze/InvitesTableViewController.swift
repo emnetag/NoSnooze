@@ -31,40 +31,37 @@ class InvitesTableViewController: UITableViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-        print("Invites view will appear")
         super.viewWillAppear(animated)
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
+        
         rootRef.observeAuthEventWithBlock { (authData) -> Void in
-            //self.invites = [Alarm]()
-            //var tempInvites = [Alarm]()
             if authData != nil {
+                
+                //get from /invites/userID all the invites
+                
                 self.invitesRef.childByAppendingPath(authData.uid!).observeEventType(.Value, withBlock: {inviteSnap in
+                    
                     if inviteSnap.hasChildren() {
-                        
-                        //print("has children")
                         for item in inviteSnap.children {
                             let thing = item as! FDataSnapshot
                             let myAlarmID = thing.value["alarmID"] as! String
                             print(myAlarmID)
+                            
+                            // alarms/alarmID
                             self.alarmsRef.childByAppendingPath(myAlarmID).observeSingleEventOfType(.Value, withBlock: { alarmSnap in
                                 let alarm = Alarm(snapshot: alarmSnap)
                                 self.invites.append(alarm)
                                 self.rawInvites.append(alarm)
                                 self.tableView.reloadData()
-                                print(self.invites.count)
-                                
                             })
                         }
                     }
                 })
-            } else {
-                print("User is not logged in")
             }
-            
         }
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
     }
     
     
