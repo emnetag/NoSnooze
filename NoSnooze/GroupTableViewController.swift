@@ -20,6 +20,8 @@ class GroupTableViewController: UITableViewController {
     
     var usersRef: Firebase!
     
+    @IBOutlet weak var groupChat: UINavigationItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // print("lol")

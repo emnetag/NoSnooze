@@ -464,10 +464,13 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Root View Controller" id="JjL-Pw-5J3"/>
+                    <connections>
+                        <outlet property="groupChat" destination="JjL-Pw-5J3" id="8GT-DX-Hf3"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O4I-R2-eYQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-656.5" y="885.5"/>
+            <point key="canvasLocation" x="-800.5" y="885.5"/>
         </scene>
         <!--Messages View Controller-->
         <scene sceneID="rgX-po-tdc">
@@ -485,7 +488,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xzO-Rc-Jtk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-36" y="852"/>
+            <point key="canvasLocation" x="87.5" y="885.5"/>
         </scene>
         <!--Chat-->
         <scene sceneID="fnv-KC-5yl">

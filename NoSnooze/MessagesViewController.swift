@@ -38,6 +38,7 @@ class MessagesViewController: JSQMessagesViewController {
         messagesRef = Firebase(url: "https://swifttest123.firebaseio.com/messages")
         
         // *** STEP 4: RECEIVE MESSAGES FROM FIREBASE (limited to latest 25 messages)
+        
         messagesRef.queryLimitedToNumberOfChildren(25).observeEventType(FEventType.ChildAdded, withBlock: { (snapshot) in
             let text = snapshot.value["text"] as? String
             let sender = snapshot.value["sender"] as? String
