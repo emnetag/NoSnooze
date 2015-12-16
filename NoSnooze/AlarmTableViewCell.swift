@@ -12,6 +12,8 @@ class AlarmTableViewCell: UITableViewCell {
 
     @IBOutlet weak var AlarmText: UILabel!
     @IBOutlet weak var CutoffTime: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

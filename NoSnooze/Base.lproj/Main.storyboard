@@ -18,12 +18,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aH1-DY-QKt">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aH1-DY-QKt">
                                 <rect key="frame" x="20" y="333" width="335" height="50"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="Wd5-EF-PEe"/>
+                                    <constraint firstAttribute="height" constant="50" id="zVx-2w-xek"/>
                                 </constraints>
                                 <state key="normal" title="Log In With Facebook">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -32,12 +32,12 @@
                                     <action selector="loginDidTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="w2g-1t-XC0"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ggt-mM-vIt">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ggt-mM-vIt">
                                 <rect key="frame" x="20" y="394" width="335" height="50"/>
                                 <animations/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="RW1-ag-bdJ"/>
+                                    <constraint firstAttribute="height" constant="50" id="NQe-Lj-brM"/>
                                 </constraints>
                                 <state key="normal" title="Log Out">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -50,7 +50,7 @@
                                 <rect key="frame" x="46" y="116" width="283" height="60"/>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="exH-7e-Z0Z"/>
+                                    <constraint firstAttribute="height" constant="60" id="gq4-bt-htk"/>
                                 </constraints>
                                 <attributedString key="attributedText">
                                     <fragment content="NoSnooze">
@@ -67,14 +67,15 @@
                         <animations/>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="JXz-wT-BmG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DYw-Ib-0AF"/>
-                            <constraint firstItem="ggt-mM-vIt" firstAttribute="leading" secondItem="aH1-DY-QKt" secondAttribute="leading" id="Rue-fS-b6D"/>
-                            <constraint firstItem="aH1-DY-QKt" firstAttribute="centerX" secondItem="JXz-wT-BmG" secondAttribute="centerX" id="TeF-x3-DoV"/>
-                            <constraint firstItem="JXz-wT-BmG" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="96" id="mw9-Re-JsO"/>
-                            <constraint firstItem="ggt-mM-vIt" firstAttribute="top" secondItem="aH1-DY-QKt" secondAttribute="bottom" constant="11" id="p1I-eg-9Hg"/>
-                            <constraint firstItem="JXz-wT-BmG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="qoL-uR-KEQ"/>
-                            <constraint firstItem="aH1-DY-QKt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="4" id="rLb-JV-uy6"/>
-                            <constraint firstItem="ggt-mM-vIt" firstAttribute="trailing" secondItem="aH1-DY-QKt" secondAttribute="trailing" id="yRG-7S-BOg"/>
+                            <constraint firstItem="aH1-DY-QKt" firstAttribute="trailing" secondItem="ggt-mM-vIt" secondAttribute="trailing" id="0Xb-gX-ST3"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ggt-mM-vIt" secondAttribute="bottom" constant="223" id="NyT-nx-GSY"/>
+                            <constraint firstItem="ggt-mM-vIt" firstAttribute="top" secondItem="aH1-DY-QKt" secondAttribute="bottom" constant="11" id="VNu-wZ-ipl"/>
+                            <constraint firstItem="JXz-wT-BmG" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="96" id="VYm-bU-6mW"/>
+                            <constraint firstItem="ggt-mM-vIt" firstAttribute="leading" secondItem="aH1-DY-QKt" secondAttribute="leading" id="aOE-OQ-xmG"/>
+                            <constraint firstItem="JXz-wT-BmG" firstAttribute="centerX" secondItem="aH1-DY-QKt" secondAttribute="centerX" id="iXh-JA-8Vd"/>
+                            <constraint firstItem="aH1-DY-QKt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jxv-uI-sFb"/>
+                            <constraint firstItem="JXz-wT-BmG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="psc-xg-ArR"/>
+                            <constraint firstItem="aH1-DY-QKt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="4" id="r1K-q0-clZ"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>

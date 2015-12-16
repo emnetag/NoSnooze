@@ -27,12 +27,16 @@ class FriendsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        let nib = UINib(nibName: "FBFriendTableViewCell", bundle: nil)
+//        tableView.registerNib(nib, forCellReuseIdentifier: "FacebookFriend")
     }
 
     override func viewWillAppear(animated: Bool) {
         let params = ["fields": "id, friends"]
         
         self.accessToken = FBSDKAccessToken.currentAccessToken().tokenString
+        
         
         if (self.accessToken != nil) {
             
@@ -78,22 +82,20 @@ class FriendsTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return self.friends.count
     }
-
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("FacebookFriendCell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("FacebookFriend", forIndexPath: indexPath) as! FBFriendTableViewCell
         
-        let name = self.friends[indexPath.row]["name"] as? String
-        
-        cell.textLabel?.text = name
+        cell.loadUserData(self.friends[indexPath.row])
         
         return cell
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let friendCell = tableView.cellForRowAtIndexPath(indexPath)
-        let idStr = "facebook:\(self.friends[indexPath.row]["id"] as! String)"
         
+        let idStr = "facebook:\(self.friends[indexPath.row]["id"] as! String)"
+
         if friendCell?.accessoryType == .Checkmark {
             friendCell?.accessoryType = .None
             self.tempMembers.removeAtIndex(indexPath.row)
@@ -101,9 +103,38 @@ class FriendsTableViewController: UITableViewController {
             friendCell?.accessoryType = .Checkmark
             self.tempMembers.append(idStr)
         }
+        
         print("I have \(tempMembers.count) temp members")
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
     }
+    
+//    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCellWithIdentifier("FacebookFriendCell", forIndexPath: indexPath)
+//        
+//        let name = self.friends[indexPath.row]["name"] as? String
+//        
+//        cell.textLabel?.text = name
+//        
+//        return cell
+//    }
+//    
+//    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+//        let friendCell = tableView.cellForRowAtIndexPath(indexPath)
+//        
+//        let idStr = "facebook:\(self.friends[indexPath.row]["id"] as! String)"
+//        
+//        if friendCell?.accessoryType == .Checkmark {
+//            friendCell?.accessoryType = .None
+//            self.tempMembers.removeAtIndex(indexPath.row)
+//        } else {
+//            friendCell?.accessoryType = .Checkmark
+//            self.tempMembers.append(idStr)
+//        }
+//        
+//        print("I have \(tempMembers.count) temp members")
+//        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+//    }
 
     
     

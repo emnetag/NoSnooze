@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FBSDKCoreKit
 import Firebase
 import FirebaseUI
 
@@ -43,6 +44,12 @@ class HomeAlarmTableVC: UITableViewController {
         usersRef = Firebase(url: "https://nosnooze.firebaseio.com/users")
         alarmsRef = Firebase(url: "https://nosnooze.firebaseio.com/alarms")
         invitesRef = Firebase(url: "https://nosnooze.firebaseio.com/invites")
+        
+        //TESTING PROFILE IMAGE
+        
+        
+
+        //TESTING PROFILE IMAGE
         self.navigationItem.leftBarButtonItem = self.editButtonItem()
     }
     
@@ -98,40 +105,6 @@ class HomeAlarmTableVC: UITableViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        alarmHandle = self.alarmsRef.observeEventType(.ChildAdded, withBlock: { snapshot in
-            let alarmKey = snapshot.key
-            self.alarms = [Alarm]()
-            //This is picking up additional alarms
-            /*self.alarmsRef.childByAppendingPath(alarmKey).observeSingleEventOfType(.Value, withBlock: {snapshot in
-                let newAlarm = Alarm(snapshot: snapshot)
-                self.alarms.append(newAlarm)
-                self.tableView.reloadData()
-            }) */
-            var invite: Invite?
-            self.myInvitesRef.observeSingleEventOfType(.ChildAdded, withBlock: { inviteSnap in
-                
-                if inviteSnap.hasChildren() {
-                    
-                    invite = Invite(snapshot: inviteSnap)
-                    print("I have been invited to \(invite!.alarmID!)")
-                    
-                    let tempRef = self.alarmsRef.childByAppendingPath(invite!.alarmID!)
-                    
-                    tempRef.observeSingleEventOfType(.Value, withBlock: {alarmSnap in
-                        
-                        let alarm = Alarm(snapshot: alarmSnap)
-                        print(alarm.addedByUser!)
-                        
-                        //show Alert Controller
-                        //self.showAlertForAlarm(alarm, alarmID: invite!.alarmID!, inviteID: invite!.inviteID!)
-                        
-                    })
-                } else {
-                    print("No invites for now")
-                }
-            })
-        })
-        
         
         NSLog("HUE HUE HUE HUE HUE \(alarms.count)")
         timer2.removeAll()
@@ -163,15 +136,15 @@ class HomeAlarmTableVC: UITableViewController {
     
     
     override func viewDidDisappear(animated: Bool) {
-            super.viewDidDisappear(animated)
-            rootRef.removeAllObservers()
-            usersRef.removeAllObservers()
-            alarmsRef.removeAllObservers()
-            invitesRef.removeAllObservers()
-            if self.myInvitesRef != nil {
-                self.myInvitesRef.removeAllObservers()
-            }
+        super.viewDidDisappear(animated)
+        rootRef.removeAllObservers()
+        usersRef.removeAllObservers()
+        alarmsRef.removeAllObservers()
+        invitesRef.removeAllObservers()
+        if self.myInvitesRef != nil {
+            self.myInvitesRef.removeAllObservers()
         }
+    }
     
     //using .Value and iterating through all alarms 
     //seems to be the only way to update the view

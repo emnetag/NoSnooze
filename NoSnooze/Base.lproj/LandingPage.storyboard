@@ -15,7 +15,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
-                        <textField key="tableFooterView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Min Friends Required to Snooze" textAlignment="center" minimumFontSize="17" id="rco-5Y-oue">
+                        <textField key="tableFooterView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="How many friends are required?" textAlignment="center" minimumFontSize="17" id="rco-5Y-oue">
                             <rect key="frame" x="0.0" y="219.5" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <animations/>
@@ -241,24 +241,27 @@
         <scene sceneID="C5n-7l-2fI">
             <objects>
                 <tableViewController id="HxX-XH-oY8" customClass="FriendsTableViewController" customModule="NoSnooze" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="LlE-Gp-tyw">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="125" sectionHeaderHeight="28" sectionFooterHeight="28" id="LlE-Gp-tyw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FacebookFriendCell" textLabel="xBG-Pc-aI5" style="IBUITableViewCellStyleDefault" id="orn-wS-9cK">
-                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FacebookFriend" rowHeight="125" id="HBD-OX-Ttt" customClass="FBFriendTableViewCell" customModule="NoSnooze" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="375" height="125"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="orn-wS-9cK" id="Tbn-ml-1fQ">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HBD-OX-Ttt" id="loI-Nd-sJk">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="125"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xBG-Pc-aI5">
-                                            <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p57-Be-lbF">
+                                            <rect key="frame" x="14" y="25" width="75" height="75"/>
                                             <animations/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n3g-nf-6k9">
+                                            <rect key="frame" x="113" y="48" width="201" height="30"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -266,6 +269,10 @@
                                     <animations/>
                                 </tableViewCellContentView>
                                 <animations/>
+                                <connections>
+                                    <outlet property="FriendName" destination="n3g-nf-6k9" id="9lg-0F-Ayv"/>
+                                    <outlet property="FriendProfImage" destination="p57-Be-lbF" id="SSB-Yz-c0i"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -287,7 +294,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SGu-op-Tbg" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Foy-wP-bzL" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1424" y="-32"/>
+            <point key="canvasLocation" x="1611.5" y="-38.5"/>
         </scene>
         <!--My Alarms-->
         <scene sceneID="q7E-dV-New">
@@ -326,7 +333,6 @@
                     <connections>
                         <segue destination="ioW-Cy-ITh" kind="relationship" relationship="viewControllers" id="DAF-SQ-wQq"/>
                         <segue destination="Q3Z-gJ-jq7" kind="relationship" relationship="viewControllers" id="wNv-S5-dm8"/>
-                        <segue destination="FtA-kk-MN1" kind="relationship" relationship="viewControllers" id="GWi-oV-RTC"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vPq-t7-nWT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -413,7 +419,7 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -445,7 +451,7 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -463,27 +469,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pBj-Ek-JaF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="474.5" y="-941.5"/>
-        </scene>
-        <!--Chat-->
-        <scene sceneID="zoa-Q7-cxm">
-            <objects>
-                <viewController id="FtA-kk-MN1" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Yvj-Wu-wId"/>
-                        <viewControllerLayoutGuide type="bottom" id="ZZX-B5-nJY"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Qfi-Eu-EVM">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Chat" image="speechbubble98" id="1fk-3b-a7m"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zzP-m2-iM5" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1051.5" y="919.5"/>
         </scene>
         <!--Invites-->
         <scene sceneID="nrH-Gi-2Ic">
@@ -509,7 +494,6 @@
     </scenes>
     <resources>
         <image name="clocks26" width="32" height="32"/>
-        <image name="speechbubble98" width="32" height="32"/>
         <image name="tray9" width="32" height="32"/>
     </resources>
 </document>
